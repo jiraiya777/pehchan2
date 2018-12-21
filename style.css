@@ -1,0 +1,154 @@
+
+
+
+#demo{
+	border: 2px solid black;
+	background-color:green;
+	color:white;
+	margin-left: 35px;
+	margin-right: 35px;	
+	padding:5px;
+}
+
+#demo111{
+	border: 2px solid black;
+	background-color:green;
+	color:white;
+	
+	padding:5px;
+}
+
+
+#poll{
+	border: 3px solid green;
+	border-radius: 15px;
+	width:25%;
+	height: auto;
+	margin-top:45px ;
+	background-color: lightblue;
+
+	
+}
+
+
+
+#abs1{
+	margin-top:45px;
+	
+	margin-left:45;
+	height: 40px;
+	
+
+}
+
+.poll1{
+	color:black;
+	
+
+}
+
+#demo1{
+	width:80%;
+	height:200px;
+    border: 2px solid green;
+}
+
+#demo2{
+	padding:10px;
+	background-color: green;
+	color: white;
+}
+#demo3{
+	
+	margin:30px 35px;
+	width: 81%;
+	height:250px;
+	border: 2px solid green;
+
+}
+
+
+#war{
+	margin:15px 35px;
+	color:black;
+}
+
+#war1{
+	border:2px dashed black;
+	height: 9cm;
+	width: 14cm;
+
+	margin-left:55px;
+	margin-top:45px;
+}
+
+.absolute1{
+	top:0;
+	right:0;
+	border:2px dashed black;
+	height: 9cm;
+	width: 14cm;
+	margin-right: 20px;
+	position: absolute;
+}
+
+.tabl{
+	margin-left:25px;
+	margin-right:125px;
+}
+table {
+	margin-left: 50px;
+	margin-right: 50px;
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+  }
+  
+  td {
+	border: 1px solid black;
+	text-align: left;
+	padding: 8px;
+  }
+   th {
+	 background-color: green;
+	 color:white;  
+	border: 1px solid black;
+	text-align: left;
+	padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+	background-color: grey;
+  }
+
+  .container1{
+	  border: 5px solid black;
+	  margin:35px 0px; 
+  }
+
+.forum { color: black; }
+
+.forum:hover { background-color: orange !important;
+		
+			 }
+
+#link{
+   text-decoration-line: none;
+   color: black;
+}	
+
+.goat{
+	border: 2px solid grey;
+	border-radius:15px;
+	height:300px;
+	width:100%;
+	margin-top: 35px;
+}
+
+#full{
+	margin-left:40px;
+	border: 2px solid lightblue;
+	border-radius: 20px;
+}
+
+			 
