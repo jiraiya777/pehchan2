@@ -6,12 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bootstrap.css">
-    <link rel="stylesheet"  href="Volunteer_style.css">
+    <link rel="stylesheet"  href="style.css">
+    <link rel="stylesheet"  href="style11.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="javascript.js"></script>
-  <title>Volunteer</title>   
+  <title>TEST</title>   
 </head>
 <body>
      <!-- Top section starts here -->
@@ -136,16 +137,100 @@
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex .</p>
             <div class="block-data" align="center";>
               <div class="hd1">Astha Singhal</div>
-              <div class="hd2">Astha Singhal</div>
-              <div class="hd2">Astha Singhal</div>
-
-            
+              <div class="hd2" align="center">
+                Intern<br>Smile Foundation
+              </div>
             </div>
             </div>
           </div>
-          <hr>
+        </div>
 
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+            
+            <?php
+                    require("db.php");
+                   /* $sql = "SELECT * FROM story_of_day";
+                    $result = mysqli_query($conn, $sql);
+
+                    if (mysqli_num_rows($result)>0) {
+                        while($row = mysqli_fetch_assoc($result)) {
+                            echo '<li>'.$row['story'].'</li>';
+                        }
+                    } else {
+                        echo "<li>no story!</li>";
+                    }*/
+                    $SQLCommand = "SELECT *  FROM story_of_day";
+
+                    $result = mysqli_query($conn,$SQLCommand); // This line executes the MySQL query that you typed above
+
+                    $yourArray = array(); // make a new array to hold all your data
+
+
+                    $index = 0;
+                    while($row = mysqli_fetch_assoc($result)){ // loop to store the data in an associative array.
+                         $yourArray[$index] = $row;
+                         $index++;
+                    }
+
+                    for($x=0; $x<13;$x++){
+                      echo '<div class="row" align="center">';
+
+            echo '<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">';
+                        echo ' <div class="block" >';
+            echo '<img src="1.jpg" height="200" width="200" alt="Avatar" class="center">'.$yourArray[$x]['story'].$yourArray[$x]['date'].'</div>'.'</div>';
+            if (++$x < 13)   
+            {
+            echo '<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">'.
+                        ' <div class="block" >'.
+            '<img src="1.jpg" height="200" width="200" alt="Avatar" class="center">'.$yourArray[$x]['story'].'</div>'.'</div>';
+          }
+          else
+          {
+            break;
+          }
+            if (++$x < 13)   
+            {
+            echo '<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">'.
+                        ' <div class="block" >'.
+            '<img src="1.jpg" height="200" width="200" alt="Avatar" class="center">'.$yourArray[$x]['story'].'</div>'.'</div>';
+          }
+          else
+          {
+            break;
+          }
+            if (++$x < 13)   
+            {
+            echo '<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">'.
+                        ' <div class="block" >'.
+            '<img src="1.jpg" height="200" width="200" alt="Avatar" class="center">'.$yourArray[$x]['story'].'</div>'.'</div>';
+          }
+          else
+          {
+            break;
+          }
+
+            
+            echo '</div>';
+            echo "<hr/>";
+
+           
+
+                    }
+                    /*foreach ($yourArray as $key => $value){
+                      echo ' <div class="row" >' .'<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">'.'<div class="block" >'.$value['story'].'</div>'.'</div>'.' </div>';
+                    
+                    }*/
+
+                    /*
+                    echo $yourArray[2]['story']; 
+echo " <div style=\"width: 280px; border: 2px dashed #000000; float: right; padding: 3px; margin: 5px\">"; 
+echo '<div class="my_class">'.$cart->count_product.'</div>';*/
+
+                    mysqli_close($conn);
+            ?>
+
+        
+           <!--
+           <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
             <div class="block"> 
             <img src="2.jpg" height="200" width="200" alt="Avatar" class="center">
             <p class="img__description" align="center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -185,9 +270,9 @@
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex .</p>
             <div class="block-data" align="center";>
               <div class="hd1">Astha Singhal</div>
-              <div class="hd2">Astha Singhal</div>
-
-              <div class="hd2">Astha Singhal</div>
+              <div class="hd2" align="center">
+                Intern<br>Smile Foundation
+              </div>  
             </div>
             </div>
           </div>
@@ -278,6 +363,9 @@
         </div>
         </section>
       </div>
+    -->
+  </section>
+</div>
       <script >
         
         function myFunction() {
