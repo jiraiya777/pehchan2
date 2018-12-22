@@ -239,7 +239,38 @@
         <div class="goat">
 
           <div class="panel panel-default">
-                <h2 class="panel-heading">>Story of Day</h2></div>
+                <h2 class="panel-heading">>Story of Day</h2>
+                <ul>
+                  <?php
+                    require("db.php");
+                   /* $sql = "SELECT * FROM story_of_day";
+                    $result = mysqli_query($conn, $sql);
+
+                    if (mysqli_num_rows($result)>0) {
+                        while($row = mysqli_fetch_assoc($result)) {
+                            echo '<li>'.$row['story'].'</li>';
+                        }
+                    } else {
+                        echo "<li>no story!</li>";
+                    }*/
+                    $SQLCommand = "SELECT *  FROM story_of_day";
+
+                    $result = mysqli_query($conn,$SQLCommand); // This line executes the MySQL query that you typed above
+
+                    $yourArray = array(); // make a new array to hold all your data
+
+
+                    $index = 0;
+                    while($row = mysqli_fetch_assoc($result)){ // loop to store the data in an associative array.
+                         $yourArray[$index] = $row;
+                         $index++;
+                    }
+
+                    echo $yourArray[2]['date'];
+                    mysqli_close($conn);
+                   ?>
+                </ul>
+          </div>
       
         </div>
       </div>
@@ -286,3 +317,9 @@
 
 </body>
 </html>
+
+<style>
+  .yo{
+    background-color: blue;
+  }
+</style>
