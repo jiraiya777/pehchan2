@@ -166,88 +166,160 @@
                     <div id="line"></div>
                     <h2  id="demo333">Founders</h2>
                  </div>
-                 <div class="row" style="margin-top:50px;">
               
-                   <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" >
+
+                   <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" >
+                    <div class="post">
                       <div id="full111" >
-                        <img src="images.jpg" rel="person" class="img-responsive" style="width:100px; height:120px;">
-                         <b class="abs333">MR. Ankit Yadav vanu gopal ayar</b>
+                        
+                        <img src="images.jpg" rel="person" class="img-responsive" style="width:255px; height:255px;">
+                         <h2 >NAME</h2>
+                         <h4 >COURSE</h4>
+                         <h4 >INSTITUTE</h4>
+                         <h4 >EMAIL ID</h4>
                       </div>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                        <div id="full111">
-                          <img src="images.jpg" rel="person" class="img-responsive" style="width:100px; height:120px;">
-   
-                        </div>
+                  </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" >
+                    <div class="post">
+                      <div id="full111" >
+                        
+                        <img src="images.jpg" rel="person" class="img-responsive" style="width:255px; height:255px;">
+                         <h2 >NAME</h2>
+                         <h4 >COURSE</h4>
+                         <h4 >INSTITUTE</h4>
+                         <h4 >EMAIL ID</h4>
                       </div>
-                      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                          <div id="full111">
-                            <img src="images.jpg" rel="person" class="img-responsive" style="width:100px; height:120px;">
-     
-                          </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                            <div id="full111">
-                              <img src="images.jpg" rel="person" class="img-responsive" style="width:100px; height:120px;">
-       
-                            </div>
-                          </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" >
+                    <div class="post">
+                      <div id="full111" >
+                        
+                        <img src="images.jpg" rel="person" class="img-responsive" style="width:255px; height:255px;">
+                        <h2 >NAME</h2>
+                         <h4 >COURSE</h4>
+                         <h4 >INSTITUTE</h4>
+                         <h4 >EMAIL ID</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" >
+                    <div class="post">
+                      <div id="full111" >
+                        
+                        <img src="images.jpg" rel="person" class="img-responsive" style="width:255px; height:255px;">
+                         <h2 >NAME</h2>
+                         <h4 >COURSE</h4>
+                         <h4 >INSTITUTE</h4>
+                         <h4 >EMAIL ID</h4>
+                      </div>
+                    </div>
+                  </div>
                    
                
                  </div>
+                 <hr>
 
                  </div>
                  <div class="container">
                     <div class="row" style="margin-top:30px;">
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                            <div id="full111">
-                              <img src="images.jpg" rel="person" class="img-responsive" style="width:100px; height:120px;">
-       
-                            </div>
-                          </div>
-                      
-                          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                              <div id="full111">
-                                <img src="images.jpg" rel="person" class="img-responsive" style="width:100px; height:120px;">
-         
-                              </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                <div id="full111">
-                                  <img src="images.jpg" rel="person" class="img-responsive" style="width:100px; height:120px;">
-           
-                                </div>
-                              </div>
-                              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                  <div id="full111">
-                                    <img src="images.jpg" rel="person" class="img-responsive" style="width:100px; height:120px;">
-             
-                                  </div>
-                                </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" >
+                    <div class="post">
+                      <div id="full111" >
+                        
+                        <img src="images.jpg" rel="person" class="img-responsive" style="width:255px; height:255px;">
+                         <h2 >NAME</h2>
+                         <h4 >COURSE</h4>
+                         <h4 >INSTITUTE</h4>
+                         <h4 >EMAIL ID</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" >
+                    <div class="post">
+                      <div id="full111" >
+                        
+                        <img src="images.jpg" rel="person" class="img-responsive" style="width:255px; height:255px;">
+                         <h2 >NAME</h2>
+                         <h4 >COURSE</h4>
+                         <h4 >INSTITUTE</h4>
+                         <h4 >EMAIL ID</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" >
+                    <div class="post">
+                      <div id="full111" >
+                        
+                        <img src="images.jpg" rel="person" class="img-responsive" style="width:255px; height:255px;">
+                         <h2 >NAME</h2>
+                         <h4 >COURSE</h4>
+                         <h4 >INSTITUTE</h4>
+                         <h4 >EMAIL ID</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" >
+                    <div class="post">
+                      <div id="full111" >
+                        
+                        <img src="images.jpg" rel="person" class="img-responsive" style="width:255px; height:255px;">
+                         <h2 >NAME</h2>
+                         <h4 >COURSE</h4>
+                         <h4 >INSTITUTE</h4>
+                         <h4 >EMAIL ID</h4>
+                      </div>
+                    </div>
+                  </div>
                   
                     </div>
    
                     </div>
+                    <hr>
                     <div class="container">
                         <div class="row" style="margin-top:30px;">
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                <div id="full111">
-                                  <img src="images.jpg" rel="person" class="img-responsive" style="width:100px; height:120px;">
-           
-                                </div>
-                              </div>
-                              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                  <div id="full111">
-                                    <img src="images.jpg" rel="person" class="img-responsive" style="width:100px; height:120px;">
-             
-                                  </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div id="full111">
-                                      <img src="images.jpg" rel="person" class="img-responsive" style="width:100px; height:120px;">
-               
-                                    </div>
-                                  </div>
+                            
+                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" >
+                    <div class="post">
+                      <div id="full111" >
+                        
+                        <img src="images.jpg" rel="person" class="img-responsive" style="width:255px; height:255px;">
+                         <h2 >NAME</h2>
+                         <h4 >COURSE</h4>
+                         <h4 >INSTITUTE</h4>
+                         <h4 >EMAIL ID</h4>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" >
+                    <div class="post">
+                      <div id="full111" >
+                        
+                        <img src="images.jpg" rel="person" class="img-responsive" style="width:255px; height:255px;">
+                         <h2 >NAME</h2>
+                         <h4 >COURSE</h4>
+                         <h4 >INSTITUTE</h4>
+                         <h4 >EMAIL ID</h4>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" >
+                    <div class="post">
+                      <div id="full111" >
+                        
+                        <img src="images.jpg" rel="person" class="img-responsive" style="width:255px; height:255px;">
+                         <h2 >NAME</h2>
+                         <h4 >COURSE</h4>
+                         <h4 >INSTITUTE</h4>
+                         <h4 >EMAIL ID</h4>
+                      </div>
+                    </div>
+                  </div>
                       
                         </div>
                     
@@ -256,6 +328,132 @@
                   <div class="container">
                         <div id="line"></div>
                         <h2  id="demo333">Advisors</h2>
+
+
+
+                        <?php
+                   require("db.php");
+                     $sqll="SELECT * FROM story_of_day ORDER BY id DESC LIMIT 0, 1";
+
+                    $result = mysqli_query($conn,$sqll);
+
+                    while ($row = mysqli_fetch_row($result))
+                    $highest_id = $row[0];
+
+                    //echo "HIGHEST ID: ".$highest_id."<br/";
+                    $ind=0;
+                    $name = array(); // make a new array to hold all your data
+
+                    //echo "</br>"."IND1 ".$ind."<br/>";
+                    for ($index=1; $index <=$highest_id; $index++)
+                    {
+                      $sql="SELECT * FROM story_of_day WHERE id='$index' ";
+                      $result=mysqli_query($conn,$sql);
+                      if (mysqli_num_rows($result)>0){
+                        $row = mysqli_fetch_row($result);
+                        $name[$ind] = $row[1];     // 0 for id , 1 for story
+                        /* MAKE FOR OTHERS*/
+                        $ind++;
+                      }
+                      $lmt=$ind -1;
+                      
+                    }
+
+                    for($x=0; $x<$lmt;$x++){
+                      echo '<div class="row" align="center">';
+
+echo '<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">'.
+                        ' <div class="block2" >'.
+            '<img src="1.jpg" height="200" width="200" alt="Avatar" class="center">'.
+            '<div class="block-data" align="center";>'.$name[$x].
+              '<div class="hd2">'.$name[$x].'</div>
+              <div class="hd2">'.$name[$x].'</div>
+              <div class="hd2">'.$name[$x].'</div>'.
+
+            
+            '</div>'.
+            '</div>'.'</div>';
+            if (++$x < $lmt)   
+            {
+              echo '<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">'.
+                        ' <div class="block2" >'.
+            '<img src="1.jpg" height="200" width="200" alt="Avatar" class="center">'.
+            '<div class="block-data" align="center";>'.$name[$x].
+              '<div class="hd2">'.$name[$x].'</div>
+              <div class="hd2">'.$name[$x].'</div>
+              <div class="hd2">'.$name[$x].'</div>'.
+
+            
+            '</div>'.
+            '</div>'.'</div>';
+          }
+          else
+          {
+            break;
+          }
+            if (++$x < $lmt)   
+            {
+            echo '<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">'.
+                        ' <div class="block2" >'.
+            '<img src="1.jpg" height="200" width="200" alt="Avatar" class="center">'.
+            '<div class="block-data" align="center";>'.$name[$x].
+              '<div class="hd2">'.$name[$x].'</div>
+              <div class="hd2">'.$name[$x].'</div>
+              <div class="hd2">'.$name[$x].'</div>'.
+
+            
+            '</div>'.
+            '</div>'.'</div>';
+          }
+          else
+          {
+            break;
+          }
+            if (++$x < $lmt)   
+            {
+            echo '<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">'.
+                        ' <div class="block2" >'.
+            '<img src="1.jpg" height="200" width="200" alt="Avatar" class="center">'.
+            '<div class="block-data" align="center";>'.$name[$x].
+              '<div class="hd2">'.$name[$x].'</div>
+              <div class="hd2">'.$name[$x].'</div>
+              <div class="hd2">'.$name[$x].'</div>'.
+
+            
+            '</div>'.
+            '</div>'.'</div>';
+          }
+          else
+          {
+            break;
+          }
+
+            
+            echo '</div>';
+            echo "<hr/>";
+
+           
+
+                    }
+                    /*foreach ($name as $key => $value){
+                      echo ' <div class="row" >' .'<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">'.'<div class="block" >'.$value['story'].'</div>'.'</div>'.' </div>';
+                    
+                    }*/
+
+                    /*
+                    echo $name[2]['story']; 
+echo " <div style=\"width: 280px; border: 2px dashed #000000; float: right; padding: 3px; margin: 5px\">"; 
+echo '<div class="my_class">'.$cart->count_product.'</div>';*/
+
+                    mysqli_close($conn);
+            ?>
+
+
+
+
+
+
+
                         <br>
                         <br>
                         <br>
@@ -267,11 +465,131 @@
                   <div class="container">
                       <div id="line"></div>
                       <h2  id="demo333">Members</h2>
+
+
+                      <?php
+                   require("db.php");
+                     $sqll="SELECT * FROM story_of_day ORDER BY id DESC LIMIT 0, 1";
+
+                    $result = mysqli_query($conn,$sqll);
+
+                    while ($row = mysqli_fetch_row($result))
+                    $highest_id = $row[0];
+
+                    //echo "HIGHEST ID: ".$highest_id."<br/";
+                    $ind=0;
+                    $name = array(); // make a new array to hold all your data
+
+                    //echo "</br>"."IND1 ".$ind."<br/>";
+                    for ($index=1; $index <=$highest_id; $index++)
+                    {
+                      $sql="SELECT * FROM story_of_day WHERE id='$index' ";
+                      $result=mysqli_query($conn,$sql);
+                      if (mysqli_num_rows($result)>0){
+                        $row = mysqli_fetch_row($result);
+                        $name[$ind] = $row[1];     // 0 for id , 1 for story
+                        /* MAKE FOR OTHERS*/
+                        $ind++;
+                      }
+                      $lmt=$ind -1;
+                      
+                    }
+
+                    for($x=0; $x<$lmt;$x++){
+                      echo '<div class="row" align="center">';
+
+echo '<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">'.
+                        ' <div class="block2" >'.
+            '<img src="1.jpg" height="200" width="200" alt="Avatar" class="center">'.
+            '<div class="block-data" align="center";>'.$name[$x].
+              '<div class="hd2">'.$name[$x].'</div>
+              <div class="hd2">'.$name[$x].'</div>
+              <div class="hd2">'.$name[$x].'</div>'.
+
+            
+            '</div>'.
+            '</div>'.'</div>';
+            if (++$x < $lmt)   
+            {
+              echo '<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">'.
+                        ' <div class="block2" >'.
+            '<img src="1.jpg" height="200" width="200" alt="Avatar" class="center">'.
+            '<div class="block-data" align="center";>'.$name[$x].
+              '<div class="hd2">'.$name[$x].'</div>
+              <div class="hd2">'.$name[$x].'</div>
+              <div class="hd2">'.$name[$x].'</div>'.
+
+            
+            '</div>'.
+            '</div>'.'</div>';
+          }
+          else
+          {
+            break;
+          }
+            if (++$x < $lmt)   
+            {
+            echo '<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">'.
+                        ' <div class="block2" >'.
+            '<img src="1.jpg" height="200" width="200" alt="Avatar" class="center">'.
+            '<div class="block-data" align="center";>'.$name[$x].
+              '<div class="hd2">'.$name[$x].'</div>
+              <div class="hd2">'.$name[$x].'</div>
+              <div class="hd2">'.$name[$x].'</div>'.
+
+            
+            '</div>'.
+            '</div>'.'</div>';
+          }
+          else
+          {
+            break;
+          }
+            if (++$x < $lmt)   
+            {
+            echo '<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">'.
+                        ' <div class="block2" >'.
+            '<img src="1.jpg" height="200" width="200" alt="Avatar" class="center">'.
+            '<div class="block-data" align="center";>'.$name[$x].
+              '<div class="hd2">'.$name[$x].'</div>
+              <div class="hd2">'.$name[$x].'</div>
+              <div class="hd2">'.$name[$x].'</div>'.
+
+            
+            '</div>'.
+            '</div>'.'</div>';
+          }
+          else
+          {
+            break;
+          }
+
+            
+            echo '</div>';
+            echo "<hr/>";
+
+           
+
+                    }
+                    /*foreach ($name as $key => $value){
+                      echo ' <div class="row" >' .'<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">'.'<div class="block" >'.$value['story'].'</div>'.'</div>'.' </div>';
+                    
+                    }*/
+
+                    /*
+                    echo $name[2]['story']; 
+echo " <div style=\"width: 280px; border: 2px dashed #000000; float: right; padding: 3px; margin: 5px\">"; 
+echo '<div class="my_class">'.$cart->count_product.'</div>';*/
+
+                    mysqli_close($conn);
+            ?>
+
+
+
                       <br>
                       <br>
                       <br>
                       <br>
-                      <div id="line"></div>
                 </div>
                           
     
