@@ -14,6 +14,9 @@
   <title>Volunteer</title>   
 </head>
 <body>
+  <?php
+include 'Siteheader.php';
+?>
      <!-- Top section starts here -->
 
    <section class="top_section">
@@ -136,9 +139,10 @@
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex .</p>
             <div class="block-data" align="center";>
               <div class="hd1">Astha Singhal</div>
-              <div class="hd2" align="center">
-                Intern<br>Smile Foundation
-              </div>
+              <div class="hd2">Astha Singhal</div>
+              <div class="hd2">Astha Singhal</div>
+
+            
             </div>
             </div>
           </div>
@@ -184,9 +188,9 @@
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex .</p>
             <div class="block-data" align="center";>
               <div class="hd1">Astha Singhal</div>
-              <div class="hd2" align="center">
-                Intern<br>Smile Foundation
-              </div>  
+              <div class="hd2">Astha Singhal</div>
+
+              <div class="hd2">Astha Singhal</div>
             </div>
             </div>
           </div>
