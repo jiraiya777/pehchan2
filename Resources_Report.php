@@ -11,7 +11,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="javascript.js"></script>
-  <title>Volunteer</title>   
+  <title>Reports-Resources</title>   
 </head>
 <body>
   <?php
@@ -52,11 +52,11 @@ include 'Siteheader.php';
                       echo '<div class="row" align="center">';
 
 echo '<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">'.
-                        
-           ' <a href='.$name[$x].'> <div class="block3"><img src="1.jpg" height="200" width="200" alt="Avatar" class="center"></div></a>'.
+                        '<div class="block4">
+           <a href='.$name[$x].'> <div class="block3"><img src="1.jpg" height="200" width="200" alt="Avatar" class="center"></div></a>'.
 
             
-            '</div>';
+            '</div></div>';
             if (++$x < $lmt)   
             {
               

@@ -65,39 +65,74 @@
       <li class="fa fa-caret-down"></li>
     </button>
     <div class="drpdown-content">
-      <a href="Genious.html">Overview</a>
-      <a href="Mission.php">Mission</a>
-      <a href="Vision.html">Vision</a>
+      <a href="#">Genious</a>
+      <a href="#">Mission/Vision</a>
+      <a href="PeopleBehindPehchaan.php">People Behind Pehchaan Ek Safar</a>
+      <a href="#">Working Model</a>
+      <a href="#">Partners and Affiliates</a>
+
     </div>
   </div> 
   <div class="drpdown">
-    <button class="drpbtn">Our Work
+    <button class="drpbtn">Projects
       <li class="fa fa-caret-down"></li>
     </button>
     <div class="drpdown-content">
-      <a href="OurWork.html">Overview</a>
-      <a href="PeopleBehindPehchaan.php">People Behind Pehchaan</a>
+      <a href="#">Abhyas</a>
+      <a href="#">Paathshala</a>
+      <a href="#">School Chale Hum</a>
+      <a href="#">School Outreach</a>
     </div>
   </div> 
+
+  <div class="drpdown">
+    <button class="drpbtn">Campaigns
+      <li class="fa fa-caret-down"></li>
+    </button>
+    <div class="drpdown-content">
+      <a href="#">IIT Visits</a>
+      <a href="#">JHUGGI Paathshala</a>
+      <a href="#">Keep away from roads</a>
+      <a href="#">Samajhiye</a>
+    </div>
+  </div>
 
   <div class="drpdown">
     <button class="drpbtn">Get Involved
       <li class="fa fa-caret-down"></li>
     </button>
     <div class="drpdown-content">
-      <a href="Individual.html">Individual Support</a>
-      <a href="Volunteer.php">Volunteer</a>
+      <a href="#">Donate</a>
+      <a href="Volunteer.php">Volunteer With Us</a>
       <a href="FAQ.php">FAQ</a>
     </div>
   </div> 
 
-  <div class="donate">
   <div class="drpdown">
+    <button class="drpbtn">Resources
+      <li class="fa fa-caret-down"></li>
+    </button>
+    <div class="drpdown-content">
+      <a href="Resources_Report.php">Reports</a>
+      <a href="#">Other Resources</a>
+    </div>
+  </div>
+
   <div class="drpdown">
-    <input class="drpbtn" type="button" onclick="location.href='donate.php'" value="Donate" />
+    <button class="drpbtn">Financials
+      <li class="fa fa-caret-down"></li>
+    </button>
+    <div class="drpdown-content">
+      <a href="#">Finance Reports</a>
+    </div>
+  </div>
+
+  <div class="drpdown">
+    <input class="drpbtn" type="button" onclick="location.href='#" value="Contact Us" />
   </div> 
   </div> 
-  </div> 
+
+ 
   
   <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 </div>

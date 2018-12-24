@@ -69,9 +69,9 @@ if (isset($_GET['logout'])) {
         </div>
 
 
-        <!--------------------------------------------------------------------------------------->
+        <!---------------------------------------------------------------------------------------
 
-         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Read more</button>
+         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add</button>
 
   
       <div class="modal fade" id="myModal" role="dialog">
@@ -84,6 +84,7 @@ if (isset($_GET['logout'])) {
               <h4 class="modal-title">Modal Hdr</h4>
             </div>
             <div class="modal-body">
+            -->
 
               <?php
 // define variables and set to empty values
@@ -168,7 +169,7 @@ function test_input($data) {
 </form>
 <?php
 
-echo "<h2>Your Input:</h2>";
+echo "<h2>Inp:</h2>";
 echo $name;
 echo "<br>";
 echo $email;
@@ -235,6 +236,8 @@ mysqli_close($conn);
 
 ?>
 
+
+<!--
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -243,6 +246,8 @@ mysqli_close($conn);
           
         </div>
       </div>
+
+    -->
 
 
 
@@ -255,6 +260,7 @@ mysqli_close($conn);
 </script>
 
 <?php 
+/*
     require("../db.php");
     $sql = "DELETE FROM reports WHERE heading ='' OR links=''";
 
@@ -264,7 +270,18 @@ if (mysqli_query($conn, $sql)) {
 
 } else {
     echo "Error deleting record: " . mysqli_error($conn);
-}
+} 
+mysqli_close($conn);
+*/
+
+require("../db.php");
+    $sql = "SELECT *FROM reports WHERE heading ='' OR links=''";
+        $results = mysqli_query($conn, $sql);
+
+        if (mysqli_num_rows($results) >0) { 
+          echo "FILL ALL DETAILS ";
+        }
+
 mysqli_close($conn);
 
 ?>

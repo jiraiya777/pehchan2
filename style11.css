@@ -47,11 +47,11 @@ body{
 
 .drpdown .drpbtn {
   font-size: 17px;    
-  border: none;
+  border: 10px solid green;
   outline: none;
-  color: white;
+  color: black;
   padding: 14px 16px;
-  background-color: inherit;
+  background-color: black;
   font-family: inherit;
   margin: 0;
 
@@ -76,8 +76,8 @@ body{
 }
 
 .topnav a:hover, .drpdown:hover .drpbtn {
-  background-color: #555;
-  color: white;
+  background-color: blue;
+  color: red;
 }
 
 .drpdown-content a:hover {
@@ -253,6 +253,6 @@ body{
   margin-left: 5px;
 }
 
-.block3{
+.block4  a.block3 img{
   border: 1px solid green;
 }
