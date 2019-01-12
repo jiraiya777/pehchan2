@@ -116,6 +116,10 @@
       <li class="fa fa-caret-down"></li>
     </button>
     <div class="drpdown-content">
+      <a href="Resources_Report.php">IIT ROPAR Donors</a>
+      <a href="Resources_Report.php">Our Permanent Donors</a>
+      <a href="Resources_Report.php">Other Donors</a>
+      <a href="Resources_Report.php">Government Grants</a>
       <a href="#">Finance Reports</a>
       <a href="Resources_Report.php">Reports</a>
       <a href="#">Other Resources</a>
