@@ -158,7 +158,55 @@ $z =1;
   if ($z==0)
 {
 
+$message = "insert";
+echo "<script type='text/javascript'>alert('$message');</script>";
+}
+}
 
+}
+
+/*
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+
+*/
+?>
+
+
+<h2>PHP Form  Example</h2>
+<p><span class="error">* required field</span></p>
+<form name="form1" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >  
+  Name: <input type="text" name="name" value="<?php echo $name;?>">
+  <span class="error">* <?php echo $nameErr;?></span>
+  <br><br>
+  E-mail: <input type="text" name="email" value="<?php echo $email;?>">
+  <span class="error">* <?php echo $emailErr;?></span>
+  <br><br>
+  Website: <input type="text" name="website" value="<?php echo $website;?>">
+  <span class="error"><?php echo $websiteErr;?></span>
+  <br><br>
+  Comment: <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
+  <br><br>
+  Gender:
+  <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="female">Female
+  <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="male">Male
+  <input type="radio" name="gender" <?php if (isset($gender) && $gender=="other") echo "checked";?> value="other">Other  
+  <span class="error">* <?php echo $genderErr;?></span>
+  <br><br>
+
+  
+  <input type="submit" name="submit1" value="Submit" " > 
+  
+</form>
+
+
+
+
+<?php
 
 
     require("../db.php");
@@ -210,51 +258,57 @@ $SQLCommand = "SELECT *  FROM reports";
                     }*/
 mysqli_close($conn);
 
-
-
-$message = "insert";
-echo "<script type='text/javascript'>alert('$message');</script>";
-}
-}
-
-}
-
 ?>
 
+<?php
+if ($z ==1)
+{
+echo "FLAG1 ".$z."<br/>";
+toDeleteInvalid();
+$z=0;
+}
+else
+{
 
-<h2>PHP Form  Example</h2>
-<p><span class="error">* required field</span></p>
-<form name="form1" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >  
-  Name: <input type="text" name="name" value="<?php echo $name;?>">
-  <span class="error">* <?php echo $nameErr;?></span>
-  <br><br>
-  E-mail: <input type="text" name="email" value="<?php echo $email;?>">
-  <span class="error">* <?php echo $emailErr;?></span>
-  <br><br>
-  Website: <input type="text" name="website" value="<?php echo $website;?>">
-  <span class="error"><?php echo $websiteErr;?></span>
-  <br><br>
-  Comment: <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
-  <br><br>
-  Gender:
-  <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="female">Female
-  <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="male">Male
-  <input type="radio" name="gender" <?php if (isset($gender) && $gender=="other") echo "checked";?> value="other">Other  
-  <span class="error">* <?php echo $genderErr;?></span>
-  <br><br>
+echo "FLAG0 ".$z."<br/>";
+}
 
-  
-  <input type="submit" name="submit1" value="Submit" " > 
-  
-</form>
+echo "<h2>Inp:</h2>";
+echo $name;
+echo "<br>";
+echo $email;
+echo "<br>";
+echo $website;
+echo "<br>";
+echo $comment;
+echo "<br>";
+echo $gender;
 
+?>
+<!--
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
 
-
+    -->
 
 
-<?php           // for case of refreshs
+
+
+<!------------------------------------------------------------------------------->
+<script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>
+
+<?php 
 /*
-      
     require("../db.php");
     $sql = "DELETE FROM reports WHERE heading ='' OR links=''";
 
@@ -267,6 +321,53 @@ if (mysqli_query($conn, $sql)) {
 } 
 mysqli_close($conn);
 */
+
+function toDeleteInvalid(){
+require("../db.php");
+$sqll="SELECT * FROM reports ORDER BY id DESC LIMIT 0, 1";
+                  $highest_id;
+                    $result = mysqli_query($conn,$sqll);
+
+                    while ($row = mysqli_fetch_row($result))
+                    $highest_id = $row[0];
+
+    $sql = "DELETE FROM reports WHERE id='$highest_id' ";
+        $results = mysqli_query($conn, $sql);
+
+        if ($results == FALSE)
+        {
+
+$message = "insertion failed...try again";
+echo "<script type='text/javascript'>alert('$message');</script>";
+        }
+
+        else 
+        {
+
+$message = "WRONGG";          // FOR INVALID
+echo "<script type='text/javascript'>alert('$message');</script>";
+        }
+
+        echo "Dsf ".$highest_id."<br/";
+mysqli_close($conn);
+}
+
+?>
+
+
+<?php           // for case of refreshs
+      
+    require("../db.php");
+    $sql = "DELETE FROM reports WHERE heading ='' OR links=''";
+
+if (mysqli_query($conn, $sql)) {
+    echo "Record deleted successfully";
+    // print if no data input
+
+} else {
+    echo "Error deleting record: " . mysqli_error($conn);
+} 
+mysqli_close($conn);
 ?>
     </div>
             <div class="modal-footer">
@@ -364,6 +465,37 @@ mysqli_close($conn);
 
   if ($z==0)
   {
+$message = "Deleted , please refresh the page to see changes";
+echo "<script type='text/javascript'>alert('$message');</script>";
+  }
+ } 
+}
+
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+
+
+
+?>
+
+
+<p><span class="error">* required field</span></p>
+<form name="form2" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" onsubmit="required()">  
+  Name: <input type="text" name="nme" value="<?php echo $nme;?>">
+  <span class="error">* <?php echo $nmeErr;?></span>
+  <br><br>
+
+
+  <input type="submit" name="submit2" value="Submit"  "> 
+</form>
+
+
+<?php
 
 
     require("../db.php");
@@ -380,37 +512,9 @@ if (mysqli_query($conn, $sql)) {
 } 
 
 
-
 mysqli_close($conn);
 
-
-$message = "Deleted , please refresh the page to see changes";
-echo "<script type='text/javascript'>alert('$message');</script>";
-  }
- } 
-}
-
-
-
-
-
-
-
 ?>
-
-
-
-<p><span class="error">* required field</span></p>
-<form name="form2" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" onsubmit="required()">  
-  Name: <input type="text" name="nme" value="<?php echo $nme;?>">
-  <span class="error">* <?php echo $nmeErr;?></span>
-  <br><br>
-
-
-  <input type="submit" name="submit2" value="Submit"  "> 
-</form>
-
-
 
             </div>
             <div class="modal-footer">
@@ -420,24 +524,6 @@ echo "<script type='text/javascript'>alert('$message');</script>";
           
         </div>
       </div>
-
-
-      <script>
-        <?php
-  function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
-  ?>
-</script>
-
-<script>
-    if ( window.history.replaceState ) {
-        window.history.replaceState( null, null, window.location.href );
-    }
-</script>
 
 
 
@@ -453,11 +539,6 @@ CHECK FOR Z
 
 
 -->
-
-
-
-
-
 </body>
 </html>
 

@@ -150,7 +150,7 @@ include 'Siteheader.php';
         <div class="goat">
 
           <div class="panel panel-default">
-                <h2 class="panel-heading">>Story of Day</h2>
+                <h4 class="panel-heading">>News and Announcements</h4>
                 <ul>
                   <?php
                     require("db.php");
