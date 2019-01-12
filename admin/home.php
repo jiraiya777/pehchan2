@@ -1,17 +1,92 @@
-<!DOCTYPE HTML>  
+<?php 
+include('functions.php');
+
+if (!isAdmin()) {
+    $_SESSION['msg'] = "You must log in first";
+    header('location: login.php');
+}
+
+if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['user']);
+    header("location: login.php");
+}
+?>
+<!DOCTYPE html>
 <html>
 <head>
-<style>
-.error {color: #FF0000;}
-</style>
+    <title>Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" type="text/css" href="../style11.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+    .header {
+        background: #003366;
+    }
+    button[name=register_btn] {
+        background: #003366;
+    }
+    </style>
 </head>
-<body>  
+<body>
+    <div class="header">
+        <h2>Admin - Home Page</h2>
+    </div>
+    <div class="content">
+        <!-- notification message -->
+        <?php if (isset($_SESSION['success'])) : ?>
+            <div class="error success" >
+                <h3>
+                    <?php 
+                        echo $_SESSION['success']; 
+                        unset($_SESSION['success']);
+                    ?>
+                </h3>
+            </div>
+        <?php endif ?>
+
+        <!-- logged in user information -->
+        <div class="profile_info">
+            <img src="../images/admin_profile.png"  >
+
+            <div>
+                <?php  if (isset($_SESSION['user'])) : ?>
+                    <strong><?php echo $_SESSION['user']['username']; ?></strong>
+
+                    <small>
+                        <i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i> 
+                        <br>
+                        <a href="home.php?logout='1'" style="color: red;">logout</a>
+                    </small>
+
+                <?php endif ?>
+            </div>
+        </div>
 
 
+        <!---------------------------------------------------------------------------------------
 
-<?php
+         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add</button>
 
-include 'Siteheader.php';
+  
+      <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+        
+          
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Modal Hdr</h4>
+            </div>
+            <div class="modal-body">
+            -->
+
+              <?php
 // define variables and set to empty values
 $nameErr = $emailErr = $genderErr = $websiteErr = "";
 $name = $email = $gender = $comment = $website = "";
@@ -94,7 +169,7 @@ function test_input($data) {
 </form>
 <?php
 
-echo "<h2>Your Input:</h2>";
+echo "<h2>Inp:</h2>";
 echo $name;
 echo "<br>";
 echo $email;
@@ -110,7 +185,7 @@ echo $gender;
 <?php
 
 
-    require("db.php");
+    require("../db.php");
 
 $stmt =$conn->prepare( "INSERT INTO reports (heading, links)
 VALUES ( ?,?)");
@@ -162,5 +237,54 @@ mysqli_close($conn);
 ?>
 
 
+<!--
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+    -->
+
+
+
+
+<!------------------------------------------------------------------------------->
+<script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>
+
+<?php 
+/*
+    require("../db.php");
+    $sql = "DELETE FROM reports WHERE heading ='' OR links=''";
+
+if (mysqli_query($conn, $sql)) {
+    echo "Record deleted successfully";
+    // print if no data input
+
+} else {
+    echo "Error deleting record: " . mysqli_error($conn);
+} 
+mysqli_close($conn);
+*/
+
+require("../db.php");
+    $sql = "SELECT *FROM reports WHERE heading ='' OR links=''";
+        $results = mysqli_query($conn, $sql);
+
+        if (mysqli_num_rows($results) >0) { 
+          echo "FILL ALL DETAILS ";
+        }
+
+mysqli_close($conn);
+
+?>
+    </div>
 </body>
 </html>
