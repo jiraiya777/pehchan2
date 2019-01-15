@@ -211,4 +211,47 @@ table {
 
 }
 
+#footer {
+    background-color: rgba(46, 46, 46, 0.9);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #fff;
+}
+
+.form-area {
+    background-color: rgba(216, 214, 214, 0.66);
+    padding: 0px 28px 45px;
+    margin: 20px 0px 30px 70px;
+    border: 1px solid GREY;
+  
+}
+
+.form-group {
+    margin-bottom: 7px;
+}
+
+.btn-details4 {
+    background-color: #76C04E;
+    padding: 2px 4px 2px 4px;
+    border-radius: 2px;
+    bottom: 5%;
+    border-bottom: 2px solid #3C763D;
+}
+
+.bottom-footer {
+    background-color: #2e2e2e;
+    padding: 10px;
+}
+
+.bottom-footer p {
+    color: #fff;
+    margin: 0 !important;
+}
+
+#footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
 
