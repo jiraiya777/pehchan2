@@ -40,7 +40,7 @@ include 'Siteheader.php';
     <div class="carousel-inner" role="listbox">
 
       <div class="item active">
-        <img src="banner.jpg" alt="poor children" width="460" height="345">
+        <img src="./pictures for carousal/Copy of IMG_4163 - Copy.jpg" alt="poor children" width="460" height="345">
         <div class="carousel-caption">
           <h3>Chania</h3>
           <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
@@ -48,7 +48,7 @@ include 'Siteheader.php';
       </div>
 
       <div class="item">
-        <img src="banner.jpg" alt="poor children" width="460" height="345">
+        <img src="./pictures for carousal/Copy of IMG_5360.jpg" alt="poor children" width="460" height="345">
         <div class="carousel-caption">
           <h3>Chania</h3>
           <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
@@ -84,28 +84,32 @@ include 'Siteheader.php';
     </a>
   </div>
 </div>
+
+
+
+
+
+
+
+<br>
+<br>
+
+<a class="iframeLink" href="fee4thsem.pdf"
+   jQuery1640737952376988841="85"> ANY DOCUMENT </a>
+
+
+
+
 <div class="container" style="margin-top:35px;">
   <div class="row">
-    <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8 ">
-      <h1 id="demo111">About Pehchaan Ek Safar</h1>
+    <div class="col-xs-12 col-sm-12 col-lg-8 col-md-8 ">
+      <h1 id="demo111">Pehchaan Ek Safar</h1>
       <p>
-        Smile Foundation is an NGO in India directly benefitting over 600,000 children and their
-         families every year, through more than 250 live welfare projects on education, healthcare, 
-         livelihood and women empowerment, in over 950 remote villages and slums across 25 states 
-         of India.
+        India has more than 50% of its population below 25 years of age. It is going to be a global workforce in near future. India’s development lies in cashing this opportunity... ‘now or never’!
       </p>
-      <p>
-        Education is both the means as well as the end to a better life: the means because 
-        it empowers an individual to earn his/her livelihood and the end because it increases
-         one's awareness on a range of issues – from healthcare to appropriate social behaviour
-          to understanding one's rights – and in the process help him/her evolve as a better citizen.
+      <p>However only 74.3% Indians are literate, let alone them being properly educated! That means 25% of the population relies on others to fill their forms, count their salaries and take their decisions!
       </p>
-      <p>
-        Doubtless, education is the most powerful catalyst for social transformation. But 
-        child education cannot be done in isolation. A child will go to school only if the 
-        family, particularly the mother, is assured of healthcare and empowered. Moreover, when 
-        an elder sibling is relevantly skilled to be employable and begins earning, the journey 
-        of empowerment continues beyond the present generation.
+      <p>The workforce at Pehchaan Ek Safar feels the need to be at the forefront against this battle against illiteracy. We feel the need to inculcate rational mindset and scientific temper amongst citizens, and strive to accomplish this.
       </p>
        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Read more</button>
 
@@ -146,13 +150,56 @@ include 'Siteheader.php';
       </div>
       
     </div>
-    <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4 ">
+    <div class="col-xs-12 col-sm-12 col-lg-4 col-md-4 ">
         <div class="goat">
 
           <div class="panel panel-default">
                 <h4 class="panel-heading">>News and Announcements</h4>
-                <ul>
+                
                   <?php
+
+
+   require("db.php");
+          $sqll="SELECT * FROM news_and_annc ORDER BY id DESC LIMIT 0, 1";
+
+          $result = mysqli_query($conn,$sqll);
+          $highest_id =0;
+
+          while ($row = mysqli_fetch_row($result))
+          $highest_id = $row[0];
+
+          //echo "HIGHEST ID: ".$highest_id."<br/";
+          $ind=0;
+          $lmt=0;
+          $dataRp=array();
+          $docRp=array();
+
+          for ($index=1; $index <=$highest_id; $index++)
+            {
+              $sql="SELECT * FROM news_and_annc WHERE id='$index' ";
+              $result=mysqli_query($conn,$sql);
+              if (mysqli_num_rows($result)>0)
+              {
+               $row = mysqli_fetch_row($result);
+               $dataRp[$ind]=$row[1];
+               $docRp[$ind]=$row[2];
+
+               $ind++;
+              }
+              $lmt=$ind ;
+                     
+            }
+            $y=0;
+            for($x=($lmt-1); $x>=0;$x--)
+            {
+              $y++;
+             echo "\t\t".'<a href='.$docRp[$x].'> <h4>'.$dataRp[$x].'</h4></a>';
+
+            }
+
+
+
+                  /*
                     require("db.php");
                    /* $sql = "SELECT * FROM story_of_day";
                     $result = mysqli_query($conn, $sql);
@@ -163,8 +210,8 @@ include 'Siteheader.php';
                         }
                     } else {
                         echo "<li>no story!</li>";
-                    }*/
-                    $SQLCommand = "SELECT *  FROM story_of_day";
+                    }
+                    $SQLCommand = "SELECT *  FROM news_and_annc";
 
                     $result = mysqli_query($conn,$SQLCommand); // This line executes the MySQL query that you typed above
 
@@ -178,19 +225,31 @@ include 'Siteheader.php';
                     }
 
                     echo $yourArray[2]['date'];
-                    mysqli_close($conn);
+                    mysqli_close($conn);*/
                    ?>
-                </ul>
+                
           </div>
       
         </div>
       </div>
   </div>
 </div>
+
+<br>
+<hr>
+<div class="container">
+
+<iframe width="100%" height="315"
+src="https://www.youtube.com/embed/Uv3gRESVDVI">
+</iframe>
+
+</div>
+
+<br>
 <div class="container" style="margin-top:35px;">
     <h2 id="demo111">Events and Updates</h2>
     <div class="row" style="background-color: lightblue">
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
           <div class="thumbnail">
               <a href="#" target="_blank">
                 <img src="banner.jpg" alt="poor" style="width:100%; height:250px;" >
@@ -200,7 +259,7 @@ include 'Siteheader.php';
               </a>
             </div>
           </div>
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <div class="thumbnail">
               <a href="#" target="_blank">
                 <img src="banner_Simplygiving header image_v3.jpg" alt="Nature" style="width:100%; height:250px;">
@@ -210,7 +269,7 @@ include 'Siteheader.php';
               </a>
             </div>
           </div>
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <div class="thumbnail">
               <a href="#" target="_blank">
                 <img src="pDTsDZTenjqGYJq-800x450-noPad.jpg" alt="Fjords" style="width:100%; height:250px;">

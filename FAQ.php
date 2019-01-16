@@ -29,10 +29,11 @@ include 'Siteheader.php';
     <div class="container">
         <div class="my-list" >
         <ul >
+          <a href="./index.php">
             <div class="cam1" style="cursor: pointer;">
              <mfs>Helloo desdsf skngjsdgjs lnjdgnjfdkbl;sdjlfefsfs</mfs>
             <img onclick="myFunction()" src="7.jpg" alt="Smiley face" height="25" width="30"  style="cursor: pointer;" >
-            </div>
+            </div></a>
             <div class="cam2" style="cursor: pointer;">
                 <mfs>Helloo desdsf sefsfs </mfs>       
               <img onclick="myFunction()" src="6.jpg" alt="Smiley face" height="30" width="30" style="cursor: pointer;">

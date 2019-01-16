@@ -202,10 +202,10 @@ table {
 	float:left;
 }
 .block2{
-	border: 2px solid green;
+	border: 0px solid green;
 }
 .block2 img{
-	border-radius: 50%;
+	border-radius: 0%;
 	
     padding:10px 0px;
 
