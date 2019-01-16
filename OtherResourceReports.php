@@ -78,7 +78,7 @@ include 'Siteheader.php';
 echo '<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">'.
 '<div class="Pimg">'.
                         '<div class="block3">
-           <a href='.$docRp[$x].'> <div class="block3"><img src="'.$imgRp[$x].'" height="140" width="140" alt="Avatar" class="center"></div>'.
+           <a href='.$docRp[$x].' target="_blank"> <div class="block3"><img src="'.$imgRp[$x].'" height="140" width="140" alt="Avatar" class="center"></div>'.
            '<h4>'.$dataRp[$x].'</h4>'.'</div></a></a>'.
             
             '</div></div>';
@@ -88,7 +88,7 @@ echo '<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">'.
 echo '<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">'.
 '<div class="Pimg">'.
                         '<div class="block3">
-           <a href='.$docRp[$x].'> <div class="block3"><img src="'.$imgRp[$x].'" height="140" width="140" alt="Avatar" class="center"></div>'.
+           <a href='.$docRp[$x].' target="_blank"> <div class="block3"><img src="'.$imgRp[$x].'" height="140" width="140" alt="Avatar" class="center"></div>'.
            '<h4>'.$dataRp[$x].'</h4>'.'</div></a>'.
 
             
@@ -105,7 +105,7 @@ echo '<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">'.
 echo '<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">'.
 '<div class="Pimg">'.
                         '<div class="block3">
-           <a href='.$docRp[$x].'> <div class="block3"><img src="'.$imgRp[$x].'" height="140" width="140" alt="Avatar" class="center"></div>'.
+           <a href='.$docRp[$x].' target="_blank"> <div class="block3"><img src="'.$imgRp[$x].'" height="140" width="140" alt="Avatar" class="center"></div>'.
            '<h4>'.$dataRp[$x].'</h4>'.'</div></a>'.
 
             
@@ -122,7 +122,7 @@ echo '<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">'.
 echo '<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">'.
 '<div class="Pimg">'.
                         '<div class="block3">
-           <a href='.$docRp[$x].'> <div class="block3"><img src="'.$imgRp[$x].'" height="140" width="140" alt="Avatar" class="center"></div>'.
+           <a href='.$docRp[$x].' target="_blank"> <div class="block3"><img src="'.$imgRp[$x].'" height="140" width="140" alt="Avatar" class="center"></div>'.
            '<h4>'.$dataRp[$x].'</h4>'.'</div></a>'.
 
             

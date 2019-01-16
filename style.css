@@ -3,8 +3,8 @@
 
 #demo{
 	border: 2px solid black;
-	background-color:green;
-	color:white;
+	background-color:#00cc00;
+	color:black;
 	margin-left: 35px;
 	margin-right: 35px;	
 	padding:5px;
@@ -12,12 +12,8 @@
 
 #demo222{
 border: 2px solid black;
-background-color:green;
+background-color: #00cc00;
 color:white;
-margin-left: 35px;
-margin-right: 10px;	
-padding:5px;
-width:100%;
 }
 
 #demo333{
@@ -28,21 +24,18 @@ width:100%;
 }
 
 #demo111{
-	border: 2px solid black;
-	background-color:green;
-	color:white;
+	background-color: #4d94ff;
+	color:black;
 	
 	padding:5px;
 }
 
 
 #poll{
-	border: 3px solid green;
+	border: 1px solid green;
 	border-radius: 15px;
-	width:25%;
-	height: auto;
 	margin-top:45px ;
-	background-color: lightblue;
+	background-color: skyblue;
 
 	
 }
@@ -53,7 +46,6 @@ width:100%;
 	margin-top:45px;
 	
 	margin-left:45;
-	height: 40px;
 	
 
 }
@@ -72,7 +64,7 @@ width:100%;
 
 #demo2{
 	padding:10px;
-	background-color: green;
+	background-color: red;
 	color: white;
 }
 #demo3{
@@ -145,7 +137,7 @@ table {
 
 .forum { color: black; }
 
-.forum:hover { background-color: orange !important;
+.forum:hover { background-color: yellow !important;
 		
 			 }
 

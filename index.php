@@ -41,35 +41,56 @@ include 'Siteheader.php';
 
       <div class="item active">
         <img src="./pictures for carousal/Copy of IMG_4163 - Copy.jpg" alt="poor children" width="460" height="345">
-        <div class="carousel-caption">
-          <h3>Chania</h3>
-          <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
-        </div>
+        
       </div>
 
       <div class="item">
         <img src="./pictures for carousal/Copy of IMG_5360.jpg" alt="poor children" width="460" height="345">
-        <div class="carousel-caption">
-          <h3>Chania</h3>
-          <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
-        </div>
-      </div>
-    
-      <div class="item">
-        <img src="banner_Simplygiving header image_v3.jpg" alt="poor children" width="460" height="345">
-        <div class="carousel-caption">
-          <h3>Flowers</h3>
-          <p>Beautiful flowers in Kolymbari, Crete.</p>
-        </div>
+
       </div>
 
       <div class="item">
-        <img src="banner_Simplygiving header image_v3.jpg" alt="Flower" width="460" height="345">
-        <div class="carousel-caption">
-          <h3>Flowers</h3>
-          <p>Beautiful flowers in Kolymbari, Crete.</p>
-        </div>
+        <img src="./pictures for carousal/Copy of IMG_5336.jpg" alt="poor children" width="460" height="345">
+
       </div>
+
+      <div class="item">
+        <img src="./pictures for carousal/Copy of IMG_7269.jpg" alt="poor children" width="460" height="345">
+
+      </div>
+
+      <div class="item">
+        <img src="./pictures for carousal/Copy of IMG_20181203_134243.jpg" alt="poor children" width="460" height="345">
+
+      </div>
+
+      <div class="item">
+        <img src="./pictures for carousal/Copy of IMG_20181217_090838.jpg" alt="poor children" width="460" height="345">
+ 
+      </div>
+
+      <div class="item">
+        <img src="./pictures for carousal/IMG_20181014_094306.jpg" alt="poor children" width="460" height="345">
+
+      </div>
+
+      <div class="item">
+        <img src="./pictures for carousal/IMG_20181018_162702.jpg" alt="poor children" width="460" height="345">
+
+      </div>
+
+      <div class="item">
+        <img src="./pictures for carousal/IMG_20181107_152718.jpg" alt="poor children" width="460" height="345">
+
+      </div>
+
+      <div class="item">
+        <img src="./pictures for carousal/womens day iit.jpg" alt="poor children" width="460" height="345">
+
+      </div>
+
+
+    
   
     </div>
 
@@ -94,8 +115,11 @@ include 'Siteheader.php';
 <br>
 <br>
 
+<!--
 <a class="iframeLink" href="fee4thsem.pdf"
    jQuery1640737952376988841="85"> ANY DOCUMENT </a>
+
+ -->
 
 
 
@@ -193,7 +217,11 @@ include 'Siteheader.php';
             for($x=($lmt-1); $x>=0;$x--)
             {
               $y++;
-             echo "\t\t".'<a href='.$docRp[$x].'> <h4>'.$dataRp[$x].'</h4></a>';
+             echo "\t\t".'<a href='.$docRp[$x].'  target="_blank"> <h4>'.$dataRp[$x].'</h4></a>';
+             if($y==5)
+             {
+              break;
+             }
 
             }
 
@@ -226,6 +254,7 @@ include 'Siteheader.php';
 
                     echo $yourArray[2]['date'];
                     mysqli_close($conn);*/
+                    mysqli_close($conn);
                    ?>
                 
           </div>
@@ -248,37 +277,97 @@ src="https://www.youtube.com/embed/Uv3gRESVDVI">
 <br>
 <div class="container" style="margin-top:35px;">
     <h2 id="demo111">Events and Updates</h2>
-    <div class="row" style="background-color: lightblue">
-      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-          <div class="thumbnail">
-              <a href="#" target="_blank">
-                <img src="banner.jpg" alt="poor" style="width:100%; height:250px;" >
-                <div class="caption">
-                  <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            <div class="thumbnail">
-              <a href="#" target="_blank">
-                <img src="banner_Simplygiving header image_v3.jpg" alt="Nature" style="width:100%; height:250px;">
-                <div class="caption">
-                  <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            <div class="thumbnail">
-              <a href="#" target="_blank">
-                <img src="pDTsDZTenjqGYJq-800x450-noPad.jpg" alt="Fjords" style="width:100%; height:250px;">
-                <div class="caption">
-                  <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                </div>
-              </a>
-            </div>
-          </div>
+    <div class="row" style="background-color: ">
+<?php
+          require("db.php");
+          $sqll="SELECT * FROM events_and_up ORDER BY id DESC LIMIT 0, 1";
+
+          $result = mysqli_query($conn,$sqll);
+          $highest_id =0;
+
+          while ($row = mysqli_fetch_row($result))
+          $highest_id = $row[0];
+
+          //echo "HIGHEST ID: ".$highest_id."<br/";
+          $ind=0;
+          $lmt=0;
+          $imgRp = array(); // make a new array to hold all your data
+          $dataRp=array();
+          $docRp=array();
+
+          for ($index=1; $index <=$highest_id; $index++)
+            {
+              $sql="SELECT * FROM events_and_up WHERE id='$index' ";
+              $result=mysqli_query($conn,$sql);
+              if (mysqli_num_rows($result)>0)
+              {
+               $row = mysqli_fetch_row($result);
+               $imgRp[$ind] = $row[1];     // 0 for id , 1 for story
+               $dataRp[$ind]=$row[2];
+               $docRp[$ind]=$row[3];
+
+               $ind++;
+              }
+              $lmt=$ind ;
+                     
+            }
+
+                    for($x=0; $x<$lmt;$x=$x+10000){
+
+echo '<div class="event_border">'.
+'<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">'.
+'<div class="Pimg">'.
+                        '<div class="block3" align="center">
+           <a href='.$docRp[$x].' target="_blank"> <div class="block3"><img src="'.$imgRp[$x].'" height="200" width="200px" alt="Avatar"></div>'.
+           '<h4>'.$dataRp[$x].'</h4>'.'</div></a>'.
+
+            
+           
+            '</div>'.'</div>'.'</div>';
+          if (++$x < $lmt)   
+            {
+              
+echo '<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">'.
+'<div class="Pimg">'.
+                        '<div class="block3" align="center">
+           <a href='.$docRp[$x].' target="_blank"> <div class="block3"><img src="'.$imgRp[$x].'" height="200" width="200" alt="Avatar" ></div>'.
+           '<h4>'.$dataRp[$x].'</h4>'.'</div></a>'.
+
+            
+           
+            '</div>'.'</div>';
+          }
+          else
+          {
+            break;
+          }
+
+          if (++$x < $lmt)   
+            {
+              
+echo '<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">'.
+'<div class="Pimg">'.
+                        '<div class="block3" align="center">
+           <a href='.$docRp[$x].' target="_blank"> <div class="block3"><img src="'.$imgRp[$x].'" height="200" width="200" alt="Avatar" ></div>'.
+           '<h4>'.$dataRp[$x].'</h4>'.'</div></a>'.
+
+            
+           
+            '</div>'.'</div>';
+          }
+          else
+          {
+            break;
+          }
+
+
+
+}
+mysqli_close($conn);
+?>
+
+
+
       
     
 </div>

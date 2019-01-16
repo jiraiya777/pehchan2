@@ -30,49 +30,40 @@
 include 'Siteheader.php';
 ?>
  
-		<div>
+		<div >
 			<h1 id="demo">About Us</h1>
 		</div>
 		<div class="container" >
 			
 		    <div class="row" style="height:300px;"> 
-                <div class="col-sm-4 col-md-4 col-xs-4 col-lg-4" id="poll">
-                <div class="forum">
-                <a id="link" href="Genious.html"> <h3 >GENIOUS</h3></a>
-                 </div>
-                 <hr>
+                <div class="col-sm-12 col-md-4 col-xs-12 col-lg-3" id="poll">
                  <div class="forum">
-                 <a id="link" href="Vision.html"><h3 >VISION</h3></a>
-                 </div>
-                 <hr>
-                 <div class="forum">
-                 <a id="link" href="Mission.html"><h3 >MISION</h3></a>
+                 <a id="link" href="./VisionMission.php"><h3 >VISION AND MISSION</h3></a>
                  </div>
                  <hr>
                  <div>
-                 <h3 id= "demo2">PEOPLE BEHIND PECHAN</h3>
+                 <h3 id= "demo2">PEOPLE BEHIND PEHCHAAN</h3>
                  </div>
                  <hr>
                  <div class="forum">
-                 <h3 >IMPACT</h3>
+                 <h3 >PARTNERS AND AFFILIATES</h3>
                  </div>
                  <hr>
                  <div class="forum">
                  <h3 >WORKING MODEL</h3>
               
                  </div>
-				 <hr>
                  
                  </div>
-			     <div class="col-sm-8 col-md-8 col-xs-8 col-lg-8" id="abs1">
+			     <div class="col-sm-12 col-md-8 col-xs-12 col-lg-8" id="abs1">
               <h1 id="demo222">People Behind Phechaan Ek Safar</h1>
-              <p style="margin-left:40px;">Smile Foundation is managed by a Board of Advisors comprising individuals from diverse 
+              <p >Smile Foundation is managed by a Board of Advisors comprising individuals from diverse 
                 backgrounds and expertise. The board is formed for a period of one year and 
                 a few independent members of eminence and reputation are
                 nominated each year. Members of this board meet once every quarter.
               </p>
               
-              <img  id="demo1" style="margin-left:45px; height:450px; width:95%; " src="groupPicPBP.jpg" rel="group" class="img-responsive">
+              <img  id="demo1" style=" height:290px; width:95%; " src="groupPicPBP.jpg" rel="group" class="img-responsive">
             </div>
                    
 

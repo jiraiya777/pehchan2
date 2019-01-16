@@ -29,7 +29,7 @@ include 'Siteheader.php';
     <div class="container">
         <div class="my-list" >
         <ul >
-          <a href="./index.php">
+          <a href="./index.php"  target="_blank">
             <div class="cam1" style="cursor: pointer;">
              <mfs>Helloo desdsf skngjsdgjs lnjdgnjfdkbl;sdjlfefsfs</mfs>
             <img onclick="myFunction()" src="7.jpg" alt="Smiley face" height="25" width="30"  style="cursor: pointer;" >
