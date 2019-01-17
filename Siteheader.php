@@ -36,12 +36,10 @@
               <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="hd_right">
                   <ul>
-                    <li><a href="https://www.facebook.com/smilefoundationindia.org"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
-                    <li><a href="https://twitter.com/smilefoundation"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
-                    <li><a href="https://www.youtube.com/user/tubeforchange"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
-                    <li><a href="mailto:yours@email.com?Subject=Please check this site"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
-                    <li><a href="https://plus.google.com/+SmilefoundationindiaOrgcharity"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a></li>
-                    <li><a href="https://www.linkedin.com/company/smile-foundation"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                    <li><a href="https://m.facebook.com/profile.php?id=932906730231703&ref=content_filter"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+                    <li><a href="https://www.youtube.com/channel/UCteFgeHGwySvFezOYIXjehA"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/pehchaan-ek-safar-iit-ropar-754757177"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                    <li><a href="https://www.instagram.com/pehchaan_iitrpr/?hl=en"><i class="fa fa-instagram " aria-hidden="true"></i></a></li>
                   </ul>
                 </div>
               </div>
@@ -56,10 +54,11 @@
 <!--Navbar starts here -->
 <div class="container-fluid">
 <div class="topnav" id="myTopnav">
-  <img src="1.jpg" width="80" height="80"  >
+  <img src="/Pehchan Logo1.jpg" width="80" height="80" >
+  <img src="/iitrprLogo.jpg" width="80" height="80" align="right" >
   <div class="tp">
   <div class="drpdown">
-    <input class="drpbtn" type="button" onclick="location.href='index.php'" value="Home" />
+    <input class="drpbtn" type="button" onclick="location.href='/index.php'" value="Home" />
   </div> 
   </div> 
   <div class="drpdown">
@@ -67,9 +66,8 @@
       <li class="fa fa-caret-down"></li>
     </button>
     <div class="drpdown-content">
-      <a href="#">Genious</a>
       <a href="#">Mission/Vision</a>
-      <a href="PeopleBehindPehchaan.php">People Behind Pehchaan Ek Safar </a>      
+      <a href="/PeopleBehindPehchaan.php">People Behind Pehchaan Ek Safar </a>      
       <a href="#">Working Model </a>
       <a href="#">Partners and Affiliates</a>
 
@@ -116,6 +114,10 @@
       <li class="fa fa-caret-down"></li>
     </button>
     <div class="drpdown-content">
+      <a href="/IITRoparDonors.php">IIT ROPAR Donors</a>
+      <a href="/PermanentDonors.php">Our Permanent Donors</a>
+      <a href="Resources_Report.php">Other Donors</a>
+      <a href="Resources_Report.php">Government Grants</a>
       <a href="#">Finance Reports</a>
       <a href="Resources_Report.php">Reports</a>
       <a href="#">Other Resources</a>
@@ -261,13 +263,14 @@ mysqli_close($conn);
 
 
 
-
+/*  TEST INPUT FUNCTION
 function test_input($data) {
   $data = trim($data);
   $data = stripslashes($data);
   $data = htmlspecialchars($data);
   return $data;
 }
+*/
 
 ?>
 <script>

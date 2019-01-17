@@ -12,7 +12,7 @@ body{
 
 .topnav {
   overflow: hidden;
-  background-color: #333;
+  background-color:  #4d94ff;
 }
 .topnav a {
   float: left;
@@ -49,7 +49,7 @@ body{
   font-size: 17px;    
   border: none;
   outline: none;
-  color: red;     /*white*/
+  color: black;     /*white*/
   padding: 10px 16px; /* 14px 16px*/
   background-color: inherit;
   font-family: inherit;
@@ -60,7 +60,7 @@ body{
 .drpdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: rgba(216, 500, 214, 0.66);
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -76,12 +76,12 @@ body{
 }
 
 .topnav a:hover, .drpdown:hover .drpbtn {
-  background-color: #555;
+  background-color: red;
   color: white;
 }
 
 .drpdown-content a:hover {
-  background-color: #ddd;
+  background-color: yellow;
   color: black;
 }
 
@@ -255,4 +255,14 @@ body{
 
 .block4  a.block3 img{
   border: 1px solid green;
+}
+
+.directorImg img{
+  border-radius: 50%;
+  border: 2px solid green;
+}
+
+.Pimg img{
+  padding: 1px;
+  border: 1px solid lightgreen;
 }
