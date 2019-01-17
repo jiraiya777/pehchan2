@@ -18,7 +18,7 @@ color:white;
 
 #demo333{
 	border: 2px solid black;
-	background-color:green;
+	background-color:rgb(56, 243, 56);
 	color:white;
 	padding:5px;
 }
@@ -127,7 +127,7 @@ table {
   }
   
   tr:nth-child(even) {
-	background-color: grey;
+	background-color: rgb(247, 244, 244);
   }
 
   .container1{
