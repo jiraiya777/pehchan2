@@ -155,7 +155,6 @@
     <div class="bottom-footer text-center">
             <div class="container">
               <p>© 2017 <a target="_blank" href="./index.php" > Pehchan Ek Safar Foundation</a>. All Rights Reserved. | <a href="/admin/login.php" target="_blank">Admin Login</a>&nbsp; | <span style="cursor: pointer;" data-toggle="modal" data-target="#policy">Privacy Policy </span></p>
-              <p>© 2017 <a target="_blank" href="#" > Pehchan Ek Safar</a>. All Rights Reserved. | <a href="#" target="_blank">Staff Login</a>&nbsp; | <span style="cursor: pointer;" data-toggle="modal" data-target="#policy">Privacy Policy </span></p>
               
             </div><!--Container end-->
           </div>
