@@ -27,7 +27,7 @@ include './Siteheader.php';
           <br>
           
           <div>
-                <h4 style="color:purple;">Wire Transfers/NEFT/RTGS</h4>
+                <h3 style="color:purple;">Wire Transfers/NEFT/RTGS</h3>
                 <br>
                 <i><h4 style="margin-left:45px;">here is our bank account details:</h4></i>
                 <table class="table">
@@ -35,56 +35,78 @@ include './Siteheader.php';
                         <tbody>
                           <tr>
                             <td><b>  Name of the account holder</b></td>
-                            <td>INDIAN INSTITUTE OF TECHNOLOGY ROPAR</td>
+                            <td>RATNESH KUMAR SINGH</td>
                             
                           </tr>
                           <tr>
                             <td><b>Account Number</b></td>
-                            <td>Moe</td>
+                            <td>33343519986</td>
                             
                           </tr>
                           <tr>
                             <td><b>Name of the Bank	</b></td>
-                            <td>Dooley</td>
+                            <td>STATE BANK OF INDIA</td>
                         
                           </tr>
                           <tr>
                                 <td><b>Branch Name</b></td>
-                                <td>Dooley</td>
+                                <td>EAST PARK ROAD, KAROL BAGH</td>
                             
                               </tr>
                               <tr>
                                     <td><b>Address</b></td>
-                                    <td>Dooley</td>
+                                    <td>DORI WALEN, KAROL BAGH,<br>
+                                           NEW DELHI,PIN-110005
+                                
+                              </td>
                                 
                                   </tr>
                                   <tr>
                                         <td><b>Account Type</b></td>
-                                        <td>Dooley</td>
+                                        <td>SAVING</td>
                                     
                                       </tr>
                                       <tr>
                                             <td><b>IFSC Code</b></td>
-                                            <td>Dooley</td>
+                                            <td>SBI0020918</td>
                                         
                                           </tr>
                                           <tr>
                                                 <td><b>SWIFT Code</b></td>
-                                                <td>Dooley</td>
+                                                <td>*****</td>
                                             
                                               </tr>
                         </tbody>
                       </table>     
           </div>
           <div>
-                <h4 style="color:purple;">Cheque/ DD</h4>
+                  <br>
+                <h3 style="color:purple;"> Other Payment Methods</h3>
+                <br>
+                <i><h4 style="margin-left:45px;">here is our other payment methods:</h4></i>
+                
+                <table class="table">
+                      <tbody>
+                            <tr>
+                                  <td><b> Google Pay</b></td>
+                                  <td>7834974499</td>
+                            </tr>
+                            <tr>
+                                    <td><b>Phone Pey</b>  </td>
+                                    <td>7834974499</td>
+                              </tr>
+                              <tr>
+                                          <td><b>Bhim/UPI</b>  </td>
+                                          <td>7834974499@upi</td>
+                                    </tr>
+                                    <tr>
+                                                <td><b> Paytm </b> </td>
+                                                <td>xxxxxxxx</td>
+                                          </tr>
+                      </tbody>
+                </table>
           </div>
-          <div>
-                <h4 style="color:purple;">Phone Number</h4>
-          </div>
-          <div>
-                <h4 style="color:purple;">Bhim/UPI</h4>
-          </div>
+          
 
     </div> 
 	<div class="container">
@@ -94,7 +116,9 @@ include './Siteheader.php';
                   contribution on your website:</b></i>
              <br>
             <a href="https://drive.google.com/open?id=1I0CXr3VnrQLfn8ZGollJeUQ_bGjs6_t8KRSC3nQBQx0" class="btn btn-info" role="button" target="_blank" style="background-color:purple; color:white; height: 40px; width: 300px; border-radius: 7px; padding-bottom: 20px; padding-right: 10px;"><i><h4>Google form for donation details</h4></i></a>
-              
+            
+            <br>
+            <br>  
       </div>
       <hr>
 
