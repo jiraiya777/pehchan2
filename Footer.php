@@ -19,7 +19,7 @@
             <ul class="">
               <div class="col-md-4">
             
-                   <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalFt" style="background-color:yellow; color:black;"><i>Follow us</i></button>
+                   <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalFt" style="background-color:rgb(216, 238, 238); color:black;"><i>Follow us</i></button>
 
    
   <div class="modal fade" id="myModalFt" role="dialog">
@@ -49,11 +49,15 @@
     </div>  
        <div style="margin-top:35px;">
       <a href="/Donate.php" target="_blank">
-      <img src="images/donate.jpg" alt="Lights" style="width:100px; height: 100px; border-radius:10px"></a>
+      <img src="images/donate111.jpg" alt="Lights" style="width:100px; height: 100px; border-radius:10px"></a>
               </div>
               <div style="margin-top:35px;">
-                <i style="font:; color:yellow;">Also visit IIT Ropar site:</i>
-                <a href="http://www.iitrpr.ac.in/" class="btn btn-info" role="button" target="_blank" style="background-color:rgb(214,174,100); color:black; height: 40px; width: 110px; border-radius: 7px; padding-bottom: 20px; padding-right: 10px;"><i><h4>IIT Ropar</h4></i></a>
+                <a href="#" target="_blank">
+                <img src="images/volunteer111jpg..jpg" alt="Lights" style="width:100px; height: 100px; border-radius:10px"></a>
+                        </div>
+              <div style="margin-top:35px;">
+                <i style="color:rgb(216, 238, 238);">Also visit IIT Ropar site:</i>
+                <a href="http://www.iitrpr.ac.in/" class="btn btn-info" role="button" target="_blank" style="background-color:rgb(216, 238, 238); color:black; height: 40px; width: 110px; border-radius: 7px; padding-bottom: 20px; padding-right: 10px;"><i><h4>IIT Ropar</h4></i></a>
               </div>
              
               </div>
@@ -154,7 +158,7 @@
     </footer>
     <div class="bottom-footer text-center">
             <div class="container">
-              <p>© 2017 <a target="_blank" href="./index.php" > Pehchan Ek Safar Foundation</a>. All Rights Reserved. | <a href="/admin/login.php" target="_blank">Admin Login</a>&nbsp; | <span style="cursor: pointer;" data-toggle="modal" data-target="#policy">Privacy Policy </span></p>
+              <p>© 2017 <a target="_blank" href="./index.php" > Pehchan Ek Safar Foundation/NGO of IIT Ropar</a>. All Rights Reserved. | <a href="/admin/login.php" target="_blank">Admin Login</a>&nbsp; | <span style="cursor: pointer;" data-toggle="modal" data-target="#policy">Privacy Policy </span></p>
               
             </div><!--Container end-->
           </div>
