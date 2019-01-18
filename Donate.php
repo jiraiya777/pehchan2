@@ -15,6 +15,10 @@
 
 	</head>
 	<body>
+
+        <?php
+include './Siteheader.php';
+?>
     <div class="container">  
         <h3 id="demo333">Donate Us</h3>
     <h4>Thank you for considering a contribution to the Pehchaan Ek Safar/IIT Ropar.
@@ -89,8 +93,13 @@
             <i><b>Please fill the Google form with respect to your donation ,so that we can updated your 
                   contribution on your website:</b></i>
              <br>
-            <a href="https://drive.google.com/open?id=1I0CXr3VnrQLfn8ZGollJeUQ_bGjs6_t8KRSC3nQBQx0" class="btn btn-info" role="button" style="background-color:purple; color:white; height: 40px; width: 300px; border-radius: 7px; padding-bottom: 20px; padding-right: 10px;"><i><h4>Google form for donation details</h4></i></a>
+            <a href="https://drive.google.com/open?id=1I0CXr3VnrQLfn8ZGollJeUQ_bGjs6_t8KRSC3nQBQx0" class="btn btn-info" role="button" target="_blank" style="background-color:purple; color:white; height: 40px; width: 300px; border-radius: 7px; padding-bottom: 20px; padding-right: 10px;"><i><h4>Google form for donation details</h4></i></a>
               
       </div>
+      <hr>
+
+          <?php
+include 'Footer.php';
+?>
     </body>
 </html>

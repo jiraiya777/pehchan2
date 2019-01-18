@@ -20,7 +20,9 @@
 </head>
 <body>
   
-
+  <?php
+include 'Siteheader.php';
+?>
 <div class="container">
     <h2 id="demo333">IIT Visits</h2>
     
@@ -183,7 +185,9 @@
         
         
 
-
+  <?php
+include 'Footer.php';
+?>
 
 </body>
 </html>

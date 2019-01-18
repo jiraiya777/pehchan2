@@ -55,36 +55,36 @@
               </div>
               <div style="margin-top:35px;">
                 <i style="font:; color:yellow;">also visit our IIT Ropar site:</i>
-                <a href="http://www.iitrpr.ac.in/" class="btn btn-info" role="button" style="background-color:yellow; color:black; height: 40px; width: 110px; border-radius: 7px; padding-bottom: 20px; padding-right: 10px;"><i><h4>IIT Ropar</h4></i></a>
+                <a href="http://www.iitrpr.ac.in/" class="btn btn-info" role="button" target="_blank" style="background-color:yellow; color:black; height: 40px; width: 110px; border-radius: 7px; padding-bottom: 20px; padding-right: 10px;"><i><h4>IIT Ropar</h4></i></a>
               </div>
              
               </div>
               <div class="col-md-4">
-                  <li><a href="#"><h4>HOME</h4></a></li>
+                  <li><a href="./index.php"><h4>HOME</h4></a></li>
                   <br>
                     <li><a href="#"><h4>ABOUT US</h4></a></li>
                     <div class="foo-text">  
-                        <li><a href="#">Mission And Vision</a></li>
-                        <li><a href="#">People Behind Pehchaan EK Safar</a></li>
+                        <li><a href="./VisionMission.php">Mission And Vision</a></li>
+                        <li><a href="./PeopleBehindPehchaan.php">People Behind Pehchaan EK Safar</a></li>
                         <li><a href="#">Working Model</a></li>
                         <li><a href="#">Partner And Affliates</a></li>
                     </div>  
                     <br>
                 <li><a href="#"><h4>PROJECTS</h4></a></li>
                 <div class="foo-text">
-                     <li><a href="#">Abhyas</a></li>
-                    <li><a href="#">School Chale Hum</a></li>
-                    <li><a href="#">School outreach in ropar</a></li>
-                    <li><a href="#">Pathshala</a></li>
+                     <li><a href="./Project_Abhyas.php">Abhyas</a></li>
+                    <li><a href="./Project_SchoolChaleHum.php">School Chale Hum</a></li>
+                    <li><a href="./Project_SchoolOutreach.php">School outreach in ropar</a></li>
+                    <li><a href="./Project_Pathsala.php">Pathshala</a></li>
                 </div>
                 <br>
                 <li><a href="#"><h4>CAMPAIGNS</h4></a></li>
                     <div class="foo-text">
                     
-                        </p><li><a href="#"> IIT Visits</a></li>
-                        <li><a href="#">Jhuggi Pathshala</a></li>
-                        <li><a href="#"><a>Keep away from road</a></li>
-                        <li><a href="#">Campaign Samajhiye</a></li>
+                        </p><li><a href="Campaign_IITVisit.php"> IIT Visits</a></li>
+                        <li><a href="Campaign_JhuggiPathsala.php">Jhuggi Pathshala</a></li>
+                        <li><a href="Campaign_KeepAwayFromRoaD.php"><a>Keep away from road</a></li>
+                        <li><a href="Camp_Samajhiye.php">Campaign Samajhiye</a></li>
                
                     </div> 
                

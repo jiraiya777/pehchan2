@@ -275,6 +275,7 @@ src="https://www.youtube.com/embed/Uv3gRESVDVI">
 </div>
 
 <br>
+<hr>
 <div class="container" style="margin-top:35px;">
     <h2 id="demo111">Events and Updates</h2>
     <div class="row" style="background-color: ">
@@ -372,7 +373,7 @@ mysqli_close($conn);
     
 </div>
 </div>
-
+<hr>
 
     <?php
 include 'Footer.php';
