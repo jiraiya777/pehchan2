@@ -26,17 +26,9 @@ include 'Siteheader.php';
 		<div class="container" >
 			
 		    <div class="row" style="height:300px;"> 
-<<<<<<< HEAD:Vision&Mission.html
                 <div class="col-sm-4 col-md-4 col-xs-4 col-lg-4" id="poll">
-                <div class="forum">
-                <a id="link" href="Genious.html"> <h3 class="Qbu">GENIOUS</h3></a>
-                 </div>
-                 <hr>
-=======
-                <div class="col-sm-12 col-md-4 col-xs-12 col-lg-3" id="poll">
->>>>>>> 79dd9213b48dfc95b1c281802ec66fb4fe367bcb:VisionMission.php
                  <div >
-                 <h3 id = "demo2">VISION & MISSION</h3>
+                 <h3 id = "demo2">VISION AND Mission</h3>
                  </div>
                  <hr>
                  <div class="forum">
@@ -51,7 +43,7 @@ include 'Siteheader.php';
                  <h3>WORKING MODEL</h3>
               
                  </div>
-				 <hr>
+         <hr>
                  
                  </div>
 			     <div class="col-sm-12 col-md-8 col-xs-12 col-lg-8" id="abs1">

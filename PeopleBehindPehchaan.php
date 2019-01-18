@@ -29,11 +29,11 @@
   <?php
 include 'Siteheader.php';
 ?>
- 
-		<div >
-			<h1 id="demo">About Us</h1>
+ <div class="container" >
+		<div  align="center">
+			<h1 id="demo222">About Us</h1>
 		</div>
-		<div class="container" >
+		
 			
 		    <div class="row" style="height:300px;"> 
                 <div class="col-sm-12 col-md-4 col-xs-12 col-lg-3" id="poll">
@@ -54,6 +54,9 @@ include 'Siteheader.php';
               
                  </div>
                  
+
+
+
                  </div>
 			     <div class="col-sm-12 col-md-8 col-xs-12 col-lg-8" id="abs1">
               <h1 id="demo222">People Behind Phechaan Ek Safar</h1>
