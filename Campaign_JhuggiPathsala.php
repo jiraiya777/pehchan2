@@ -53,30 +53,30 @@ include 'Siteheader.php';
             <div class="row" style="background-color:skyblue; padding-top:15px;">
               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                   <div class="thumbnail">
-                      <a href="images/camp_Jhughi1.jpg" target="_blank">
-                        <img src="images/camp_jhughi1.jpg" alt="poor" style="width:100%; height:250px;" >
-                        <div class="caption">
-                          <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                    <div class="thumbnail">
                       <a href="images/camp_jhughi2 .jpg" target="_blank">
-                        <img src="images/camp_jhughi2 .jpg" alt="Nature" style="width:100%; height:250px;">
+                        <img src="images/camp_jhughi2 .jpg" alt="poor" style="width:100%; height:250px;" >
                         <div class="caption">
-                          <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                          <p>Team Members trying to make home for kids.</p>
                         </div>
                       </a>
                     </div>
                   </div>
                   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                     <div class="thumbnail">
-                      <a href="images/camp_jhughi3.jpg" target="_blank">
-                        <img src="images/camp_jhughi3.jpg" alt="Fjords" style="width:100%; height:250px;">
+                      <a href="images/Camp_jhughi333.jpg" target="_blank">
+                        <img src="images/Camp_jhughi333.jpg" alt="Nature" style="width:100%; height:250px;">
                         <div class="caption">
-                          <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                          <p>Beauty of a natural home.</p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <div class="thumbnail">
+                      <a href="images/camp_Jhughi1.jpg" target="_blank">
+                        <img src="images/camp_Jhughi1.jpg" alt="Fjords" style="width:100%; height:250px;">
+                        <div class="caption">
+                          <p>A teaching class for kids.</p>
                         </div>
                       </a>
                     </div>
