@@ -91,7 +91,9 @@ include 'Siteheader.php';
         <iframe class="embed-responsive-item" src="https://youtu.be/PjTU0DmBWiU" style="width: 800px; height: 300px;"></iframe>
       </div>
 </div>
-
+    <?php
+include 'Footer.php';
+?>
 
 </body>
 </html>

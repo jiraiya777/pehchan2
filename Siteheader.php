@@ -22,15 +22,18 @@
               <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="single">
                <!--  <form action="newsletter.html" method="get" > -->
+
                     <form name="formSub" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" onsubmit="required()"> 
                     <div class="input-group">
                     <input type="email" class="form-control" name="emailIdHd"  placeholder="Enter Your Email Id">
+                    
                     <!--  <input type="email" class="form-control" name="emailIdHd" id="emailId" placeholder="Enter Your Email Id"> -->
                       <span class="input-group-btn">
                       <button class="btn btn-theme"name="submitSub" type="submit">SUBSCRIBE</button>
                       </span>
                     </div>
                   </form>
+
                 </div>
               </div>
               <div class="col-md-6 col-sm-6 col-xs-12">
@@ -219,7 +222,7 @@ $mail->SMTPSecure = 'ssl';*/
     $mail->addBCC('bcc@example.com');*/
 
     //Attachments
-    $mail->addAttachment('./fee4thsem.pdf');         // Add attachments
+    /*$mail->addAttachment('./fee4thsem.pdf');         // Add attachments
    //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name*/
 
     //Content

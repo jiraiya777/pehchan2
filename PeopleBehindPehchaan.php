@@ -1185,5 +1185,10 @@ echo '<div class="my_class">'.$cart->count_product.'</div>';*/
 
 		-->
 	
+
+    <?php
+include 'Footer.php';
+?>
+
     </body>
 </html>

@@ -148,12 +148,16 @@ echo '<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">'.
 
   mysqli_close($conn);
             ?>
+             </div>
+          <hr/>
 </div>
 
          
         <br>
         <div id="line"></div>
 
-
+    <?php
+include 'Footer.php';
+?>
 </body>
 </html>

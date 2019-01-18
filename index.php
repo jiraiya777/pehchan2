@@ -374,6 +374,9 @@ mysqli_close($conn);
 </div>
 
 
+    <?php
+include 'Footer.php';
+?>
 </body>
 </html>
 
