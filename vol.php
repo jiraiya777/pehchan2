@@ -10,6 +10,11 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+
+        <?php
+include './Siteheader.php';
+?>
+
 <div class="container">
     <div class="row">
          <div class="col-sm-12">
@@ -84,6 +89,8 @@ Provided that the Governing Body may from time to time modify the rules regardin
 
  </div>
       
-    
+          <?php
+include './Footer.php';
+?>
 </body>
 </html>

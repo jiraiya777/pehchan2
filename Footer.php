@@ -91,7 +91,7 @@
                      
                 <li><a href="#"><h4>GET INVOLVED</h4></a></li>
                 <div class="foo-text">
-                  <p></p><li><a href="../Volunteer.php">Volunteer With Us</a></li>
+                  <p></p><li><a href="./vol.php">Volunteer With Us</a></li>
                   <li><a href="./Donate.php">Donate</a></li>
                   <li><a href="./FAQ.php">FAQs</a></li>
                 </div>

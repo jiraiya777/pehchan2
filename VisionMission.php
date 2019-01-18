@@ -40,7 +40,7 @@ include 'Siteheader.php';
                  </div>
                  <hr>
                  <div class="forum">
-                 <h3>WORKING MODEL</h3>
+                 <a id="link" href="./WorkingModel"><h3>WORKING MODEL</h3>
               
                  </div>
          <hr>

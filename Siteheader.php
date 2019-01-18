@@ -106,9 +106,9 @@
       <li class="fa fa-caret-down"></li>
     </button>
     <div class="drpdown-content">
-      <a href="../Volunteer.php">Volunteer With Us</a>
+      <a href="./vol.php">Volunteer With Us</a>
       <a href="/Donate.php">Donate</a>
-      <a href="../FAQ.php">FAQ</a>
+      <a href="./FAQ.php">FAQ</a>
     </div>
   </div> 
 

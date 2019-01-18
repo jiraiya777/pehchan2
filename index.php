@@ -121,51 +121,23 @@ include 'Siteheader.php';
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-lg-8 col-md-8 ">
       <h1 id="demo333">Pehchaan Ek Safar</h1>
-      <p>
-        India has more than 50% of its population below 25 years of age. It is going to be a global workforce in near future. India’s development lies in cashing this opportunity... ‘now or never’!
+
+      <p>India has more than 50% of its population below 25 years of age. It is going to be a global workforce in near future. India’s development lies in cashing this opportunity... ‘now or never’! However only 74.3% Indians are literate, let alone them being properly educated! That means 25% of the population relies on others to fill their forms, count their salaries and take their decisions!
+
       </p>
-      <p>However only 74.3% Indians are literate, let alone them being properly educated! That means 25% of the population relies on others to fill their forms, count their salaries and take their decisions!
+      <p>We, the highly motivated and enthusiastic students of IIT Ropar (around 40) are active as a social service group  (a registered NGO) under the name PEHCHAAN EK SAFAR (Search for an identity). We have been working for the education of under privileged children around IIT Ropar permanent campus.  The workforce at Pehchaan Ek Safar feels the need to be at the forefront battle against illiteracy. We feel the need to inculcate rational mindset and scientific temper amongst citizens, and strive to accomplish this.
       </p>
-      <p>The workforce at Pehchaan Ek Safar feels the need to be at the forefront against this battle against illiteracy. We feel the need to inculcate rational mindset and scientific temper amongst citizens, and strive to accomplish this.
+      <p>We believe its youth’s responsibility to provide a bridge to connect the local socio-economically backward and underprivileged children to the rest of the world. A child will go to school only if the family is assured of healthcare and empowered. Realizing this, we are creating awareness among the parents of these kids about child education. We are trying to contribute to build up educational stability in the country where all the kids can have access to education, health care and a better living standard.
       </p>
-       <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Read more</button>
+
+      <p>"We cannot all do great things, but we can do small things with great love"
+      </p>
+
+      <p> Mother Teresa
+      </p>
 
   
-      <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
-        
-          
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">Modal Hdr</h4>
-            </div>
-            <div class="modal-body">
-              <p>Smile Foundation is an NGO in India directly benefitting over 600,000
-                  children and their families every year, through more than 250 live welfare 
-                  projects on education, healthcare, livelihood and women empowerment, in over
-                   950 remote villages and slums across 25 states of India.</p>
 
-                  <p>Education is both the means as well as the end to a better life:
-                     the means because it empowers an individual to earn his/her livelihood
-                      and the end because it increases one's awareness on a range of 
-                      issues – from healthcare to appropriate social behaviour to understanding 
-                      one's rights – and in the process help him/her evolve as a better citizen.</p>
-                  
-                 <p> Doubtless, education is the most powerful catalyst for social transformation.
-                    But child education cannot be done in isolation. A child will go to school only 
-                    if the family, particularly the mother, is assured of healthcare and empowered. 
-                    Moreover, when an elder sibling is relevantly skilled to be employable and begins
-                     earning, the journey of empowerment continues beyond the present generation.</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-      
     </div>
     <div class="col-xs-12 col-sm-12 col-lg-4 col-md-4 ">
         <div class="goat">

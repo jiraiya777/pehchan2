@@ -153,7 +153,7 @@ body{
 }
 
 .cam1{
-    background-color:lightgrey;
+    background-color:#ffe6f7;
     border:1px solid grey;
 
 }
@@ -164,7 +164,7 @@ body{
 
 
 .cam2{
-    background-color:lightgrey;
+    background-color:#ffe6f7;
     border:1px solid grey;
     box-sizing:border-box;
 }
@@ -177,7 +177,7 @@ body{
 
 
 .cam3{
-    background-color:lightgrey;
+    background-color:#ffe6f7;
     border:1px solid grey;
 
 }
@@ -188,7 +188,7 @@ body{
 
 
 .cam4{
-    background-color:lightgrey;
+    background-color:#ffe6f7;
     border:1px solid grey;
     box-sizing:border-box;
 }
@@ -200,7 +200,7 @@ body{
 
 
 .cam5{
-    background-color:lightgrey;
+    background-color:#ffe6f7;
     border:1px solid grey;
 
 }
@@ -211,7 +211,7 @@ body{
 
 
 .cam6{
-    background-color:lightgrey;
+    background-color:#ffe6f7;
     border:1px solid grey;
     box-sizing:border-box;
 }
@@ -226,7 +226,7 @@ body{
 
 
 .cam7{
-    background-color:lightgrey;
+    background-color:#ffe6f7;
     border:1px solid grey;
 
 }
@@ -237,7 +237,7 @@ body{
 
 
 .cam8{
-    background-color:lightgrey;
+    background-color:#ffe6f7;
     border:1px solid grey;
     box-sizing:border-box;
 }
@@ -250,7 +250,7 @@ body{
 
 
 .cam9{
-    background-color:lightgrey;
+    background-color:#ffe6f7;
     border:1px solid grey;
 
 }
@@ -261,7 +261,7 @@ body{
 
 
 .cam10{
-    background-color:lightgrey;
+    background-color:#ffe6f7;
     border:1px solid grey;
     box-sizing:border-box;
 }
@@ -274,7 +274,7 @@ body{
 
 
 .cam11{
-    background-color:lightgrey;
+    background-color:#ffe6f7;
     border:1px solid grey;
 
 }
@@ -285,7 +285,7 @@ body{
 
 
 .cam12{
-    background-color:lightgrey;
+    background-color:#ffe6f7;
     border:1px solid grey;
     box-sizing:border-box;
 }
@@ -298,7 +298,7 @@ body{
 
 
 .cam13{
-    background-color:lightgrey;
+    background-color:#ffe6f7;
     border:1px solid grey;
 
 }
@@ -309,7 +309,7 @@ body{
 
 
 .cam14{
-    background-color:lightgrey;
+    background-color:#ffe6f7;
     border:1px solid grey;
     box-sizing:border-box;
 }
@@ -322,7 +322,7 @@ body{
 
 
 .cam15{
-    background-color:lightgrey;
+    background-color:#ffe6f7;
     border:1px solid grey;
 
 }
@@ -333,7 +333,7 @@ body{
 
 
 .cam16{
-    background-color:lightgrey;
+    background-color:#ffe6f7;
     border:1px solid grey;
     box-sizing:border-box;
 }
@@ -346,23 +346,35 @@ body{
 
 
 
-.cam18{
-    background-color:lightgrey;
+.cam17{
+    background-color:#ffe6f7;
     border:1px solid grey;
 
 }
+.cam17 mfs{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+.cam18{
+    background-color:#ffe6f7;
+    border:1px solid grey;
+    box-sizing:border-box;
+}
+
 .cam18 mfs{
     font-size: 18px;
     font-weight: bold;
 }
 
 
-.cam19{
-    background-color:lightgrey;
-    border:1px solid grey;
-    box-sizing:border-box;
-}
 
+.cam19{
+    background-color:#ffe6f7;
+    border:1px solid grey;
+
+}
 .cam19 mfs{
     font-size: 18px;
     font-weight: bold;
@@ -371,10 +383,11 @@ body{
 
 
 .cam20{
-    background-color:lightgrey;
+    background-color:#ffe6f7;
     border:1px solid grey;
-
+    box-sizing:border-box;
 }
+
 .cam20 mfs{
     font-size: 18px;
     font-weight: bold;
@@ -382,10 +395,63 @@ body{
 
 
 
+.cam21{
+    background-color:#ffe6f7;
+    border:1px solid grey;
+
+}
+.cam21 mfs{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+
+.cam22{
+    background-color:#ffe6f7;
+    border:1px solid grey;
+    box-sizing:border-box;
+}
+
+.cam22 mfs{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+
+.cam23{
+    background-color:#ffe6f7;
+    border:1px solid grey;
+
+}
+.cam23 mfs{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+
+.cam24{
+    background-color:#ffe6f7;
+    border:1px solid grey;
+    box-sizing:border-box;
+}
+
+.cam24 mfs{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+
+
+
+
 
 .top_section{
   padding-top:10px;
-  background-color: lightgrey;
+  background-color: lightgrey;/*lightgrey*/
 }
 
 .single .input-group .form-control {

@@ -79,9 +79,9 @@ include 'Siteheader.php';
         </div>
     </div>
 	</div>
-
+<br>
       <?php
-include '../Footer.php';
+include './Footer.php';
 ?>
 
     </body>
