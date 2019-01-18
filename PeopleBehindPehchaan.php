@@ -27,7 +27,7 @@
 	<body>
 
   <?php
-include 'Siteheader.php';
+include './Siteheader.php';
 ?>
  <div class="container" >
 		<div  align="center">
@@ -681,7 +681,7 @@ include 'Siteheader.php';
 
 
     <?php
-include 'Footer.php';
+include './Footer.php';
 ?>
 
     </body>

@@ -26,7 +26,7 @@
                     <form name="formSub" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" onsubmit="required()"> 
                     <div class="input-group">
                     <input type="email" class="form-control" name="emailIdHd"  placeholder="Enter Your Email Id">
-                    
+
                     <!--  <input type="email" class="form-control" name="emailIdHd" id="emailId" placeholder="Enter Your Email Id"> -->
                       <span class="input-group-btn">
                       <button class="btn btn-theme"name="submitSub" type="submit">SUBSCRIBE</button>
@@ -132,7 +132,7 @@
   </div> 
 
   <div class="drpdown">
-    <input class="drpbtn" type="button" onclick="location.href='#" value="Contact Us" />
+    <input class="drpbtn" type="button" onclick="location.href='/ContactUs.php'" value="Contact Us" />
   </div> 
   </div> 
 

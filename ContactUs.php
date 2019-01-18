@@ -10,6 +10,10 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+
+    <?php
+include './Siteheader.php';
+?>
 <div class="container">
     <div class="row">
          <div class="sm-col-12">
@@ -33,6 +37,11 @@
     </div>
   </div>
   </div>
+
+  <hr>
+    <?php
+include './Footer.php';
+?>
 </body>
 </html>
 

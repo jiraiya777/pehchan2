@@ -29,7 +29,7 @@
 </head>
 <body>
   <?php
-include 'Siteheader.php';
+include './Siteheader.php';
 ?>
 
 <div class="container">
@@ -157,7 +157,7 @@ echo '<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">'.
         <div id="line"></div>
 
     <?php
-include 'Footer.php';
+include './Footer.php';
 ?>
 </body>
 </html>

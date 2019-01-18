@@ -94,8 +94,8 @@
                 <li><a href="#"><h4>GET INVOLVED</h4></a></li>
                 <div class="foo-text">
                   <p></p><li><a href="#">Volunteer With Us</a></li>
-                  <li><a href="#">Donate</a></li>
-                  <li><a href="#">FAQs</a></li>
+                  <li><a href="./Donate.php">Donate</a></li>
+                  <li><a href="./FAQ.php">FAQs</a></li>
                 </div>
                
                 
@@ -106,12 +106,12 @@
                   <li><a href="#">Others Donar </a></li>
                   <li><a href="#">GOvernment Grants</a></li>
                   <li><a href="#">Finance Reports </a></li>
-                  <li><a href="#">Reports </a></li>
+                  <li><a href="./Resources_Report.php">Reports </a></li>
                 </div>
                 <br>
-                <li><a href="#"><h4>Gallery</h4></a></li>
+                <li><a href="./Gallery.php"><h4>Gallery</h4></a></li>
                 <br>
-                <li><a href="#"><h4>Contact Us</h4></a></li>
+                <li><a href="./ContactUs.php"><h4>Contact Us</h4></a></li>
                 
               </div>
             </ul>
