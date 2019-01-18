@@ -80,7 +80,9 @@ include 'Siteheader.php';
         </div>
         
         
-
+    <?php
+include 'Footer.php';
+?>
 
 
 </body>
