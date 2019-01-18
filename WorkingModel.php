@@ -15,6 +15,11 @@
 
 	</head>
 	<body>
+
+          <?php
+include 'Siteheader.php';
+?>
+
     <div class="container">  
         <h3 id="demo333">Working Model</h3>
         <div class="row">
@@ -74,5 +79,10 @@
         </div>
     </div>
 	</div>
+
+      <?php
+include '../Footer.php';
+?>
+
     </body>
 </html>

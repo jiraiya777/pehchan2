@@ -31,7 +31,7 @@ include './Siteheader.php';
 ?>
  <div class="container" >
 		<div  align="center">
-			<h1 id="demo222">About Us</h1>
+			<h1 id="demo333">About Us</h1>
 		</div>
 		
 			
@@ -59,7 +59,7 @@ include './Siteheader.php';
 
                  </div>
 			     <div class="col-sm-12 col-md-8 col-xs-12 col-lg-8" id="abs1">
-              <h1 id="demo222">People Behind Phechaan Ek Safar</h1>
+              <h1 id="demo333">People Behind Phechaan Ek Safar</h1>
               <p >Smile Foundation is managed by a Board of Advisors comprising individuals from diverse 
                 backgrounds and expertise. The board is formed for a period of one year and 
                 a few independent members of eminence and reputation are
@@ -76,6 +76,7 @@ include './Siteheader.php';
         </div>
 
 <br>
+<hr>
         <div class="container">
 
           <div class="demo222" align="center">

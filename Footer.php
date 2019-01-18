@@ -19,10 +19,10 @@
             <ul class="">
               <div class="col-md-4">
             
-                   <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="background-color:yellow; color:black;"><i>follow us</i></button>
+                   <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalFt" style="background-color:yellow; color:black;"><i>Follow us</i></button>
 
    
-  <div class="modal fade" id="myModal" role="dialog">
+  <div class="modal fade" id="myModalFt" role="dialog">
       <div class="modal-dialog">
       
         <!-- Modal content-->
@@ -34,12 +34,10 @@
           <div class="modal-body">
             
               
-                  <a href="https://www.facebook.com/smilefoundationindia.org" style="width:100px; height:100px ;"><i class="fa fa-facebook-official" aria-hidden="true" ></i></a>
-                  <a href="https://twitter.com/smilefoundation"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
-                  <a href="https://www.youtube.com/user/tubeforchange"><i class="fa fa-youtube-square" aria-hidden="true"></i></a>
-                  <a href="mailto:yours@email.com?Subject=Please check this site"><i class="fa fa-envelope" aria-hidden="true"></i></a>
-                  <a href="https://plus.google.com/+SmilefoundationindiaOrgcharity"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a>
-                  <a href="https://www.linkedin.com/company/smile-foundation"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                  <a href="https://m.facebook.com/profile.php?id=932906730231703&ref=content_filter" style="font-size:50px;"><i class="fa fa-facebook-official" aria-hidden="true" ></i></a>
+                  <a href="https://www.youtube.com/channel/UCteFgeHGwySvFezOYIXjehA" style="font-size:50px;"><i class="fa fa-youtube-square" aria-hidden="true"></i></a>
+                  <a href="https://www.linkedin.com/in/pehchaan-ek-safar-iit-ropar-754757177" style="font-size:50px;" ><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                  <a href="https://www.instagram.com/pehchaan_iitrpr/?hl=en" style="font-size:50px;"><i class="fa fa-instagram " aria-hidden="true"></i></a>
                 
           </div>
           <div class="modal-footer">
@@ -50,12 +48,12 @@
       </div>
     </div>  
        <div style="margin-top:35px;">
-      <a href="donate.html" target="_blank">
+      <a href="/Donate.php" target="_blank">
       <img src="images/donate.jpg" alt="Lights" style="width:100px; height: 100px; border-radius:10px"></a>
               </div>
               <div style="margin-top:35px;">
-                <i style="font:; color:yellow;">also visit our IIT Ropar site:</i>
-                <a href="http://www.iitrpr.ac.in/" class="btn btn-info" role="button" target="_blank" style="background-color:yellow; color:black; height: 40px; width: 110px; border-radius: 7px; padding-bottom: 20px; padding-right: 10px;"><i><h4>IIT Ropar</h4></i></a>
+                <i style="font:; color:yellow;">Also visit IIT Ropar site:</i>
+                <a href="http://www.iitrpr.ac.in/" class="btn btn-info" role="button" target="_blank" style="background-color:rgb(214,174,100); color:black; height: 40px; width: 110px; border-radius: 7px; padding-bottom: 20px; padding-right: 10px;"><i><h4>IIT Ropar</h4></i></a>
               </div>
              
               </div>
@@ -66,7 +64,7 @@
                     <div class="foo-text">  
                         <li><a href="./VisionMission.php">Mission And Vision</a></li>
                         <li><a href="./PeopleBehindPehchaan.php">People Behind Pehchaan EK Safar</a></li>
-                        <li><a href="#">Working Model</a></li>
+                        <li><a href="../WorkingModel.php">Working Model</a></li>
                         <li><a href="#">Partner And Affliates</a></li>
                     </div>  
                     <br>
@@ -93,7 +91,7 @@
                      
                 <li><a href="#"><h4>GET INVOLVED</h4></a></li>
                 <div class="foo-text">
-                  <p></p><li><a href="#">Volunteer With Us</a></li>
+                  <p></p><li><a href="../Volunteer.php">Volunteer With Us</a></li>
                   <li><a href="./Donate.php">Donate</a></li>
                   <li><a href="./FAQ.php">FAQs</a></li>
                 </div>
@@ -156,7 +154,7 @@
     </footer>
     <div class="bottom-footer text-center">
             <div class="container">
-              <p>© 2017 <a target="_blank" href="#" > Pehchan Ek Safar Foundation</a>. All Rights Reserved. | <a href="#" target="_blank">Staff Login</a>&nbsp; | <span style="cursor: pointer;" data-toggle="modal" data-target="#policy">Privacy Policy </span></p>
+              <p>© 2017 <a target="_blank" href="./index.php" > Pehchan Ek Safar Foundation</a>. All Rights Reserved. | <a href="/admin/login.php" target="_blank">Admin Login</a>&nbsp; | <span style="cursor: pointer;" data-toggle="modal" data-target="#policy">Privacy Policy </span></p>
               
             </div><!--Container end-->
           </div>

@@ -21,7 +21,7 @@ include 'Siteheader.php';
 ?>
 
 		<div>
-			<h1 id="demo">About Us</h1>
+			<h1 id="demo333">About Us</h1>
 		</div>
 		<div class="container" >
 			
@@ -47,7 +47,7 @@ include 'Siteheader.php';
                  
                  </div>
 			     <div class="col-sm-12 col-md-8 col-xs-12 col-lg-8" id="abs1">
-                        <h1 id="demo">Vision & Mission</h1>
+                        <h1 id="demo333">Vision & Mission</h1>
                         <br>
                         <p class="poll1"  style="margin-left:45px;">
 

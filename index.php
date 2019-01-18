@@ -28,68 +28,61 @@ include 'Siteheader.php';
 <div class="container-fluid">
   <br>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-      <li data-target="#myCarousel" data-slide-to="3"></li>
-    </ol>
-
+  
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
 
-      <div class="item active">
-        <img src="./pictures for carousal/Copy of IMG_4163 - Copy.jpg" alt="poor children" width="460" height="345">
-        
-      </div>
+       <?php
+          require("db.php");
+          $sqll="SELECT * FROM home_carousal ORDER BY id DESC LIMIT 0, 1";
+          $highest_id =0;
 
-      <div class="item">
-        <img src="./pictures for carousal/Copy of IMG_5360.jpg" alt="poor children" width="460" height="345">
+          $result = mysqli_query($conn,$sqll);
+          while ($row = mysqli_fetch_row($result))
+          $highest_id = $row[0];
 
-      </div>
+          //echo "HIGHEST ID: ".$highest_id."<br/";
+          $ind=0;
+          $lmtHome_car=0;
+          $imgHome_car=array();
 
-      <div class="item">
-        <img src="./pictures for carousal/Copy of IMG_5336.jpg" alt="poor children" width="460" height="345">
+          for ($index=1; $index <=$highest_id; $index++)
+            {
+              $sql="SELECT * FROM home_carousal WHERE id='$index' ";
+              $result=mysqli_query($conn,$sql);
+              if (mysqli_num_rows($result)>0)
+              {
+               $row = mysqli_fetch_row($result);     
+               $imgHome_car[$ind]=$row[1];
 
-      </div>
+               $ind++;
+              }
+              $lmtHome_car=$ind ;
+                     
+            }
 
-      <div class="item">
-        <img src="./pictures for carousal/Copy of IMG_7269.jpg" alt="poor children" width="460" height="345">
+            for($x=0; $x<$lmtHome_car;$x++)
+            {
 
-      </div>
+              if ($x==0 )
+              {
+             echo ' <div class="item active">
+                <img src="'.$imgHome_car[$x].'" alt="poor children" width="460" height="345" >
+                
+              </div>';
+            }
 
-      <div class="item">
-        <img src="./pictures for carousal/Copy of IMG_20181203_134243.jpg" alt="poor children" width="460" height="345">
+            else
+            {
+              echo '<div class="item">
+        <img src="'.$imgHome_car[$x].'" alt="poor children" width="460" height="345">
 
-      </div>
+      </div>';
+            }
+          }
 
-      <div class="item">
-        <img src="./pictures for carousal/Copy of IMG_20181217_090838.jpg" alt="poor children" width="460" height="345">
- 
-      </div>
-
-      <div class="item">
-        <img src="./pictures for carousal/IMG_20181014_094306.jpg" alt="poor children" width="460" height="345">
-
-      </div>
-
-      <div class="item">
-        <img src="./pictures for carousal/IMG_20181018_162702.jpg" alt="poor children" width="460" height="345">
-
-      </div>
-
-      <div class="item">
-        <img src="./pictures for carousal/IMG_20181107_152718.jpg" alt="poor children" width="460" height="345">
-
-      </div>
-
-      <div class="item">
-        <img src="./pictures for carousal/womens day iit.jpg" alt="poor children" width="460" height="345">
-
-      </div>
-
-
+                    mysqli_close($conn);
+            ?>  
     
   
     </div>
@@ -127,7 +120,7 @@ include 'Siteheader.php';
 <div class="container" style="margin-top:35px;">
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-lg-8 col-md-8 ">
-      <h1 id="demo111">Pehchaan Ek Safar</h1>
+      <h1 id="demo333">Pehchaan Ek Safar</h1>
       <p>
         India has more than 50% of its population below 25 years of age. It is going to be a global workforce in near future. India’s development lies in cashing this opportunity... ‘now or never’!
       </p>
@@ -277,7 +270,7 @@ src="https://www.youtube.com/embed/Uv3gRESVDVI">
 <br>
 <hr>
 <div class="container" style="margin-top:35px;">
-    <h2 id="demo111">Events and Updates</h2>
+    <h2 id="demo333">Events and Updates</h2>
     <div class="row" style="background-color: ">
 <?php
           require("db.php");

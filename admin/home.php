@@ -5241,6 +5241,2356 @@ mysqli_close($conn);
 <hr>
 
 
+<!---------------------------------START -Home Carousal-------------->
+
+
+        <h3 >HOME CAROUSAL</h3>
+         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalHomeCar">Add</button>
+
+  
+      <div class="modal fade" id="myModalHomeCar" role="dialog">
+        <div class="modal-dialog">
+        
+          
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">ADD</h4>
+            </div>
+            <div class="modal-body">
+            
+
+              <?php
+// define variables and set to empty values
+$nameHomeCarErr =$deptHomeCarErr = $emailHomeCarErr =$imgHomeCarErr = "";
+$nameHomeCar =$deptHomeCar = $emailHomeCar =$imgHomeCar ="";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (isset($_POST['submitHomeCar1'] )) {
+
+
+
+
+
+   if (empty($_POST["imgHomeCar"])) {
+    $imgHomeCarErr = "Image is required";
+$message = "Image is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+  } else {
+    $imgHomeCar = test_input($_POST["imgHomeCar"]);
+  }
+    
+
+
+
+
+  if ($z==0)
+{
+    require("../db.php");
+
+$stmt =$conn->prepare( "INSERT INTO home_carousal (img)
+VALUES (?)");
+
+$stmt->bind_param("s",$ln);
+$ln=$imgHomeCar;
+$stmt->execute();
+
+    $stmt->close();
+
+
+
+mysqli_close($conn);
+
+
+
+$message = "ENTRY INSERTED";
+echo "<script type='text/javascript'>alert('$message');</script>";
+}
+}
+
+}
+
+?>
+
+
+<h4><strong>For leaving an entry empty , press spacebar in the respective field</strong></h4>
+<p><span class="error">* required field</span></p>
+<form name="form1" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >  
+
+
+  Image : <input type="text" name="imgHomeCar" value="<?php echo $imgHomeCar;?>">
+  <span class="error">* <?php echo $imgHomeCarErr;?></span>
+  <br><br>
+  
+  <input type="submit" name="submitHomeCar1" value="Submit" " > 
+  
+</form>
+
+
+
+
+
+<?php           // for case of refreshs
+/*
+      
+    require("../db.php");
+    $sql = "DELETE FROM reports WHERE heading ='' OR links=''";
+
+if (mysqli_query($conn, $sql)) {
+    echo "Record deleted successfully";
+    // print if no data input
+
+} else {
+    echo "Error deleting record: " . mysqli_error($conn);
+} 
+mysqli_close($conn);
+*/
+?>
+    </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+<br><hr>
+
+
+    <!-------------DELETION----------------------------------->
+
+
+       <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalHomeCar2">DELETE</button>
+
+  
+      <div class="modal fade" id="myModalHomeCar2" role="dialog">
+        <div class="modal-dialog">
+        
+          
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">DELETE</h4>
+            </div>
+            <div class="modal-body">
+
+
+              INPUT ID FOR DELETING THE ENTRY
+              <br><hr>
+              <?php
+    require("../db.php");
+
+              $sql="SELECT * FROM home_carousal ";
+                      $result=mysqli_query($conn,$sql);
+                      while ($row = mysqli_fetch_assoc($result)) {
+                      echo "<strong>Id</strong> ".$row["id"]."\t---------\t"."\t<strong>Name</strong>\t".$row["img"]."<br/>";
+}
+
+mysqli_free_result($result);
+
+mysqli_close($conn);
+
+              ?>
+
+
+              <?php
+// define variables and set to empty values
+$nmeHomeCarErr =  "";
+$nmeHomeCar = 0;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (isset($_POST['submitHomeCar2'] )) {
+    
+  if (empty($_POST["nmeHomeCar"])) {
+    $nmeHomeCarErr = "ID is required";
+$message = "ID is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+
+  } else {
+    $nmeHomeCar = test_input($_POST["nmeHomeCar"]);
+    // check if name only contains letters and whitespace
+    if (!is_numeric($nmeHomeCar)) {
+      $nmeHomeCarErr = "Only numbers allowed"; 
+$message = "Only numbers allowed";
+echo "<script type='text/javascript'>alert('$message');</script>";
+
+//toDeleteInvalid();
+    
+$z =1;
+    }
+
+    else
+    {
+    require("../db.php");
+     $sql = "SELECT id FROM home_carousal WHERE id='$nmeHomeCar'";
+$result = mysqli_query($conn,$sql);
+
+if(mysqli_num_rows($result) >0){
+   //found
+}else{
+$message = "ID NOT FOUND!! CHECK AGAIND id";
+echo "<script type='text/javascript'>alert('$message');</script>";
+$z=1;
+}
+
+mysqli_close($conn);
+    }
+
+  }
+
+
+  if ($z==0)
+  {
+
+
+    require("../db.php");
+$delId=$nmeHomeCar;
+$sql = "DELETE FROM home_carousal WHERE id='$delId'";
+if (mysqli_query($conn, $sql)) {
+    echo "Record deleted successfully";
+    // print if no data input
+
+} else {
+    echo "Error deleting record: " . mysqli_error($conn);
+} 
+
+
+
+mysqli_close($conn);
+
+
+$message = "Deleted , please refresh the page to see changes";
+echo "<script type='text/javascript'>alert('$message');</script>";
+  }
+ } 
+}
+
+
+
+
+
+
+
+?>
+
+
+
+<p><span class="error">* required field</span></p>
+<form name="form2" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" onsubmit="required()">  
+  Name: <input type="text" name="nmeHomeCar" value="<?php echo $nmeHomeCar;?>">
+  <span class="error">* <?php echo $nmeHomeCarErr;?></span>
+  <br><br>
+
+
+  <input type="submit" name="submitHomeCar2" value="Submit"  "> 
+</form>
+
+
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+
+
+
+<!----------------------------------------------UPDATION------------------>
+
+       <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalHomeCar3">UPDATE</button>
+
+      <div class="modal fade" id="myModalHomeCar3" role="dialog">
+        <div class="modal-dialog">
+        
+          
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">UPDATE</h4>
+            </div>
+            <div class="modal-body">
+            
+
+             INPUT ID FOR UPDATING THE ENTRY
+              <br><hr>
+              <?php
+    require("../db.php");
+
+              $sql="SELECT * FROM home_carousal ";
+                      $result=mysqli_query($conn,$sql);
+                      while ($row = mysqli_fetch_assoc($result)) {
+                      echo "<strong>Id</strong> ".$row["id"]."\t---------\t"."\t<strong>Name</strong>\t".$row["img"]."<br/>";
+}
+
+mysqli_free_result($result);
+
+mysqli_close($conn);
+
+              ?>
+
+
+
+              <?php
+// define variables and set to empty values
+$nmeHomeCarUpErr = "";
+$nmeHomeCarUp = 0;
+$nameHomeCarUpErr = $deptHomeCarUpErr=$emailHomeCarUpErr=$imgHomeCarUpErr=  "";
+$nameHomeCarUp = $deptHomeCarUp =$emailHomeCarUp =$imgHomeCarUp = "";
+
+
+
+  
+
+
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (isset($_POST['submitHomeCar3'] )) {
+
+
+
+
+    if (empty($_POST["nmeHomeCarUp"])) {
+    $nmeHomeCarUpErr = "Name is required";
+$message = "ID is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+
+  } else {
+    $nmeHomeCarUp = test_input($_POST["nmeHomeCarUp"]);
+    // check if nameHomeCarUp only contains letters and whitespace
+    if (!is_numeric($nmeHomeCarUp)) {
+      $nmeHomeCarUpErr = "Only numbers allowed"; 
+$message = "Only numbers allowed";
+echo "<script type='text/javascript'>alert('$message');</script>";
+
+//toDeleteInvalid();
+    
+$z =1;
+    }
+
+    else
+    {
+    require("../db.php");
+     $sql = "SELECT id FROM home_carousal WHERE id='$nmeHomeCarUp'";
+$result = mysqli_query($conn,$sql);
+
+if(mysqli_num_rows($result) >0){
+   //found
+}else{
+$message = "ID NOT FOUND!! CHECK AGAIND id";
+echo "<script type='text/javascript'>alert('$message');</script>";
+$z=1;
+}
+
+mysqli_close($conn);
+    }
+
+  }
+
+
+
+
+
+     if (empty($_POST["imgHomeCarUp"])) {
+    $imgHomeCarErrUp = "Image is required";
+$message = "Image is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+  } else {
+    $imgHomeCarUp = test_input($_POST["imgHomeCarUp"]);
+  }
+    
+
+
+
+
+
+  if ($z==0)
+{
+    require("../db.php");
+
+$sql = "UPDATE home_carousal SET   img=? WHERE id=?";
+
+$stmt = $conn->prepare($sql);
+
+$stmt->bind_param('ss',  $imgHomeCarUp,$nmeHomeCarUp);
+$stmt->execute();
+
+if ($stmt->error) {
+  echo "FAILURE!!! " . $stmt->error;
+}
+else{
+
+
+$message = "ENTRY UPDATED.... RELOAD THE PAGE TO SEE CHANGES";
+echo "<script type='text/javascript'>alert('$message');</script>";
+}
+
+$stmt->close();
+mysqli_close($conn);
+
+
+}
+}
+
+}
+
+?>
+
+
+<h4><strong>For leaving an entry empty , press spacebar in the respective field</strong></h4>
+<p><span class="error">* required field</span></p>
+<form name="form1" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >  
+
+
+  ID: <input type="text" name="nmeHomeCarUp" value="<?php echo $nmeHomeCarUp;?>">
+  <span class="error">* <?php echo $nmeHomeCarUpErr;?></span>
+  <br><br>
+
+
+ Image: <input type="text" name="imgHomeCarUp" value="<?php echo $imgHomeCarUp;?>">
+  <span class="error">* <?php echo $imgHomeCarUpErr;?></span>
+  <br><br>
+  <br><br>
+
+  
+  <input type="submit" name="submitHomeCar3" value="Submit" " > 
+  
+</form>
+
+
+
+
+
+<?php           // for case of refreshs
+/*
+      
+    require("../db.php");
+    $sql = "DELETE FROM reports WHERE heading ='' OR links=''";
+
+if (mysqli_query($conn, $sql)) {
+    echo "Record deleted successfully";
+    // print if no data input
+
+} else {
+    echo "Error deleting record: " . mysqli_error($conn);
+} 
+mysqli_close($conn);
+*/
+?>
+    </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+<br><hr>
+
+<hr>
+<br>
+<hr>
+
+
+
+
+<!--------------------------END OF Home Carousal-------------->
+
+
+
+
+<!---------------------------------START -Gallery Project-------------->
+
+
+        <h3 >GALLERY- PROJECT</h3>
+         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalGalPro">Add</button>
+
+  
+      <div class="modal fade" id="myModalGalPro" role="dialog">
+        <div class="modal-dialog">
+        
+          
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">ADD</h4>
+            </div>
+            <div class="modal-body">
+            
+
+              <?php
+// define variables and set to empty values
+$nameGalProErr =$deptGalProErr = $emailGalProErr =$imgGalProErr = "";
+$nameGalPro =$deptGalPro = $emailGalPro =$imgGalPro ="";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (isset($_POST['submitGalPro1'] )) {
+
+
+
+
+
+   if (empty($_POST["imgGalPro"])) {
+    $imgGalProErr = "Image is required";
+$message = "Image is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+  } else {
+    $imgGalPro = test_input($_POST["imgGalPro"]);
+  }
+    
+
+
+
+
+  if ($z==0)
+{
+    require("../db.php");
+
+$stmt =$conn->prepare( "INSERT INTO gallery_proj (img)
+VALUES (?)");
+
+$stmt->bind_param("s",$ln);
+$ln=$imgGalPro;
+$stmt->execute();
+
+    $stmt->close();
+
+
+
+mysqli_close($conn);
+
+
+
+$message = "ENTRY INSERTED";
+echo "<script type='text/javascript'>alert('$message');</script>";
+}
+}
+
+}
+
+?>
+
+
+<h4><strong>For leaving an entry empty , press spacebar in the respective field</strong></h4>
+<p><span class="error">* required field</span></p>
+<form name="form1" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >  
+
+
+  Image : <input type="text" name="imgGalPro" value="<?php echo $imgGalPro;?>">
+  <span class="error">* <?php echo $imgGalProErr;?></span>
+  <br><br>
+  
+  <input type="submit" name="submitGalPro1" value="Submit" " > 
+  
+</form>
+
+
+
+
+
+<?php           // for case of refreshs
+/*
+      
+    require("../db.php");
+    $sql = "DELETE FROM reports WHERE heading ='' OR links=''";
+
+if (mysqli_query($conn, $sql)) {
+    echo "Record deleted successfully";
+    // print if no data input
+
+} else {
+    echo "Error deleting record: " . mysqli_error($conn);
+} 
+mysqli_close($conn);
+*/
+?>
+    </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+<br><hr>
+
+
+    <!-------------DELETION----------------------------------->
+
+
+       <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalGalPro2">DELETE</button>
+
+  
+      <div class="modal fade" id="myModalGalPro2" role="dialog">
+        <div class="modal-dialog">
+        
+          
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">DELETE</h4>
+            </div>
+            <div class="modal-body">
+
+
+              INPUT ID FOR DELETING THE ENTRY
+              <br><hr>
+              <?php
+    require("../db.php");
+
+              $sql="SELECT * FROM gallery_proj ";
+                      $result=mysqli_query($conn,$sql);
+                      while ($row = mysqli_fetch_assoc($result)) {
+                      echo "<strong>Id</strong> ".$row["id"]."\t---------\t"."\t<strong>Name</strong>\t".$row["img"]."<br/>";
+}
+
+mysqli_free_result($result);
+
+mysqli_close($conn);
+
+              ?>
+
+
+              <?php
+// define variables and set to empty values
+$nmeGalProErr =  "";
+$nmeGalPro = 0;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (isset($_POST['submitGalPro2'] )) {
+    
+  if (empty($_POST["nmeGalPro"])) {
+    $nmeGalProErr = "ID is required";
+$message = "ID is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+
+  } else {
+    $nmeGalPro = test_input($_POST["nmeGalPro"]);
+    // check if name only contains letters and whitespace
+    if (!is_numeric($nmeGalPro)) {
+      $nmeGalProErr = "Only numbers allowed"; 
+$message = "Only numbers allowed";
+echo "<script type='text/javascript'>alert('$message');</script>";
+
+//toDeleteInvalid();
+    
+$z =1;
+    }
+
+    else
+    {
+    require("../db.php");
+     $sql = "SELECT id FROM gallery_proj WHERE id='$nmeGalPro'";
+$result = mysqli_query($conn,$sql);
+
+if(mysqli_num_rows($result) >0){
+   //found
+}else{
+$message = "ID NOT FOUND!! CHECK AGAIND id";
+echo "<script type='text/javascript'>alert('$message');</script>";
+$z=1;
+}
+
+mysqli_close($conn);
+    }
+
+  }
+
+
+  if ($z==0)
+  {
+
+
+    require("../db.php");
+$delId=$nmeGalPro;
+$sql = "DELETE FROM gallery_proj WHERE id='$delId'";
+if (mysqli_query($conn, $sql)) {
+    echo "Record deleted successfully";
+    // print if no data input
+
+} else {
+    echo "Error deleting record: " . mysqli_error($conn);
+} 
+
+
+
+mysqli_close($conn);
+
+
+$message = "Deleted , please refresh the page to see changes";
+echo "<script type='text/javascript'>alert('$message');</script>";
+  }
+ } 
+}
+
+
+
+
+
+
+
+?>
+
+
+
+<p><span class="error">* required field</span></p>
+<form name="form2" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" onsubmit="required()">  
+  Name: <input type="text" name="nmeGalPro" value="<?php echo $nmeGalPro;?>">
+  <span class="error">* <?php echo $nmeGalProErr;?></span>
+  <br><br>
+
+
+  <input type="submit" name="submitGalPro2" value="Submit"  "> 
+</form>
+
+
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+
+
+
+<!----------------------------------------------UPDATION------------------>
+
+       <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalGalPro3">UPDATE</button>
+
+      <div class="modal fade" id="myModalGalPro3" role="dialog">
+        <div class="modal-dialog">
+        
+          
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">UPDATE</h4>
+            </div>
+            <div class="modal-body">
+            
+
+             INPUT ID FOR UPDATING THE ENTRY
+              <br><hr>
+              <?php
+    require("../db.php");
+
+              $sql="SELECT * FROM gallery_proj ";
+                      $result=mysqli_query($conn,$sql);
+                      while ($row = mysqli_fetch_assoc($result)) {
+                      echo "<strong>Id</strong> ".$row["id"]."\t---------\t"."\t<strong>Name</strong>\t".$row["img"]."<br/>";
+}
+
+mysqli_free_result($result);
+
+mysqli_close($conn);
+
+              ?>
+
+
+
+              <?php
+// define variables and set to empty values
+$nmeGalProUpErr = "";
+$nmeGalProUp = 0;
+$nameGalProUpErr = $deptGalProUpErr=$emailGalProUpErr=$imgGalProUpErr=  "";
+$nameGalProUp = $deptGalProUp =$emailGalProUp =$imgGalProUp = "";
+
+
+
+  
+
+
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (isset($_POST['submitGalPro3'] )) {
+
+
+
+
+    if (empty($_POST["nmeGalProUp"])) {
+    $nmeGalProUpErr = "Name is required";
+$message = "ID is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+
+  } else {
+    $nmeGalProUp = test_input($_POST["nmeGalProUp"]);
+    // check if nameGalProUp only contains letters and whitespace
+    if (!is_numeric($nmeGalProUp)) {
+      $nmeGalProUpErr = "Only numbers allowed"; 
+$message = "Only numbers allowed";
+echo "<script type='text/javascript'>alert('$message');</script>";
+
+//toDeleteInvalid();
+    
+$z =1;
+    }
+
+    else
+    {
+    require("../db.php");
+     $sql = "SELECT id FROM gallery_proj WHERE id='$nmeGalProUp'";
+$result = mysqli_query($conn,$sql);
+
+if(mysqli_num_rows($result) >0){
+   //found
+}else{
+$message = "ID NOT FOUND!! CHECK AGAIND id";
+echo "<script type='text/javascript'>alert('$message');</script>";
+$z=1;
+}
+
+mysqli_close($conn);
+    }
+
+  }
+
+
+
+
+
+     if (empty($_POST["imgGalProUp"])) {
+    $imgGalProErrUp = "Image is required";
+$message = "Image is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+  } else {
+    $imgGalProUp = test_input($_POST["imgGalProUp"]);
+  }
+    
+
+
+
+
+
+  if ($z==0)
+{
+    require("../db.php");
+
+$sql = "UPDATE gallery_proj SET   img=? WHERE id=?";
+
+$stmt = $conn->prepare($sql);
+
+$stmt->bind_param('ss',  $imgGalProUp,$nmeGalProUp);
+$stmt->execute();
+
+if ($stmt->error) {
+  echo "FAILURE!!! " . $stmt->error;
+}
+else{
+
+
+$message = "ENTRY UPDATED.... RELOAD THE PAGE TO SEE CHANGES";
+echo "<script type='text/javascript'>alert('$message');</script>";
+}
+
+$stmt->close();
+mysqli_close($conn);
+
+
+}
+}
+
+}
+
+?>
+
+
+<h4><strong>For leaving an entry empty , press spacebar in the respective field</strong></h4>
+<p><span class="error">* required field</span></p>
+<form name="form1" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >  
+
+
+  ID: <input type="text" name="nmeGalProUp" value="<?php echo $nmeGalProUp;?>">
+  <span class="error">* <?php echo $nmeGalProUpErr;?></span>
+  <br><br>
+
+
+ Image: <input type="text" name="imgGalProUp" value="<?php echo $imgGalProUp;?>">
+  <span class="error">* <?php echo $imgGalProUpErr;?></span>
+  <br><br>
+  <br><br>
+
+  
+  <input type="submit" name="submitGalPro3" value="Submit" " > 
+  
+</form>
+
+
+
+
+
+<?php           // for case of refreshs
+/*
+      
+    require("../db.php");
+    $sql = "DELETE FROM reports WHERE heading ='' OR links=''";
+
+if (mysqli_query($conn, $sql)) {
+    echo "Record deleted successfully";
+    // print if no data input
+
+} else {
+    echo "Error deleting record: " . mysqli_error($conn);
+} 
+mysqli_close($conn);
+*/
+?>
+    </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+<br><hr>
+
+<hr>
+<br>
+<hr>
+
+
+
+
+<!--------------------------END OF Gallery Proj-------------->
+
+
+
+
+<!---------------------------------START -Gallery Team and Volunteer-------------->
+
+
+        <h3 >GALLERY- PROJECT</h3>
+         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalGalTeamVol">Add</button>
+
+  
+      <div class="modal fade" id="myModalGalTeamVol" role="dialog">
+        <div class="modal-dialog">
+        
+          
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">ADD</h4>
+            </div>
+            <div class="modal-body">
+            
+
+              <?php
+// define variables and set to empty values
+$nameGalTeamVolErr =$deptGalTeamVolErr = $emailGalTeamVolErr =$imgGalTeamVolErr = "";
+$nameGalTeamVol =$deptGalTeamVol = $emailGalTeamVol =$imgGalTeamVol ="";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (isset($_POST['submitGalTeamVol1'] )) {
+
+
+
+
+
+   if (empty($_POST["imgGalTeamVol"])) {
+    $imgGalTeamVolErr = "Image is required";
+$message = "Image is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+  } else {
+    $imgGalTeamVol = test_input($_POST["imgGalTeamVol"]);
+  }
+    
+
+
+
+
+  if ($z==0)
+{
+    require("../db.php");
+
+$stmt =$conn->prepare( "INSERT INTO gallery_team_vol (img)
+VALUES (?)");
+
+$stmt->bind_param("s",$ln);
+$ln=$imgGalTeamVol;
+$stmt->execute();
+
+    $stmt->close();
+
+
+
+mysqli_close($conn);
+
+
+
+$message = "ENTRY INSERTED";
+echo "<script type='text/javascript'>alert('$message');</script>";
+}
+}
+
+}
+
+?>
+
+
+<h4><strong>For leaving an entry empty , press spacebar in the respective field</strong></h4>
+<p><span class="error">* required field</span></p>
+<form name="form1" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >  
+
+
+  Image : <input type="text" name="imgGalTeamVol" value="<?php echo $imgGalTeamVol;?>">
+  <span class="error">* <?php echo $imgGalTeamVolErr;?></span>
+  <br><br>
+  
+  <input type="submit" name="submitGalTeamVol1" value="Submit" " > 
+  
+</form>
+
+
+
+
+
+<?php           // for case of refreshs
+/*
+      
+    require("../db.php");
+    $sql = "DELETE FROM reports WHERE heading ='' OR links=''";
+
+if (mysqli_query($conn, $sql)) {
+    echo "Record deleted successfully";
+    // print if no data input
+
+} else {
+    echo "Error deleting record: " . mysqli_error($conn);
+} 
+mysqli_close($conn);
+*/
+?>
+    </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+<br><hr>
+
+
+    <!-------------DELETION----------------------------------->
+
+
+       <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalGalTeamVol2">DELETE</button>
+
+  
+      <div class="modal fade" id="myModalGalTeamVol2" role="dialog">
+        <div class="modal-dialog">
+        
+          
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">DELETE</h4>
+            </div>
+            <div class="modal-body">
+
+
+              INPUT ID FOR DELETING THE ENTRY
+              <br><hr>
+              <?php
+    require("../db.php");
+
+              $sql="SELECT * FROM gallery_team_vol ";
+                      $result=mysqli_query($conn,$sql);
+                      while ($row = mysqli_fetch_assoc($result)) {
+                      echo "<strong>Id</strong> ".$row["id"]."\t---------\t"."\t<strong>Name</strong>\t".$row["img"]."<br/>";
+}
+
+mysqli_free_result($result);
+
+mysqli_close($conn);
+
+              ?>
+
+
+              <?php
+// define variables and set to empty values
+$nmeGalTeamVolErr =  "";
+$nmeGalTeamVol = 0;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (isset($_POST['submitGalTeamVol2'] )) {
+    
+  if (empty($_POST["nmeGalTeamVol"])) {
+    $nmeGalTeamVolErr = "ID is required";
+$message = "ID is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+
+  } else {
+    $nmeGalTeamVol = test_input($_POST["nmeGalTeamVol"]);
+    // check if name only contains letters and whitespace
+    if (!is_numeric($nmeGalTeamVol)) {
+      $nmeGalTeamVolErr = "Only numbers allowed"; 
+$message = "Only numbers allowed";
+echo "<script type='text/javascript'>alert('$message');</script>";
+
+//toDeleteInvalid();
+    
+$z =1;
+    }
+
+    else
+    {
+    require("../db.php");
+     $sql = "SELECT id FROM gallery_team_vol WHERE id='$nmeGalTeamVol'";
+$result = mysqli_query($conn,$sql);
+
+if(mysqli_num_rows($result) >0){
+   //found
+}else{
+$message = "ID NOT FOUND!! CHECK AGAIND id";
+echo "<script type='text/javascript'>alert('$message');</script>";
+$z=1;
+}
+
+mysqli_close($conn);
+    }
+
+  }
+
+
+  if ($z==0)
+  {
+
+
+    require("../db.php");
+$delId=$nmeGalTeamVol;
+$sql = "DELETE FROM gallery_team_vol WHERE id='$delId'";
+if (mysqli_query($conn, $sql)) {
+    echo "Record deleted successfully";
+    // print if no data input
+
+} else {
+    echo "Error deleting record: " . mysqli_error($conn);
+} 
+
+
+
+mysqli_close($conn);
+
+
+$message = "Deleted , please refresh the page to see changes";
+echo "<script type='text/javascript'>alert('$message');</script>";
+  }
+ } 
+}
+
+
+
+
+
+
+
+?>
+
+
+
+<p><span class="error">* required field</span></p>
+<form name="form2" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" onsubmit="required()">  
+  Name: <input type="text" name="nmeGalTeamVol" value="<?php echo $nmeGalTeamVol;?>">
+  <span class="error">* <?php echo $nmeGalTeamVolErr;?></span>
+  <br><br>
+
+
+  <input type="submit" name="submitGalTeamVol2" value="Submit"  "> 
+</form>
+
+
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+
+
+
+<!----------------------------------------------UPDATION------------------>
+
+       <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalGalTeamVol3">UPDATE</button>
+
+      <div class="modal fade" id="myModalGalTeamVol3" role="dialog">
+        <div class="modal-dialog">
+        
+          
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">UPDATE</h4>
+            </div>
+            <div class="modal-body">
+            
+
+             INPUT ID FOR UPDATING THE ENTRY
+              <br><hr>
+              <?php
+    require("../db.php");
+
+              $sql="SELECT * FROM gallery_team_vol ";
+                      $result=mysqli_query($conn,$sql);
+                      while ($row = mysqli_fetch_assoc($result)) {
+                      echo "<strong>Id</strong> ".$row["id"]."\t---------\t"."\t<strong>Name</strong>\t".$row["img"]."<br/>";
+}
+
+mysqli_free_result($result);
+
+mysqli_close($conn);
+
+              ?>
+
+
+
+              <?php
+// define variables and set to empty values
+$nmeGalTeamVolUpErr = "";
+$nmeGalTeamVolUp = 0;
+$nameGalTeamVolUpErr = $deptGalTeamVolUpErr=$emailGalTeamVolUpErr=$imgGalTeamVolUpErr=  "";
+$nameGalTeamVolUp = $deptGalTeamVolUp =$emailGalTeamVolUp =$imgGalTeamVolUp = "";
+
+
+
+  
+
+
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (isset($_POST['submitGalTeamVol3'] )) {
+
+
+
+
+    if (empty($_POST["nmeGalTeamVolUp"])) {
+    $nmeGalTeamVolUpErr = "Name is required";
+$message = "ID is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+
+  } else {
+    $nmeGalTeamVolUp = test_input($_POST["nmeGalTeamVolUp"]);
+    // check if nameGalTeamVolUp only contains letters and whitespace
+    if (!is_numeric($nmeGalTeamVolUp)) {
+      $nmeGalTeamVolUpErr = "Only numbers allowed"; 
+$message = "Only numbers allowed";
+echo "<script type='text/javascript'>alert('$message');</script>";
+
+//toDeleteInvalid();
+    
+$z =1;
+    }
+
+    else
+    {
+    require("../db.php");
+     $sql = "SELECT id FROM gallery_team_vol WHERE id='$nmeGalTeamVolUp'";
+$result = mysqli_query($conn,$sql);
+
+if(mysqli_num_rows($result) >0){
+   //found
+}else{
+$message = "ID NOT FOUND!! CHECK AGAIND id";
+echo "<script type='text/javascript'>alert('$message');</script>";
+$z=1;
+}
+
+mysqli_close($conn);
+    }
+
+  }
+
+
+
+
+
+     if (empty($_POST["imgGalTeamVolUp"])) {
+    $imgGalTeamVolErrUp = "Image is required";
+$message = "Image is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+  } else {
+    $imgGalTeamVolUp = test_input($_POST["imgGalTeamVolUp"]);
+  }
+    
+
+
+
+
+
+  if ($z==0)
+{
+    require("../db.php");
+
+$sql = "UPDATE gallery_team_vol SET   img=? WHERE id=?";
+
+$stmt = $conn->prepare($sql);
+
+$stmt->bind_param('ss',  $imgGalTeamVolUp,$nmeGalTeamVolUp);
+$stmt->execute();
+
+if ($stmt->error) {
+  echo "FAILURE!!! " . $stmt->error;
+}
+else{
+
+
+$message = "ENTRY UPDATED.... RELOAD THE PAGE TO SEE CHANGES";
+echo "<script type='text/javascript'>alert('$message');</script>";
+}
+
+$stmt->close();
+mysqli_close($conn);
+
+
+}
+}
+
+}
+
+?>
+
+
+<h4><strong>For leaving an entry empty , press spacebar in the respective field</strong></h4>
+<p><span class="error">* required field</span></p>
+<form name="form1" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >  
+
+
+  ID: <input type="text" name="nmeGalTeamVolUp" value="<?php echo $nmeGalTeamVolUp;?>">
+  <span class="error">* <?php echo $nmeGalTeamVolUpErr;?></span>
+  <br><br>
+
+
+ Image: <input type="text" name="imgGalTeamVolUp" value="<?php echo $imgGalTeamVolUp;?>">
+  <span class="error">* <?php echo $imgGalTeamVolUpErr;?></span>
+  <br><br>
+  <br><br>
+
+  
+  <input type="submit" name="submitGalTeamVol3" value="Submit" " > 
+  
+</form>
+
+
+
+
+
+<?php           // for case of refreshs
+/*
+      
+    require("../db.php");
+    $sql = "DELETE FROM reports WHERE heading ='' OR links=''";
+
+if (mysqli_query($conn, $sql)) {
+    echo "Record deleted successfully";
+    // print if no data input
+
+} else {
+    echo "Error deleting record: " . mysqli_error($conn);
+} 
+mysqli_close($conn);
+*/
+?>
+    </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+<br><hr>
+
+<hr>
+<br>
+<hr>
+
+
+
+
+<!--------------------------END OF Gallery team and Volunteer-------------->
+
+
+
+
+
+
+<!---------------------------------START -Gallery Outreach-------------->
+
+
+        <h3 >GALLERY- OUTREACH</h3>
+         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalGalOut">Add</button>
+
+  
+      <div class="modal fade" id="myModalGalOut" role="dialog">
+        <div class="modal-dialog">
+        
+          
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">ADD</h4>
+            </div>
+            <div class="modal-body">
+            
+
+              <?php
+// define variables and set to empty values
+$nameGalOutErr =$deptGalOutErr = $emailGalOutErr =$imgGalOutErr = "";
+$nameGalOut =$deptGalOut = $emailGalOut =$imgGalOut ="";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (isset($_POST['submitGalOut1'] )) {
+
+
+
+
+
+   if (empty($_POST["imgGalOut"])) {
+    $imgGalOutErr = "Image is required";
+$message = "Image is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+  } else {
+    $imgGalOut = test_input($_POST["imgGalOut"]);
+  }
+    
+
+
+
+
+  if ($z==0)
+{
+    require("../db.php");
+
+$stmt =$conn->prepare( "INSERT INTO gallery_outreach (img)
+VALUES (?)");
+
+$stmt->bind_param("s",$ln);
+$ln=$imgGalOut;
+$stmt->execute();
+
+    $stmt->close();
+
+
+
+mysqli_close($conn);
+
+
+
+$message = "ENTRY INSERTED";
+echo "<script type='text/javascript'>alert('$message');</script>";
+}
+}
+
+}
+
+?>
+
+
+<h4><strong>For leaving an entry empty , press spacebar in the respective field</strong></h4>
+<p><span class="error">* required field</span></p>
+<form name="form1" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >  
+
+
+  Image : <input type="text" name="imgGalOut" value="<?php echo $imgGalOut;?>">
+  <span class="error">* <?php echo $imgGalOutErr;?></span>
+  <br><br>
+  
+  <input type="submit" name="submitGalOut1" value="Submit" " > 
+  
+</form>
+
+
+
+
+
+<?php           // for case of refreshs
+/*
+      
+    require("../db.php");
+    $sql = "DELETE FROM reports WHERE heading ='' OR links=''";
+
+if (mysqli_query($conn, $sql)) {
+    echo "Record deleted successfully";
+    // print if no data input
+
+} else {
+    echo "Error deleting record: " . mysqli_error($conn);
+} 
+mysqli_close($conn);
+*/
+?>
+    </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+<br><hr>
+
+
+    <!-------------DELETION----------------------------------->
+
+
+       <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalGalOut2">DELETE</button>
+
+  
+      <div class="modal fade" id="myModalGalOut2" role="dialog">
+        <div class="modal-dialog">
+        
+          
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">DELETE</h4>
+            </div>
+            <div class="modal-body">
+
+
+              INPUT ID FOR DELETING THE ENTRY
+              <br><hr>
+              <?php
+    require("../db.php");
+
+              $sql="SELECT * FROM gallery_outreach ";
+                      $result=mysqli_query($conn,$sql);
+                      while ($row = mysqli_fetch_assoc($result)) {
+                      echo "<strong>Id</strong> ".$row["id"]."\t---------\t"."\t<strong>Name</strong>\t".$row["img"]."<br/>";
+}
+
+mysqli_free_result($result);
+
+mysqli_close($conn);
+
+              ?>
+
+
+              <?php
+// define variables and set to empty values
+$nmeGalOutErr =  "";
+$nmeGalOut = 0;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (isset($_POST['submitGalOut2'] )) {
+    
+  if (empty($_POST["nmeGalOut"])) {
+    $nmeGalOutErr = "ID is required";
+$message = "ID is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+
+  } else {
+    $nmeGalOut = test_input($_POST["nmeGalOut"]);
+    // check if name only contains letters and whitespace
+    if (!is_numeric($nmeGalOut)) {
+      $nmeGalOutErr = "Only numbers allowed"; 
+$message = "Only numbers allowed";
+echo "<script type='text/javascript'>alert('$message');</script>";
+
+//toDeleteInvalid();
+    
+$z =1;
+    }
+
+    else
+    {
+    require("../db.php");
+     $sql = "SELECT id FROM gallery_outreach WHERE id='$nmeGalOut'";
+$result = mysqli_query($conn,$sql);
+
+if(mysqli_num_rows($result) >0){
+   //found
+}else{
+$message = "ID NOT FOUND!! CHECK AGAIND id";
+echo "<script type='text/javascript'>alert('$message');</script>";
+$z=1;
+}
+
+mysqli_close($conn);
+    }
+
+  }
+
+
+  if ($z==0)
+  {
+
+
+    require("../db.php");
+$delId=$nmeGalOut;
+$sql = "DELETE FROM gallery_outreach WHERE id='$delId'";
+if (mysqli_query($conn, $sql)) {
+    echo "Record deleted successfully";
+    // print if no data input
+
+} else {
+    echo "Error deleting record: " . mysqli_error($conn);
+} 
+
+
+
+mysqli_close($conn);
+
+
+$message = "Deleted , please refresh the page to see changes";
+echo "<script type='text/javascript'>alert('$message');</script>";
+  }
+ } 
+}
+
+
+
+
+
+
+
+?>
+
+
+
+<p><span class="error">* required field</span></p>
+<form name="form2" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" onsubmit="required()">  
+  Name: <input type="text" name="nmeGalOut" value="<?php echo $nmeGalOut;?>">
+  <span class="error">* <?php echo $nmeGalOutErr;?></span>
+  <br><br>
+
+
+  <input type="submit" name="submitGalOut2" value="Submit"  "> 
+</form>
+
+
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+
+
+
+<!----------------------------------------------UPDATION------------------>
+
+       <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalGalOut3">UPDATE</button>
+
+      <div class="modal fade" id="myModalGalOut3" role="dialog">
+        <div class="modal-dialog">
+        
+          
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">UPDATE</h4>
+            </div>
+            <div class="modal-body">
+            
+
+             INPUT ID FOR UPDATING THE ENTRY
+              <br><hr>
+              <?php
+    require("../db.php");
+
+              $sql="SELECT * FROM gallery_outreach ";
+                      $result=mysqli_query($conn,$sql);
+                      while ($row = mysqli_fetch_assoc($result)) {
+                      echo "<strong>Id</strong> ".$row["id"]."\t---------\t"."\t<strong>Name</strong>\t".$row["img"]."<br/>";
+}
+
+mysqli_free_result($result);
+
+mysqli_close($conn);
+
+              ?>
+
+
+
+              <?php
+// define variables and set to empty values
+$nmeGalOutUpErr = "";
+$nmeGalOutUp = 0;
+$nameGalOutUpErr = $deptGalOutUpErr=$emailGalOutUpErr=$imgGalOutUpErr=  "";
+$nameGalOutUp = $deptGalOutUp =$emailGalOutUp =$imgGalOutUp = "";
+
+
+
+  
+
+
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (isset($_POST['submitGalOut3'] )) {
+
+
+
+
+    if (empty($_POST["nmeGalOutUp"])) {
+    $nmeGalOutUpErr = "Name is required";
+$message = "ID is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+
+  } else {
+    $nmeGalOutUp = test_input($_POST["nmeGalOutUp"]);
+    // check if nameGalOutUp only contains letters and whitespace
+    if (!is_numeric($nmeGalOutUp)) {
+      $nmeGalOutUpErr = "Only numbers allowed"; 
+$message = "Only numbers allowed";
+echo "<script type='text/javascript'>alert('$message');</script>";
+
+//toDeleteInvalid();
+    
+$z =1;
+    }
+
+    else
+    {
+    require("../db.php");
+     $sql = "SELECT id FROM gallery_outreach WHERE id='$nmeGalOutUp'";
+$result = mysqli_query($conn,$sql);
+
+if(mysqli_num_rows($result) >0){
+   //found
+}else{
+$message = "ID NOT FOUND!! CHECK AGAIND id";
+echo "<script type='text/javascript'>alert('$message');</script>";
+$z=1;
+}
+
+mysqli_close($conn);
+    }
+
+  }
+
+
+
+
+
+     if (empty($_POST["imgGalOutUp"])) {
+    $imgGalOutErrUp = "Image is required";
+$message = "Image is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+  } else {
+    $imgGalOutUp = test_input($_POST["imgGalOutUp"]);
+  }
+    
+
+
+
+
+
+  if ($z==0)
+{
+    require("../db.php");
+
+$sql = "UPDATE gallery_outreach SET   img=? WHERE id=?";
+
+$stmt = $conn->prepare($sql);
+
+$stmt->bind_param('ss',  $imgGalOutUp,$nmeGalOutUp);
+$stmt->execute();
+
+if ($stmt->error) {
+  echo "FAILURE!!! " . $stmt->error;
+}
+else{
+
+
+$message = "ENTRY UPDATED.... RELOAD THE PAGE TO SEE CHANGES";
+echo "<script type='text/javascript'>alert('$message');</script>";
+}
+
+$stmt->close();
+mysqli_close($conn);
+
+
+}
+}
+
+}
+
+?>
+
+
+<h4><strong>For leaving an entry empty , press spacebar in the respective field</strong></h4>
+<p><span class="error">* required field</span></p>
+<form name="form1" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >  
+
+
+  ID: <input type="text" name="nmeGalOutUp" value="<?php echo $nmeGalOutUp;?>">
+  <span class="error">* <?php echo $nmeGalOutUpErr;?></span>
+  <br><br>
+
+
+ Image: <input type="text" name="imgGalOutUp" value="<?php echo $imgGalOutUp;?>">
+  <span class="error">* <?php echo $imgGalOutUpErr;?></span>
+  <br><br>
+  <br><br>
+
+  
+  <input type="submit" name="submitGalOut3" value="Submit" " > 
+  
+</form>
+
+
+
+
+
+<?php           // for case of refreshs
+/*
+      
+    require("../db.php");
+    $sql = "DELETE FROM reports WHERE heading ='' OR links=''";
+
+if (mysqli_query($conn, $sql)) {
+    echo "Record deleted successfully";
+    // print if no data input
+
+} else {
+    echo "Error deleting record: " . mysqli_error($conn);
+} 
+mysqli_close($conn);
+*/
+?>
+    </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+<br><hr>
+
+<hr>
+<br>
+<hr>
+
+
+
+
+<!--------------------------END OF Gallery Outreach-------------->
+
+
+
+
+
+<!---------------------------------START -Gallery Other Activities-------------->
+
+
+        <h3 >GALLERY- OTHER ACTIVITIES</h3>
+         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalGalOthAct">Add</button>
+
+  
+      <div class="modal fade" id="myModalGalOthAct" role="dialog">
+        <div class="modal-dialog">
+        
+          
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">ADD</h4>
+            </div>
+            <div class="modal-body">
+            
+
+              <?php
+// define variables and set to empty values
+$nameGalOthActErr =$deptGalOthActErr = $emailGalOthActErr =$imgGalOthActErr = "";
+$nameGalOthAct =$deptGalOthAct = $emailGalOthAct =$imgGalOthAct ="";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (isset($_POST['submitGalOthAct1'] )) {
+
+
+
+
+
+   if (empty($_POST["imgGalOthAct"])) {
+    $imgGalOthActErr = "Image is required";
+$message = "Image is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+  } else {
+    $imgGalOthAct = test_input($_POST["imgGalOthAct"]);
+  }
+    
+
+
+
+
+  if ($z==0)
+{
+    require("../db.php");
+
+$stmt =$conn->prepare( "INSERT INTO gallery_oth_act (img)
+VALUES (?)");
+
+$stmt->bind_param("s",$ln);
+$ln=$imgGalOthAct;
+$stmt->execute();
+
+    $stmt->close();
+
+
+
+mysqli_close($conn);
+
+
+
+$message = "ENTRY INSERTED";
+echo "<script type='text/javascript'>alert('$message');</script>";
+}
+}
+
+}
+
+?>
+
+
+<h4><strong>For leaving an entry empty , press spacebar in the respective field</strong></h4>
+<p><span class="error">* required field</span></p>
+<form name="form1" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >  
+
+
+  Image : <input type="text" name="imgGalOthAct" value="<?php echo $imgGalOthAct;?>">
+  <span class="error">* <?php echo $imgGalOthActErr;?></span>
+  <br><br>
+  
+  <input type="submit" name="submitGalOthAct1" value="Submit" " > 
+  
+</form>
+
+
+
+
+
+<?php           // for case of refreshs
+/*
+      
+    require("../db.php");
+    $sql = "DELETE FROM reports WHERE heading ='' OR links=''";
+
+if (mysqli_query($conn, $sql)) {
+    echo "Record deleted successfully";
+    // print if no data input
+
+} else {
+    echo "Error deleting record: " . mysqli_error($conn);
+} 
+mysqli_close($conn);
+*/
+?>
+    </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+<br><hr>
+
+
+    <!-------------DELETION----------------------------------->
+
+
+       <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalGalOthAct2">DELETE</button>
+
+  
+      <div class="modal fade" id="myModalGalOthAct2" role="dialog">
+        <div class="modal-dialog">
+        
+          
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">DELETE</h4>
+            </div>
+            <div class="modal-body">
+
+
+              INPUT ID FOR DELETING THE ENTRY
+              <br><hr>
+              <?php
+    require("../db.php");
+
+              $sql="SELECT * FROM gallery_oth_act ";
+                      $result=mysqli_query($conn,$sql);
+                      while ($row = mysqli_fetch_assoc($result)) {
+                      echo "<strong>Id</strong> ".$row["id"]."\t---------\t"."\t<strong>Name</strong>\t".$row["img"]."<br/>";
+}
+
+mysqli_free_result($result);
+
+mysqli_close($conn);
+
+              ?>
+
+
+              <?php
+// define variables and set to empty values
+$nmeGalOthActErr =  "";
+$nmeGalOthAct = 0;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (isset($_POST['submitGalOthAct2'] )) {
+    
+  if (empty($_POST["nmeGalOthAct"])) {
+    $nmeGalOthActErr = "ID is required";
+$message = "ID is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+
+  } else {
+    $nmeGalOthAct = test_input($_POST["nmeGalOthAct"]);
+    // check if name only contains letters and whitespace
+    if (!is_numeric($nmeGalOthAct)) {
+      $nmeGalOthActErr = "Only numbers allowed"; 
+$message = "Only numbers allowed";
+echo "<script type='text/javascript'>alert('$message');</script>";
+
+//toDeleteInvalid();
+    
+$z =1;
+    }
+
+    else
+    {
+    require("../db.php");
+     $sql = "SELECT id FROM gallery_oth_act WHERE id='$nmeGalOthAct'";
+$result = mysqli_query($conn,$sql);
+
+if(mysqli_num_rows($result) >0){
+   //found
+}else{
+$message = "ID NOT FOUND!! CHECK AGAIND id";
+echo "<script type='text/javascript'>alert('$message');</script>";
+$z=1;
+}
+
+mysqli_close($conn);
+    }
+
+  }
+
+
+  if ($z==0)
+  {
+
+
+    require("../db.php");
+$delId=$nmeGalOthAct;
+$sql = "DELETE FROM gallery_oth_act WHERE id='$delId'";
+if (mysqli_query($conn, $sql)) {
+    echo "Record deleted successfully";
+    // print if no data input
+
+} else {
+    echo "Error deleting record: " . mysqli_error($conn);
+} 
+
+
+
+mysqli_close($conn);
+
+
+$message = "Deleted , please refresh the page to see changes";
+echo "<script type='text/javascript'>alert('$message');</script>";
+  }
+ } 
+}
+
+
+
+
+
+
+
+?>
+
+
+
+<p><span class="error">* required field</span></p>
+<form name="form2" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" onsubmit="required()">  
+  Name: <input type="text" name="nmeGalOthAct" value="<?php echo $nmeGalOthAct;?>">
+  <span class="error">* <?php echo $nmeGalOthActErr;?></span>
+  <br><br>
+
+
+  <input type="submit" name="submitGalOthAct2" value="Submit"  "> 
+</form>
+
+
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+
+
+
+<!----------------------------------------------UPDATION------------------>
+
+       <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalGalOthAct3">UPDATE</button>
+
+      <div class="modal fade" id="myModalGalOthAct3" role="dialog">
+        <div class="modal-dialog">
+        
+          
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">UPDATE</h4>
+            </div>
+            <div class="modal-body">
+            
+
+             INPUT ID FOR UPDATING THE ENTRY
+              <br><hr>
+              <?php
+    require("../db.php");
+
+              $sql="SELECT * FROM gallery_oth_act ";
+                      $result=mysqli_query($conn,$sql);
+                      while ($row = mysqli_fetch_assoc($result)) {
+                      echo "<strong>Id</strong> ".$row["id"]."\t---------\t"."\t<strong>Name</strong>\t".$row["img"]."<br/>";
+}
+
+mysqli_free_result($result);
+
+mysqli_close($conn);
+
+              ?>
+
+
+
+              <?php
+// define variables and set to empty values
+$nmeGalOthActUpErr = "";
+$nmeGalOthActUp = 0;
+$nameGalOthActUpErr = $deptGalOthActUpErr=$emailGalOthActUpErr=$imgGalOthActUpErr=  "";
+$nameGalOthActUp = $deptGalOthActUp =$emailGalOthActUp =$imgGalOthActUp = "";
+
+
+
+  
+
+
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (isset($_POST['submitGalOthAct3'] )) {
+
+
+
+
+    if (empty($_POST["nmeGalOthActUp"])) {
+    $nmeGalOthActUpErr = "Name is required";
+$message = "ID is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+
+  } else {
+    $nmeGalOthActUp = test_input($_POST["nmeGalOthActUp"]);
+    // check if nameGalOthActUp only contains letters and whitespace
+    if (!is_numeric($nmeGalOthActUp)) {
+      $nmeGalOthActUpErr = "Only numbers allowed"; 
+$message = "Only numbers allowed";
+echo "<script type='text/javascript'>alert('$message');</script>";
+
+//toDeleteInvalid();
+    
+$z =1;
+    }
+
+    else
+    {
+    require("../db.php");
+     $sql = "SELECT id FROM gallery_oth_act WHERE id='$nmeGalOthActUp'";
+$result = mysqli_query($conn,$sql);
+
+if(mysqli_num_rows($result) >0){
+   //found
+}else{
+$message = "ID NOT FOUND!! CHECK AGAIND id";
+echo "<script type='text/javascript'>alert('$message');</script>";
+$z=1;
+}
+
+mysqli_close($conn);
+    }
+
+  }
+
+
+
+
+
+     if (empty($_POST["imgGalOthActUp"])) {
+    $imgGalOthActErrUp = "Image is required";
+$message = "Image is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+  } else {
+    $imgGalOthActUp = test_input($_POST["imgGalOthActUp"]);
+  }
+    
+
+
+
+
+
+  if ($z==0)
+{
+    require("../db.php");
+
+$sql = "UPDATE gallery_oth_act SET   img=? WHERE id=?";
+
+$stmt = $conn->prepare($sql);
+
+$stmt->bind_param('ss',  $imgGalOthActUp,$nmeGalOthActUp);
+$stmt->execute();
+
+if ($stmt->error) {
+  echo "FAILURE!!! " . $stmt->error;
+}
+else{
+
+
+$message = "ENTRY UPDATED.... RELOAD THE PAGE TO SEE CHANGES";
+echo "<script type='text/javascript'>alert('$message');</script>";
+}
+
+$stmt->close();
+mysqli_close($conn);
+
+
+}
+}
+
+}
+
+?>
+
+
+<h4><strong>For leaving an entry empty , press spacebar in the respective field</strong></h4>
+<p><span class="error">* required field</span></p>
+<form name="form1" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >  
+
+
+  ID: <input type="text" name="nmeGalOthActUp" value="<?php echo $nmeGalOthActUp;?>">
+  <span class="error">* <?php echo $nmeGalOthActUpErr;?></span>
+  <br><br>
+
+
+ Image: <input type="text" name="imgGalOthActUp" value="<?php echo $imgGalOthActUp;?>">
+  <span class="error">* <?php echo $imgGalOthActUpErr;?></span>
+  <br><br>
+  <br><br>
+
+  
+  <input type="submit" name="submitGalOthAct3" value="Submit" " > 
+  
+</form>
+
+
+
+
+
+<?php           // for case of refreshs
+/*
+      
+    require("../db.php");
+    $sql = "DELETE FROM reports WHERE heading ='' OR links=''";
+
+if (mysqli_query($conn, $sql)) {
+    echo "Record deleted successfully";
+    // print if no data input
+
+} else {
+    echo "Error deleting record: " . mysqli_error($conn);
+} 
+mysqli_close($conn);
+*/
+?>
+    </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+<br><hr>
+
+<hr>
+<br>
+<hr>
+
+
+
+
+<!--------------------------END OF Gallery Other Activities-------------->
+
 
 
 

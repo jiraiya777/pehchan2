@@ -71,7 +71,7 @@
     <div class="drpdown-content">
       <a href="/VisionMission.php">Mission and Vision</a>
       <a href="/PeopleBehindPehchaan.php">People Behind Pehchaan Ek Safar </a>      
-      <a href="#">Working Model </a>
+      <a href="../WorkingModel.php">Working Model </a>
       <a href="#">Partners and Affiliates</a>
 
     </div>
@@ -93,7 +93,7 @@
       <li class="fa fa-caret-down"></li>
     </button>
     <div class="drpdown-content">
-      <a href="#">IIT Visits</a>
+      <a href="./Campaign_IITVisit.php">IIT Visits</a>
       <a href="./Campaign_JhuggiPathsala.php">JHUGGI Paathshala</a>
       <a href="./Camp_KeepAwayFromRoaD.php">Keep away from roads</a>
       <a href="./Camp_Samajhiye.php"">Samajhiye</a>
@@ -106,9 +106,9 @@
       <li class="fa fa-caret-down"></li>
     </button>
     <div class="drpdown-content">
-      <a href="Volunteer.php">Volunteer With Us</a>
+      <a href="../Volunteer.php">Volunteer With Us</a>
       <a href="/Donate.php">Donate</a>
-      <a href="FAQ.php">FAQ</a>
+      <a href="../FAQ.php">FAQ</a>
     </div>
   </div> 
 
