@@ -54,8 +54,8 @@
 <!--Navbar starts here -->
 <div class="container-fluid">
 <div class="topnav" id="myTopnav">
-  <img src="/Pehchan Logo1.jpg" width="80" height="80" >
-  <img src="/iitrprLogo.jpg" width="80" height="80" align="right" >
+ <img src="/Pehchan Logo1.jpg" width="80" height="80" >
+<img src="/iitrprLogo.jpg" width="80" height="80" align="right" >
   <div class="tp">
   <div class="drpdown">
     <input class="drpbtn" type="button" onclick="location.href='/index.php'" value="Home" />
@@ -66,7 +66,7 @@
       <li class="fa fa-caret-down"></li>
     </button>
     <div class="drpdown-content">
-      <a href="#">Mission/Vision</a>
+      <a href="/VisionMission.php">Mission and Vision</a>
       <a href="/PeopleBehindPehchaan.php">People Behind Pehchaan Ek Safar </a>      
       <a href="#">Working Model </a>
       <a href="#">Partners and Affiliates</a>
@@ -78,10 +78,10 @@
       <li class="fa fa-caret-down"></li>
     </button>
     <div class="drpdown-content">
-      <a href="#">Abhyas</a>
-      <a href="#">Paathshala</a>
-      <a href="#">School Chale Hum</a>
-      <a href="#">School Outreach</a>
+      <a href="/Project_Abhyas.php">Abhyas</a>
+      <a href="/Project_Pathsala.php">Paathshala</a>
+      <a href="/Project_SchoolChaleHum.php">School Chale Hum</a>
+      <a href="/Project_SchoolOutreach.php">School Outreach</a>
     </div>
   </div> 
 
@@ -91,9 +91,9 @@
     </button>
     <div class="drpdown-content">
       <a href="#">IIT Visits</a>
-      <a href="#">JHUGGI Paathshala</a>
-      <a href="#">Keep away from roads</a>
-      <a href="#">Samajhiye</a>
+      <a href="./Campaign_JhuggiPathsala.php">JHUGGI Paathshala</a>
+      <a href="./Camp_KeepAwayFromRoaD.php">Keep away from roads</a>
+      <a href="./Camp_Samajhiye.php"">Samajhiye</a>
     </div>
   </div>
 
@@ -104,7 +104,7 @@
     </button>
     <div class="drpdown-content">
       <a href="Volunteer.php">Volunteer With Us</a>
-      <a href="#">Donate</a>
+      <a href="/Donate.php">Donate</a>
       <a href="FAQ.php">FAQ</a>
     </div>
   </div> 
@@ -125,7 +125,7 @@
   </div>
 
 <div class="drpdown">
-    <input class="drpbtn" type="button" onclick="location.href='#" value="Gallery" />
+    <input class="drpbtn" type="button" onclick="location.href='/Gallery.php'" value="Gallery" />
   </div> 
 
   <div class="drpdown">
@@ -219,8 +219,8 @@ $mail->SMTPSecure = 'ssl';*/
     $mail->addBCC('bcc@example.com');*/
 
     //Attachments
-   /* $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-    $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name*/
+    $mail->addAttachment('./fee4thsem.pdf');         // Add attachments
+   //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name*/
 
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
