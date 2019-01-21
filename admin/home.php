@@ -9359,6 +9359,242 @@ mysqli_close($conn);
 <hr>
 
 
+
+
+<!---------------------------------START -Videos-------------->
+
+
+        <h3 >VIDEOS </h3>
+         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalVidPg">Add</button>
+
+  
+      <div class="modal fade" id="myModalVidPg" role="dialog">
+        <div class="modal-dialog">
+        
+          
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">ADD</h4>
+            </div>
+            <div class="modal-body">
+            
+
+              <?php
+// define variables and set to empty values
+$nameVidPgErr =$nmeVidPgErr =$deptVidPgErr = $emailVidPgErr =$imgVidPgErr = "";
+$nameVidPg =$nmeVidPg =$deptVidPg = $emailVidPg =$imgVidPg ="";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (isset($_POST['submitVidPg1'] )) {
+
+
+
+    if (empty($_POST["nmeVidPgUp"])) {
+    $nmeVidPgUpErr = "ID is required";
+$message = "ID is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+
+  } else {
+    $nmeVidPgUp = test_input($_POST["nmeVidPgUp"]);
+    // check if nameVidPgUp only contains letters and whitespace
+    if (!is_numeric($nmeVidPgUp)) {
+      $nmeVidPgUpErr = "Only numbers allowed"; 
+$message = "Only numbers allowed";
+echo "<script type='text/javascript'>alert('$message');</script>";
+
+//toDeleteInvalid();
+    
+$z =1;
+    }
+  }
+
+
+
+   if (empty($_POST["imgVidPg"])) {
+    $imgVidPgErr = "Image is required";
+$message = "Image is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+  } else {
+    $imgVidPg = test_input($_POST["imgVidPg"]);
+  }
+    
+
+
+
+
+  if ($z==0)
+{
+    require("../db.php");
+
+ if ($nmeVidPg == 1)
+   {
+
+$sql = "UPDATE proj_abhyas SET   img=? ";
+
+$stmt = $conn->prepare($sql);
+
+$stmt->bind_param('s', $imgVidPg);
+$stmt->execute();
+
+    }
+
+
+    else  if ($nmeVidPg == 2)
+   {
+
+$sql = "UPDATE proj_pathsala SET   img=? ";
+
+$stmt = $conn->prepare($sql);
+
+$stmt->bind_param('s', $imgVidPg);
+$stmt->execute();
+
+    }
+
+
+    else  if ($nmeVidPg == 3)
+   {
+
+$sql = "UPDATE proj_scl_chl_hum SET   img=? ";
+
+$stmt = $conn->prepare($sql);
+
+$stmt->bind_param('s', $imgVidPg);
+$stmt->execute();
+
+    }
+
+
+    else  if ($nmeVidPg == 4)
+   {
+
+$sql = "UPDATE proj_scl_out SET   img=? ";
+
+$stmt = $conn->prepare($sql);
+
+$stmt->bind_param('s', $imgVidPg);
+$stmt->execute();
+
+    }
+
+
+     else     if ($nmeVidPg == 5)
+   {
+
+$sql = "UPDATE camp_keep_away SET   img=? ";
+
+$stmt = $conn->prepare($sql);
+
+$stmt->bind_param('s', $imgVidPg);
+$stmt->execute();
+
+    }
+
+
+     else     if ($nmeVidPg == 6)
+   {
+
+$sql = "UPDATE camp_samajhiye SET   img=? ";
+
+$stmt = $conn->prepare($sql);
+
+$stmt->bind_param('s', $imgVidPg);
+$stmt->execute();
+
+    }
+
+
+        else  if ($nmeVidPg == 7)
+   {
+
+$sql = "UPDATE camp_iit_visits SET   img=? ";
+
+$stmt = $conn->prepare($sql);
+
+$stmt->bind_param('s', $imgVidPg);
+$stmt->execute();
+
+    }
+
+
+      else    if ($nmeVidPg == 8)
+   {
+
+$sql = "UPDATE camp_jhuggi SET   img=? ";
+
+$stmt = $conn->prepare($sql);
+
+$stmt->bind_param('s', $imgVidPg);
+$stmt->execute();
+
+    }
+
+mysqli_close($conn);
+
+
+
+$message = "ENTRY UPDATED";
+echo "<script type='text/javascript'>alert('$message');</script>";
+}
+}
+
+}
+
+?>
+
+
+<h4><strong>For leaving an entry empty , press spacebar in the respective field</strong></h4>
+<p><span class="error">* required field</span></p>
+<form name="form1" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >  
+
+  ID: <input type="text" name="nmeVidPg" value="<?php echo $nmeVidPg;?>">
+  <span class="error">* <?php echo $nmeVidPgErr;?></span>
+  <br><br>
+
+  Video: <input type="text" name="imgVidPg" value="<?php echo $imgVidPg;?>">
+  <span class="error">* <?php echo $imgVidPgErr;?></span>
+  <br><br>
+  
+  <input type="submit" name="submitVidPg1" value="Submit" " > 
+  
+</form>
+
+
+
+
+
+<?php           // for case of refreshs
+/*
+      
+    require("../db.php");
+    $sql = "DELETE FROM reports WHERE heading ='' OR links=''";
+
+if (mysqli_query($conn, $sql)) {
+    echo "Record deleted successfully";
+    // print if no data input
+
+} else {
+    echo "Error deleting record: " . mysqli_error($conn);
+} 
+mysqli_close($conn);
+*/
+?>
+    </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+<br><hr>
+<!-----------------End of videos------------>
+
       <script>
         <?php
   function test_input($data) {
