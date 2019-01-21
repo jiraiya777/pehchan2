@@ -70,7 +70,7 @@ Provided that the Governing Body may from time to time modify the rules regardin
         <div class="col-sm-12">
           <br>
             <h4><i>Click here for Reading more details:</i></h4>
-            <a href="#" class="btn btn-info" role="button" target="_blank" style="background-color:purple; color:white; height: 40px; width: 200px; border-radius: 7px; padding-bottom: 20px; padding-right: 10px;"><i><h4>Rules And Regulatons</h4></i></a>
+            <a href="https://drive.google.com/open?id=10GmNawpBxCCOi3rLxc3qcaC9cqXB1y0g" class="btn btn-info" role="button" target="_blank" style="background-color:purple; color:white; height: 40px; width: 200px; border-radius: 7px; padding-bottom: 20px; padding-right: 10px;"><i><h4>Rules And Regulatons</h4></i></a>
             <br>
             <br>
 
@@ -79,7 +79,7 @@ Provided that the Governing Body may from time to time modify the rules regardin
             <i><h4>If you are interested to became member/volunteer then fill the respective Google form:
             </h4></i>
             
-            <a href="https://drive.google.com/open?id=1I0CXr3VnrQLfn8ZGollJeUQ_bGjs6_t8KRSC3nQBQx0" class="btn btn-info" role="button" target="_blank" style="background-color:purple; color:white; height: 40px; width: 275px; border-radius: 7px; padding-bottom: 20px; padding-right: 10px;"><i><h4>Google form for donation details</h4></i></a>
+            <a href="https://drive.google.com/open?id=1WT-htlbW1YqIQLe7IvmKKitaOFS7NOD3XNn2CA7Cw-s" class="btn btn-info" role="button" target="_blank" style="background-color:purple; color:white; height: 40px; width: 275px; border-radius: 7px; padding-bottom: 20px; padding-right: 10px;"><i><h4>Click here to be a member</h4></i></a>
             
             <br>
             <br> 

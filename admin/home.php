@@ -6184,7 +6184,7 @@ mysqli_close($conn);
 <!---------------------------------START -Gallery Team and Volunteer-------------->
 
 
-        <h3 >GALLERY- PROJECT</h3>
+        <h3 >GALLERY- VOLUNTEERS</h3>
          <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalGalTeamVol">Add</button>
 
   
@@ -7592,6 +7592,1771 @@ mysqli_close($conn);
 <!--------------------------END OF Gallery Other Activities-------------->
 
 
+
+<!---------------------------------START -iit ropar donor -------------->
+
+
+        <h3 > IIT ROPAR DONORS</h3>
+         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalIITRprDon">Add</button>
+
+  
+      <div class="modal fade" id="myModalIITRprDon" role="dialog">
+        <div class="modal-dialog">
+        
+          
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">ADD</h4>
+            </div>
+            <div class="modal-body">
+            
+
+              <?php
+// define variables and set to empty values
+$nameIITRprDonErr =$deptIITRprDonErr = $emailIITRprDonErr =$imgIITRprDonErr = "";
+$nameIITRprDon =$deptIITRprDon = $emailIITRprDon =$imgIITRprDon ="";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (isset($_POST['submitIITRprDon1'] )) {
+
+
+
+  if (empty($_POST["nameIITRprDon"])) {
+    $nameIITRprDonErr = "Name is required";
+$message = "Name is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+  } else {
+    $nameIITRprDon = test_input($_POST["nameIITRprDon"]);
+    // check if nameIITRprDon only contains letters and whitespace
+    if (!preg_match("/^[a-zA-Z ]*$/",$nameIITRprDon)) {
+      $nameIITRprDonErr = "Only letters and white space allowed"; 
+$message = "Only letters and white space allowed";
+echo "<script type='text/javascript'>alert('$message');</script>";
+
+//toDeleteInvalid();
+    
+$z =1;
+    }
+  }
+
+   if (empty($_POST["deptIITRprDon"])) {
+    $deptIITRprDonErr = "Dept is required";
+$message = "Department is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+  } else {
+    $deptIITRprDon = test_input($_POST["deptIITRprDon"]);
+  }
+
+
+
+  
+  if (empty($_POST["emailIITRprDon"])) {
+    $emailIITRprDonErr = "Email is required";
+    $message = "Email is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+  } else {
+    $emailIITRprDon = test_input($_POST["emailIITRprDon"]);
+    // check if e-mail address is well-formed
+    if (!filter_var($emailIITRprDon, FILTER_VALIDATE_EMAIL)) {
+      $emailIITRprDonErr = "Invalid email format"; 
+      $message = "Invalid email format";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+    }
+  }
+
+
+   if (empty($_POST["imgIITRprDon"])) {
+    $imgIITRprDonErr = "Image is required";
+$message = "Image is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+  } else {
+    $imgIITRprDon = test_input($_POST["imgIITRprDon"]);
+  }
+    
+
+
+
+
+  if ($z==0)
+{
+    require("../db.php");
+
+$stmt =$conn->prepare( "INSERT INTO iit_rpr_donr (name,dept,email,img)
+VALUES ( ?,?,?,?)");
+
+$stmt->bind_param("ssss",  $lnk,$hg,$hd,$ln);
+$lnk=$nameIITRprDon;
+$hg=$deptIITRprDon;
+$hd=$emailIITRprDon;
+$ln=$imgIITRprDon;
+$stmt->execute();
+
+    $stmt->close();
+
+mysqli_close($conn);
+
+
+
+$message = "ENTRY INSERTED";
+echo "<script type='text/javascript'>alert('$message');</script>";
+}
+}
+
+}
+
+?>
+
+
+<h4><strong>For leaving an entry empty , press spacebar in the respective field</strong></h4>
+<p><span class="error">* required field</span></p>
+<form name="form1" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >  
+
+  Name: <input type="text" name="nameIITRprDon" value="<?php echo $nameIITRprDon;?>">
+  <span class="error">* <?php echo $nameIITRprDonErr;?></span>
+  <br><br>
+
+  Dept: <input type="text" name="deptIITRprDon" value="<?php echo $deptIITRprDon;?>">
+  <span class="error">* <?php echo $deptIITRprDonErr;?></span>
+  <br><br>
+  E-mail: <input type="text" name="emailIITRprDon" value="<?php echo $emailIITRprDon;?>">
+  <span class="error">* <?php echo $emailIITRprDonErr;?></span>
+  <br><br>
+  Image: <input type="text" name="imgIITRprDon" value="<?php echo $imgIITRprDon;?>">
+  <span class="error">* <?php echo $imgIITRprDonErr;?></span>
+  <br><br>
+  
+  <input type="submit" name="submitIITRprDon1" value="Submit" " > 
+  
+</form>
+
+
+
+
+
+<?php           // for case of refreshs
+/*
+      
+    require("../db.php");
+    $sql = "DELETE FROM reports WHERE heading ='' OR links=''";
+
+if (mysqli_query($conn, $sql)) {
+    echo "Record deleted successfully";
+    // print if no data input
+
+} else {
+    echo "Error deleting record: " . mysqli_error($conn);
+} 
+mysqli_close($conn);
+*/
+?>
+    </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+<br><hr>
+
+
+    <!-------------DELETION----------------------------------->
+
+
+       <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalIITRprDon2">DELETE</button>
+
+  
+      <div class="modal fade" id="myModalIITRprDon2" role="dialog">
+        <div class="modal-dialog">
+        
+          
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">DELETE</h4>
+            </div>
+            <div class="modal-body">
+
+
+              INPUT ID FOR DELETING THE ENTRY
+              <br><hr>
+              <?php
+    require("../db.php");
+
+              $sql="SELECT * FROM iit_rpr_donr ";
+                      $result=mysqli_query($conn,$sql);
+                      while ($row = mysqli_fetch_assoc($result)) {
+                      echo "<strong>Id </strong>".$row["id"]."\t---------\t"."\t<strong>Name</strong>\t".$row["name"]."<br/>";
+}
+
+mysqli_free_result($result);
+
+mysqli_close($conn);
+
+              ?>
+
+
+              <?php
+// define variables and set to empty values
+$nmeIITRprDonErr =  "";
+$nmeIITRprDon = 0;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (isset($_POST['submitIITRprDon2'] )) {
+    
+  if (empty($_POST["nmeIITRprDon"])) {
+    $nmeIITRprDonErr = "ID is required";
+$message = "ID is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+
+  } else {
+    $nmeIITRprDon = test_input($_POST["nmeIITRprDon"]);
+    // check if name only contains letters and whitespace
+    if (!is_numeric($nmeIITRprDon)) {
+      $nmeIITRprDonErr = "Only numbers allowed"; 
+$message = "Only numbers allowed";
+echo "<script type='text/javascript'>alert('$message');</script>";
+
+//toDeleteInvalid();
+    
+$z =1;
+    }
+
+    else
+    {
+    require("../db.php");
+     $sql = "SELECT id FROM iit_rpr_donr WHERE id='$nmeIITRprDon'";
+$result = mysqli_query($conn,$sql);
+
+if(mysqli_num_rows($result) >0){
+   //found
+}else{
+$message = "ID NOT FOUND!! CHECK AGAIND id";
+echo "<script type='text/javascript'>alert('$message');</script>";
+$z=1;
+}
+
+mysqli_close($conn);
+    }
+
+  }
+
+
+  if ($z==0)
+  {
+
+
+    require("../db.php");
+$delId=$nmeIITRprDon;
+$sql = "DELETE FROM iit_rpr_donr WHERE id='$delId'";
+if (mysqli_query($conn, $sql)) {
+    echo "Record deleted successfully";
+    // print if no data input
+
+} else {
+    echo "Error deleting record: " . mysqli_error($conn);
+} 
+
+
+
+mysqli_close($conn);
+
+
+$message = "Deleted , please refresh the page to see changes";
+echo "<script type='text/javascript'>alert('$message');</script>";
+  }
+ } 
+}
+
+
+
+
+
+
+
+?>
+
+
+
+<p><span class="error">* required field</span></p>
+<form name="form2" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" onsubmit="required()">  
+  Name: <input type="text" name="nmeIITRprDon" value="<?php echo $nmeIITRprDon;?>">
+  <span class="error">* <?php echo $nmeIITRprDonErr;?></span>
+  <br><br>
+
+
+  <input type="submit" name="submitIITRprDon2" value="Submit"  "> 
+</form>
+
+
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+
+
+<!----------------------------------------------UPDATION------------------>
+
+       <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalIITRprDon3">UPDATE</button>
+
+      <div class="modal fade" id="myModalIITRprDon3" role="dialog">
+        <div class="modal-dialog">
+        
+          
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">UPDATE</h4>
+            </div>
+            <div class="modal-body">
+            
+
+             INPUT ID FOR UPDATING THE ENTRY
+              <br><hr>
+              <?php
+    require("../db.php");
+
+              $sql="SELECT * FROM iit_rpr_donr ";
+                      $result=mysqli_query($conn,$sql);
+                      while ($row = mysqli_fetch_assoc($result)) {
+                      echo "<strong>Id</strong> ".$row["id"]."\t---------\t"."\t<strong>Name</strong>\t".$row["name"]."<br/>";
+}
+
+mysqli_free_result($result);
+
+mysqli_close($conn);
+
+              ?>
+
+
+
+              <?php
+// define variables and set to empty values
+$nmeIITRprDonUpErr = "";
+$nmeIITRprDonUp = 0;
+$nameIITRprDonUpErr = $deptIITRprDonUpErr=$emailIITRprDonUpErr=$imgIITRprDonUpErr=  "";
+$nameIITRprDonUp = $deptIITRprDonUp =$emailIITRprDonUp =$imgIITRprDonUp = "";
+
+
+
+  
+
+
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (isset($_POST['submitIITRprDon3'] )) {
+
+
+
+
+    if (empty($_POST["nmeIITRprDonUp"])) {
+    $nmeIITRprDonUpErr = "ID is required";
+$message = "ID is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+
+  } else {
+    $nmeIITRprDonUp = test_input($_POST["nmeIITRprDonUp"]);
+    // check if nameIITRprDonUp only contains letters and whitespace
+    if (!is_numeric($nmeIITRprDonUp)) {
+      $nmeIITRprDonUpErr = "Only numbers allowed"; 
+$message = "Only numbers allowed";
+echo "<script type='text/javascript'>alert('$message');</script>";
+
+//toDeleteInvalid();
+    
+$z =1;
+    }
+
+    else
+    {
+    require("../db.php");
+     $sql = "SELECT id FROM iit_rpr_donr WHERE id='$nmeIITRprDonUp'";
+$result = mysqli_query($conn,$sql);
+
+if(mysqli_num_rows($result) >0){
+   //found
+}else{
+$message = "ID NOT FOUND!! CHECK AGAIND id";
+echo "<script type='text/javascript'>alert('$message');</script>";
+$z=1;
+}
+
+mysqli_close($conn);
+    }
+
+  }
+
+
+
+  if (empty($_POST["nameIITRprDonUp"])) {
+    $nameIITRprDonUpErr = "Name is required";
+$message = "Name is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+  } else {
+    $nameIITRprDonUp = test_input($_POST["nameIITRprDonUp"]);
+    // check if nameIITRprDonUp only contains letters and whitespace
+    if (!preg_match("/^[a-zA-Z ]*$/",$nameIITRprDonUp)) {
+      $nameIITRprDonUpErr = "Only letters and white space allowed"; 
+$message = "Only letters and white space allowed";
+echo "<script type='text/javascript'>alert('$message');</script>";
+
+//toDeleteInvalid();
+    
+$z =1;
+    }
+  }
+
+
+
+if (empty($_POST["deptIITRprDonUp"])) {
+    $deptIITRprDonUpErr = "Department is required";
+$message = "Department is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+  } else {
+    $deptIITRprDonUp = test_input($_POST["deptIITRprDonUp"]);
+  }
+
+  
+  if (empty($_POST["emailIITRprDonUp"])) {
+    $emailIITRprDonUpErr = "Email is required";
+    $message = "Email is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+  } else {
+    $emailIITRprDonUp = test_input($_POST["emailIITRprDonUp"]);
+    // check if e-mail address is well-formed
+    if (!filter_var($emailIITRprDonUp, FILTER_VALIDATE_EMAIL)) {
+      $emailIITRprDonUpErr = "Invalid email format"; 
+      $message = "Invalid email format";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+    }
+  }
+
+
+     if (empty($_POST["imgIITRprDonUp"])) {
+    $imgIITRprDonErrUp = "Image is required";
+$message = "Image is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+  } else {
+    $imgIITRprDonUp = test_input($_POST["imgIITRprDonUp"]);
+  }
+    
+
+
+
+
+
+  if ($z==0)
+{
+    require("../db.php");
+
+$sql = "UPDATE iit_rpr_donr SET  name=?, dept=?, email=?, img=? WHERE id=?";
+
+$stmt = $conn->prepare($sql);
+
+$stmt->bind_param('sssss', $nameIITRprDonUp, $deptIITRprDonUp, $emailIITRprDonUp, $imgIITRprDonUp,$nmeIITRprDonUp);
+$stmt->execute();
+
+if ($stmt->error) {
+  echo "FAILURE!!! " . $stmt->error;
+}
+else{
+
+
+$message = "ENTRY UPDATED.... RELOAD THE PAGE TO SEE CHANGES";
+echo "<script type='text/javascript'>alert('$message');</script>";
+}
+
+$stmt->close();
+
+mysqli_close($conn);
+
+
+}
+}
+
+}
+
+?>
+
+
+<h4><strong>For leaving an entry empty , press spacebar in the respective field</strong></h4>
+<p><span class="error">* required field</span></p>
+<form name="form1" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >  
+
+
+  ID: <input type="text" name="nmeIITRprDonUp" value="<?php echo $nmeIITRprDonUp;?>">
+  <span class="error">* <?php echo $nmeIITRprDonUpErr;?></span>
+  <br><br>
+
+  Name: <input type="text" name="nameIITRprDonUp" value="<?php echo $nameIITRprDonUp;?>">
+  <span class="error">* <?php echo $nameIITRprDonUpErr;?></span>
+  <br><br>
+
+  Dept: <input type="text" name="deptIITRprDonUp" value="<?php echo $deptIITRprDonUp;?>">
+  <span class="error">* <?php echo $deptIITRprDonUpErr;?></span>
+  <br><br>
+
+  E-mail: <input type="text" name="emailIITRprDonUp" value="<?php echo $emailIITRprDonUp;?>">
+  <span class="error">* <?php echo $emailIITRprDonUpErr;?></span>
+  <br><br>
+
+ Img: <input type="text" name="imgIITRprDonUp" value="<?php echo $imgIITRprDonUp;?>">
+  <span class="error">* <?php echo $imgIITRprDonUpErr;?></span>
+  <br><br>
+  <br><br>
+
+  
+  <input type="submit" name="submitIITRprDon3" value="Submit" " > 
+  
+</form>
+
+
+
+
+
+<?php           // for case of refreshs
+/*
+      
+    require("../db.php");
+    $sql = "DELETE FROM reports WHERE heading ='' OR links=''";
+
+if (mysqli_query($conn, $sql)) {
+    echo "Record deleted successfully";
+    // print if no data input
+
+} else {
+    echo "Error deleting record: " . mysqli_error($conn);
+} 
+mysqli_close($conn);
+*/
+?>
+    </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+<br><hr>
+
+
+<!--------------------------END OF iit ropar donors-------------->
+
+<hr>
+<br>
+<hr>
+
+
+
+
+
+<!---------------------------------START -permanent donor -------------->
+
+
+        <h3 > PERMANENT DONORS</h3>
+         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalPermDon">Add</button>
+
+  
+      <div class="modal fade" id="myModalPermDon" role="dialog">
+        <div class="modal-dialog">
+        
+          
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">ADD</h4>
+            </div>
+            <div class="modal-body">
+            
+
+              <?php
+// define variables and set to empty values
+$namePermDonErr =$deptPermDonErr = $emailPermDonErr =$imgPermDonErr = "";
+$namePermDon =$deptPermDon = $emailPermDon =$imgPermDon ="";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (isset($_POST['submitPermDon1'] )) {
+
+
+
+  if (empty($_POST["namePermDon"])) {
+    $namePermDonErr = "Name is required";
+$message = "Name is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+  } else {
+    $namePermDon = test_input($_POST["namePermDon"]);
+    // check if namePermDon only contains letters and whitespace
+    if (!preg_match("/^[a-zA-Z ]*$/",$namePermDon)) {
+      $namePermDonErr = "Only letters and white space allowed"; 
+$message = "Only letters and white space allowed";
+echo "<script type='text/javascript'>alert('$message');</script>";
+
+//toDeleteInvalid();
+    
+$z =1;
+    }
+  }
+
+   if (empty($_POST["deptPermDon"])) {
+    $deptPermDonErr = "Dept is required";
+$message = "Department is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+  } else {
+    $deptPermDon = test_input($_POST["deptPermDon"]);
+  }
+
+
+
+  
+  if (empty($_POST["emailPermDon"])) {
+    $emailPermDonErr = "Email is required";
+    $message = "Email is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+  } else {
+    $emailPermDon = test_input($_POST["emailPermDon"]);
+    // check if e-mail address is well-formed
+    if (!filter_var($emailPermDon, FILTER_VALIDATE_EMAIL)) {
+      $emailPermDonErr = "Invalid email format"; 
+      $message = "Invalid email format";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+    }
+  }
+
+
+   if (empty($_POST["imgPermDon"])) {
+    $imgPermDonErr = "Image is required";
+$message = "Image is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+  } else {
+    $imgPermDon = test_input($_POST["imgPermDon"]);
+  }
+    
+
+
+
+
+  if ($z==0)
+{
+    require("../db.php");
+
+$stmt =$conn->prepare( "INSERT INTO our_perm_donr (name,dept,email,img)
+VALUES ( ?,?,?,?)");
+
+$stmt->bind_param("ssss",  $lnk,$hg,$hd,$ln);
+$lnk=$namePermDon;
+$hg=$deptPermDon;
+$hd=$emailPermDon;
+$ln=$imgPermDon;
+$stmt->execute();
+
+    $stmt->close();
+
+mysqli_close($conn);
+
+
+
+$message = "ENTRY INSERTED";
+echo "<script type='text/javascript'>alert('$message');</script>";
+}
+}
+
+}
+
+?>
+
+
+<h4><strong>For leaving an entry empty , press spacebar in the respective field</strong></h4>
+<p><span class="error">* required field</span></p>
+<form name="form1" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >  
+
+  Name: <input type="text" name="namePermDon" value="<?php echo $namePermDon;?>">
+  <span class="error">* <?php echo $namePermDonErr;?></span>
+  <br><br>
+
+  Dept: <input type="text" name="deptPermDon" value="<?php echo $deptPermDon;?>">
+  <span class="error">* <?php echo $deptPermDonErr;?></span>
+  <br><br>
+  E-mail: <input type="text" name="emailPermDon" value="<?php echo $emailPermDon;?>">
+  <span class="error">* <?php echo $emailPermDonErr;?></span>
+  <br><br>
+  Image: <input type="text" name="imgPermDon" value="<?php echo $imgPermDon;?>">
+  <span class="error">* <?php echo $imgPermDonErr;?></span>
+  <br><br>
+  
+  <input type="submit" name="submitPermDon1" value="Submit" " > 
+  
+</form>
+
+
+
+
+
+<?php           // for case of refreshs
+/*
+      
+    require("../db.php");
+    $sql = "DELETE FROM reports WHERE heading ='' OR links=''";
+
+if (mysqli_query($conn, $sql)) {
+    echo "Record deleted successfully";
+    // print if no data input
+
+} else {
+    echo "Error deleting record: " . mysqli_error($conn);
+} 
+mysqli_close($conn);
+*/
+?>
+    </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+<br><hr>
+
+
+    <!-------------DELETION----------------------------------->
+
+
+       <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalPermDon2">DELETE</button>
+
+  
+      <div class="modal fade" id="myModalPermDon2" role="dialog">
+        <div class="modal-dialog">
+        
+          
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">DELETE</h4>
+            </div>
+            <div class="modal-body">
+
+
+              INPUT ID FOR DELETING THE ENTRY
+              <br><hr>
+              <?php
+    require("../db.php");
+
+              $sql="SELECT * FROM our_perm_donr ";
+                      $result=mysqli_query($conn,$sql);
+                      while ($row = mysqli_fetch_assoc($result)) {
+                      echo "<strong>Id </strong>".$row["id"]."\t---------\t"."\t<strong>Name</strong>\t".$row["name"]."<br/>";
+}
+
+mysqli_free_result($result);
+
+mysqli_close($conn);
+
+              ?>
+
+
+              <?php
+// define variables and set to empty values
+$nmePermDonErr =  "";
+$nmePermDon = 0;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (isset($_POST['submitPermDon2'] )) {
+    
+  if (empty($_POST["nmePermDon"])) {
+    $nmePermDonErr = "ID is required";
+$message = "ID is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+
+  } else {
+    $nmePermDon = test_input($_POST["nmePermDon"]);
+    // check if name only contains letters and whitespace
+    if (!is_numeric($nmePermDon)) {
+      $nmePermDonErr = "Only numbers allowed"; 
+$message = "Only numbers allowed";
+echo "<script type='text/javascript'>alert('$message');</script>";
+
+//toDeleteInvalid();
+    
+$z =1;
+    }
+
+    else
+    {
+    require("../db.php");
+     $sql = "SELECT id FROM our_perm_donr WHERE id='$nmePermDon'";
+$result = mysqli_query($conn,$sql);
+
+if(mysqli_num_rows($result) >0){
+   //found
+}else{
+$message = "ID NOT FOUND!! CHECK AGAIND id";
+echo "<script type='text/javascript'>alert('$message');</script>";
+$z=1;
+}
+
+mysqli_close($conn);
+    }
+
+  }
+
+
+  if ($z==0)
+  {
+
+
+    require("../db.php");
+$delId=$nmePermDon;
+$sql = "DELETE FROM our_perm_donr WHERE id='$delId'";
+if (mysqli_query($conn, $sql)) {
+    echo "Record deleted successfully";
+    // print if no data input
+
+} else {
+    echo "Error deleting record: " . mysqli_error($conn);
+} 
+
+
+
+mysqli_close($conn);
+
+
+$message = "Deleted , please refresh the page to see changes";
+echo "<script type='text/javascript'>alert('$message');</script>";
+  }
+ } 
+}
+
+
+
+
+
+
+
+?>
+
+
+
+<p><span class="error">* required field</span></p>
+<form name="form2" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" onsubmit="required()">  
+  Name: <input type="text" name="nmePermDon" value="<?php echo $nmePermDon;?>">
+  <span class="error">* <?php echo $nmePermDonErr;?></span>
+  <br><br>
+
+
+  <input type="submit" name="submitPermDon2" value="Submit"  "> 
+</form>
+
+
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+
+
+<!----------------------------------------------UPDATION------------------>
+
+       <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalPermDon3">UPDATE</button>
+
+      <div class="modal fade" id="myModalPermDon3" role="dialog">
+        <div class="modal-dialog">
+        
+          
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">UPDATE</h4>
+            </div>
+            <div class="modal-body">
+            
+
+             INPUT ID FOR UPDATING THE ENTRY
+              <br><hr>
+              <?php
+    require("../db.php");
+
+              $sql="SELECT * FROM our_perm_donr ";
+                      $result=mysqli_query($conn,$sql);
+                      while ($row = mysqli_fetch_assoc($result)) {
+                      echo "<strong>Id</strong> ".$row["id"]."\t---------\t"."\t<strong>Name</strong>\t".$row["name"]."<br/>";
+}
+
+mysqli_free_result($result);
+
+mysqli_close($conn);
+
+              ?>
+
+
+
+              <?php
+// define variables and set to empty values
+$nmePermDonUpErr = "";
+$nmePermDonUp = 0;
+$namePermDonUpErr = $deptPermDonUpErr=$emailPermDonUpErr=$imgPermDonUpErr=  "";
+$namePermDonUp = $deptPermDonUp =$emailPermDonUp =$imgPermDonUp = "";
+
+
+
+  
+
+
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (isset($_POST['submitPermDon3'] )) {
+
+
+
+
+    if (empty($_POST["nmePermDonUp"])) {
+    $nmePermDonUpErr = "ID is required";
+$message = "ID is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+
+  } else {
+    $nmePermDonUp = test_input($_POST["nmePermDonUp"]);
+    // check if namePermDonUp only contains letters and whitespace
+    if (!is_numeric($nmePermDonUp)) {
+      $nmePermDonUpErr = "Only numbers allowed"; 
+$message = "Only numbers allowed";
+echo "<script type='text/javascript'>alert('$message');</script>";
+
+//toDeleteInvalid();
+    
+$z =1;
+    }
+
+    else
+    {
+    require("../db.php");
+     $sql = "SELECT id FROM our_perm_donr WHERE id='$nmePermDonUp'";
+$result = mysqli_query($conn,$sql);
+
+if(mysqli_num_rows($result) >0){
+   //found
+}else{
+$message = "ID NOT FOUND!! CHECK AGAIND id";
+echo "<script type='text/javascript'>alert('$message');</script>";
+$z=1;
+}
+
+mysqli_close($conn);
+    }
+
+  }
+
+
+
+  if (empty($_POST["namePermDonUp"])) {
+    $namePermDonUpErr = "Name is required";
+$message = "Name is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+  } else {
+    $namePermDonUp = test_input($_POST["namePermDonUp"]);
+    // check if namePermDonUp only contains letters and whitespace
+    if (!preg_match("/^[a-zA-Z ]*$/",$namePermDonUp)) {
+      $namePermDonUpErr = "Only letters and white space allowed"; 
+$message = "Only letters and white space allowed";
+echo "<script type='text/javascript'>alert('$message');</script>";
+
+//toDeleteInvalid();
+    
+$z =1;
+    }
+  }
+
+
+
+if (empty($_POST["deptPermDonUp"])) {
+    $deptPermDonUpErr = "Department is required";
+$message = "Department is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+  } else {
+    $deptPermDonUp = test_input($_POST["deptPermDonUp"]);
+  }
+
+  
+  if (empty($_POST["emailPermDonUp"])) {
+    $emailPermDonUpErr = "Email is required";
+    $message = "Email is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+  } else {
+    $emailPermDonUp = test_input($_POST["emailPermDonUp"]);
+    // check if e-mail address is well-formed
+    if (!filter_var($emailPermDonUp, FILTER_VALIDATE_EMAIL)) {
+      $emailPermDonUpErr = "Invalid email format"; 
+      $message = "Invalid email format";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+    }
+  }
+
+
+     if (empty($_POST["imgPermDonUp"])) {
+    $imgPermDonErrUp = "Image is required";
+$message = "Image is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+  } else {
+    $imgPermDonUp = test_input($_POST["imgPermDonUp"]);
+  }
+    
+
+
+
+
+
+  if ($z==0)
+{
+    require("../db.php");
+
+$sql = "UPDATE our_perm_donr SET  name=?, dept=?, email=?, img=? WHERE id=?";
+
+$stmt = $conn->prepare($sql);
+
+$stmt->bind_param('sssss', $namePermDonUp, $deptPermDonUp, $emailPermDonUp, $imgPermDonUp,$nmePermDonUp);
+$stmt->execute();
+
+if ($stmt->error) {
+  echo "FAILURE!!! " . $stmt->error;
+}
+else{
+
+
+$message = "ENTRY UPDATED.... RELOAD THE PAGE TO SEE CHANGES";
+echo "<script type='text/javascript'>alert('$message');</script>";
+}
+
+$stmt->close();
+
+mysqli_close($conn);
+
+
+}
+}
+
+}
+
+?>
+
+
+<h4><strong>For leaving an entry empty , press spacebar in the respective field</strong></h4>
+<p><span class="error">* required field</span></p>
+<form name="form1" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >  
+
+
+  ID: <input type="text" name="nmePermDonUp" value="<?php echo $nmePermDonUp;?>">
+  <span class="error">* <?php echo $nmePermDonUpErr;?></span>
+  <br><br>
+
+  Name: <input type="text" name="namePermDonUp" value="<?php echo $namePermDonUp;?>">
+  <span class="error">* <?php echo $namePermDonUpErr;?></span>
+  <br><br>
+
+  Dept: <input type="text" name="deptPermDonUp" value="<?php echo $deptPermDonUp;?>">
+  <span class="error">* <?php echo $deptPermDonUpErr;?></span>
+  <br><br>
+
+  E-mail: <input type="text" name="emailPermDonUp" value="<?php echo $emailPermDonUp;?>">
+  <span class="error">* <?php echo $emailPermDonUpErr;?></span>
+  <br><br>
+
+ Img: <input type="text" name="imgPermDonUp" value="<?php echo $imgPermDonUp;?>">
+  <span class="error">* <?php echo $imgPermDonUpErr;?></span>
+  <br><br>
+  <br><br>
+
+  
+  <input type="submit" name="submitPermDon3" value="Submit" " > 
+  
+</form>
+
+
+
+
+
+<?php           // for case of refreshs
+/*
+      
+    require("../db.php");
+    $sql = "DELETE FROM reports WHERE heading ='' OR links=''";
+
+if (mysqli_query($conn, $sql)) {
+    echo "Record deleted successfully";
+    // print if no data input
+
+} else {
+    echo "Error deleting record: " . mysqli_error($conn);
+} 
+mysqli_close($conn);
+*/
+?>
+    </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+<br><hr>
+
+
+<!--------------------------END OF permanent donors-------------->
+
+<hr>
+<br>
+<hr>
+
+
+
+
+<!---------------------------------START -other donor -------------->
+
+
+        <h3 >OTHER DONORS</h3>
+         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalOthDon">Add</button>
+
+  
+      <div class="modal fade" id="myModalOthDon" role="dialog">
+        <div class="modal-dialog">
+        
+          
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">ADD</h4>
+            </div>
+            <div class="modal-body">
+            
+
+              <?php
+// define variables and set to empty values
+$nameOthDonErr =$deptOthDonErr = $emailOthDonErr =$imgOthDonErr = "";
+$nameOthDon =$deptOthDon = $emailOthDon =$imgOthDon ="";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (isset($_POST['submitOthDon1'] )) {
+
+
+
+  if (empty($_POST["nameOthDon"])) {
+    $nameOthDonErr = "Name is required";
+$message = "Name is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+  } else {
+    $nameOthDon = test_input($_POST["nameOthDon"]);
+    // check if nameOthDon only contains letters and whitespace
+    if (!preg_match("/^[a-zA-Z ]*$/",$nameOthDon)) {
+      $nameOthDonErr = "Only letters and white space allowed"; 
+$message = "Only letters and white space allowed";
+echo "<script type='text/javascript'>alert('$message');</script>";
+
+//toDeleteInvalid();
+    
+$z =1;
+    }
+  }
+
+   if (empty($_POST["deptOthDon"])) {
+    $deptOthDonErr = "Dept is required";
+$message = "Department is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+  } else {
+    $deptOthDon = test_input($_POST["deptOthDon"]);
+  }
+
+
+
+  
+  if (empty($_POST["emailOthDon"])) {
+    $emailOthDonErr = "Email is required";
+    $message = "Email is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+  } else {
+    $emailOthDon = test_input($_POST["emailOthDon"]);
+    // check if e-mail address is well-formed
+    if (!filter_var($emailOthDon, FILTER_VALIDATE_EMAIL)) {
+      $emailOthDonErr = "Invalid email format"; 
+      $message = "Invalid email format";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+    }
+  }
+
+
+   if (empty($_POST["imgOthDon"])) {
+    $imgOthDonErr = "Image is required";
+$message = "Image is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+  } else {
+    $imgOthDon = test_input($_POST["imgOthDon"]);
+  }
+    
+
+
+
+
+  if ($z==0)
+{
+    require("../db.php");
+
+$stmt =$conn->prepare( "INSERT INTO other_donr (name,dept,email,img)
+VALUES ( ?,?,?,?)");
+
+$stmt->bind_param("ssss",  $lnk,$hg,$hd,$ln);
+$lnk=$nameOthDon;
+$hg=$deptOthDon;
+$hd=$emailOthDon;
+$ln=$imgOthDon;
+$stmt->execute();
+
+    $stmt->close();
+
+mysqli_close($conn);
+
+
+
+$message = "ENTRY INSERTED";
+echo "<script type='text/javascript'>alert('$message');</script>";
+}
+}
+
+}
+
+?>
+
+
+<h4><strong>For leaving an entry empty , press spacebar in the respective field</strong></h4>
+<p><span class="error">* required field</span></p>
+<form name="form1" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >  
+
+  Name: <input type="text" name="nameOthDon" value="<?php echo $nameOthDon;?>">
+  <span class="error">* <?php echo $nameOthDonErr;?></span>
+  <br><br>
+
+  Dept: <input type="text" name="deptOthDon" value="<?php echo $deptOthDon;?>">
+  <span class="error">* <?php echo $deptOthDonErr;?></span>
+  <br><br>
+  E-mail: <input type="text" name="emailOthDon" value="<?php echo $emailOthDon;?>">
+  <span class="error">* <?php echo $emailOthDonErr;?></span>
+  <br><br>
+  Image: <input type="text" name="imgOthDon" value="<?php echo $imgOthDon;?>">
+  <span class="error">* <?php echo $imgOthDonErr;?></span>
+  <br><br>
+  
+  <input type="submit" name="submitOthDon1" value="Submit" " > 
+  
+</form>
+
+
+
+
+
+<?php           // for case of refreshs
+/*
+      
+    require("../db.php");
+    $sql = "DELETE FROM reports WHERE heading ='' OR links=''";
+
+if (mysqli_query($conn, $sql)) {
+    echo "Record deleted successfully";
+    // print if no data input
+
+} else {
+    echo "Error deleting record: " . mysqli_error($conn);
+} 
+mysqli_close($conn);
+*/
+?>
+    </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+<br><hr>
+
+
+    <!-------------DELETION----------------------------------->
+
+
+       <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalOthDon2">DELETE</button>
+
+  
+      <div class="modal fade" id="myModalOthDon2" role="dialog">
+        <div class="modal-dialog">
+        
+          
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">DELETE</h4>
+            </div>
+            <div class="modal-body">
+
+
+              INPUT ID FOR DELETING THE ENTRY
+              <br><hr>
+              <?php
+    require("../db.php");
+
+              $sql="SELECT * FROM other_donr ";
+                      $result=mysqli_query($conn,$sql);
+                      while ($row = mysqli_fetch_assoc($result)) {
+                      echo "<strong>Id </strong>".$row["id"]."\t---------\t"."\t<strong>Name</strong>\t".$row["name"]."<br/>";
+}
+
+mysqli_free_result($result);
+
+mysqli_close($conn);
+
+              ?>
+
+
+              <?php
+// define variables and set to empty values
+$nmeOthDonErr =  "";
+$nmeOthDon = 0;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (isset($_POST['submitOthDon2'] )) {
+    
+  if (empty($_POST["nmeOthDon"])) {
+    $nmeOthDonErr = "ID is required";
+$message = "ID is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+
+  } else {
+    $nmeOthDon = test_input($_POST["nmeOthDon"]);
+    // check if name only contains letters and whitespace
+    if (!is_numeric($nmeOthDon)) {
+      $nmeOthDonErr = "Only numbers allowed"; 
+$message = "Only numbers allowed";
+echo "<script type='text/javascript'>alert('$message');</script>";
+
+//toDeleteInvalid();
+    
+$z =1;
+    }
+
+    else
+    {
+    require("../db.php");
+     $sql = "SELECT id FROM other_donr WHERE id='$nmeOthDon'";
+$result = mysqli_query($conn,$sql);
+
+if(mysqli_num_rows($result) >0){
+   //found
+}else{
+$message = "ID NOT FOUND!! CHECK AGAIND id";
+echo "<script type='text/javascript'>alert('$message');</script>";
+$z=1;
+}
+
+mysqli_close($conn);
+    }
+
+  }
+
+
+  if ($z==0)
+  {
+
+
+    require("../db.php");
+$delId=$nmeOthDon;
+$sql = "DELETE FROM other_donr WHERE id='$delId'";
+if (mysqli_query($conn, $sql)) {
+    echo "Record deleted successfully";
+    // print if no data input
+
+} else {
+    echo "Error deleting record: " . mysqli_error($conn);
+} 
+
+
+
+mysqli_close($conn);
+
+
+$message = "Deleted , please refresh the page to see changes";
+echo "<script type='text/javascript'>alert('$message');</script>";
+  }
+ } 
+}
+
+
+
+
+
+
+
+?>
+
+
+
+<p><span class="error">* required field</span></p>
+<form name="form2" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" onsubmit="required()">  
+  Name: <input type="text" name="nmeOthDon" value="<?php echo $nmeOthDon;?>">
+  <span class="error">* <?php echo $nmeOthDonErr;?></span>
+  <br><br>
+
+
+  <input type="submit" name="submitOthDon2" value="Submit"  "> 
+</form>
+
+
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+
+
+<!----------------------------------------------UPDATION------------------>
+
+       <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalOthDon3">UPDATE</button>
+
+      <div class="modal fade" id="myModalOthDon3" role="dialog">
+        <div class="modal-dialog">
+        
+          
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">UPDATE</h4>
+            </div>
+            <div class="modal-body">
+            
+
+             INPUT ID FOR UPDATING THE ENTRY
+              <br><hr>
+              <?php
+    require("../db.php");
+
+              $sql="SELECT * FROM other_donr ";
+                      $result=mysqli_query($conn,$sql);
+                      while ($row = mysqli_fetch_assoc($result)) {
+                      echo "<strong>Id</strong> ".$row["id"]."\t---------\t"."\t<strong>Name</strong>\t".$row["name"]."<br/>";
+}
+
+mysqli_free_result($result);
+
+mysqli_close($conn);
+
+              ?>
+
+
+
+              <?php
+// define variables and set to empty values
+$nmeOthDonUpErr = "";
+$nmeOthDonUp = 0;
+$nameOthDonUpErr = $deptOthDonUpErr=$emailOthDonUpErr=$imgOthDonUpErr=  "";
+$nameOthDonUp = $deptOthDonUp =$emailOthDonUp =$imgOthDonUp = "";
+
+
+
+  
+
+
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (isset($_POST['submitOthDon3'] )) {
+
+
+
+
+    if (empty($_POST["nmeOthDonUp"])) {
+    $nmeOthDonUpErr = "ID is required";
+$message = "ID is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+
+  } else {
+    $nmeOthDonUp = test_input($_POST["nmeOthDonUp"]);
+    // check if nameOthDonUp only contains letters and whitespace
+    if (!is_numeric($nmeOthDonUp)) {
+      $nmeOthDonUpErr = "Only numbers allowed"; 
+$message = "Only numbers allowed";
+echo "<script type='text/javascript'>alert('$message');</script>";
+
+//toDeleteInvalid();
+    
+$z =1;
+    }
+
+    else
+    {
+    require("../db.php");
+     $sql = "SELECT id FROM other_donr WHERE id='$nmeOthDonUp'";
+$result = mysqli_query($conn,$sql);
+
+if(mysqli_num_rows($result) >0){
+   //found
+}else{
+$message = "ID NOT FOUND!! CHECK AGAIND id";
+echo "<script type='text/javascript'>alert('$message');</script>";
+$z=1;
+}
+
+mysqli_close($conn);
+    }
+
+  }
+
+
+
+  if (empty($_POST["nameOthDonUp"])) {
+    $nameOthDonUpErr = "Name is required";
+$message = "Name is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+  } else {
+    $nameOthDonUp = test_input($_POST["nameOthDonUp"]);
+    // check if nameOthDonUp only contains letters and whitespace
+    if (!preg_match("/^[a-zA-Z ]*$/",$nameOthDonUp)) {
+      $nameOthDonUpErr = "Only letters and white space allowed"; 
+$message = "Only letters and white space allowed";
+echo "<script type='text/javascript'>alert('$message');</script>";
+
+//toDeleteInvalid();
+    
+$z =1;
+    }
+  }
+
+
+
+if (empty($_POST["deptOthDonUp"])) {
+    $deptOthDonUpErr = "Department is required";
+$message = "Department is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+  } else {
+    $deptOthDonUp = test_input($_POST["deptOthDonUp"]);
+  }
+
+  
+  if (empty($_POST["emailOthDonUp"])) {
+    $emailOthDonUpErr = "Email is required";
+    $message = "Email is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+  } else {
+    $emailOthDonUp = test_input($_POST["emailOthDonUp"]);
+    // check if e-mail address is well-formed
+    if (!filter_var($emailOthDonUp, FILTER_VALIDATE_EMAIL)) {
+      $emailOthDonUpErr = "Invalid email format"; 
+      $message = "Invalid email format";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+    }
+  }
+
+
+     if (empty($_POST["imgOthDonUp"])) {
+    $imgOthDonErrUp = "Image is required";
+$message = "Image is required";
+echo "<script type='text/javascript'>alert('$message');</script>";
+//toDeleteInvalid();
+$z =1;
+  } else {
+    $imgOthDonUp = test_input($_POST["imgOthDonUp"]);
+  }
+    
+
+
+
+
+
+  if ($z==0)
+{
+    require("../db.php");
+
+$sql = "UPDATE other_donr SET  name=?, dept=?, email=?, img=? WHERE id=?";
+
+$stmt = $conn->prepare($sql);
+
+$stmt->bind_param('sssss', $nameOthDonUp, $deptOthDonUp, $emailOthDonUp, $imgOthDonUp,$nmeOthDonUp);
+$stmt->execute();
+
+if ($stmt->error) {
+  echo "FAILURE!!! " . $stmt->error;
+}
+else{
+
+
+$message = "ENTRY UPDATED.... RELOAD THE PAGE TO SEE CHANGES";
+echo "<script type='text/javascript'>alert('$message');</script>";
+}
+
+$stmt->close();
+
+mysqli_close($conn);
+
+
+}
+}
+
+}
+
+?>
+
+
+<h4><strong>For leaving an entry empty , press spacebar in the respective field</strong></h4>
+<p><span class="error">* required field</span></p>
+<form name="form1" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >  
+
+
+  ID: <input type="text" name="nmeOthDonUp" value="<?php echo $nmeOthDonUp;?>">
+  <span class="error">* <?php echo $nmeOthDonUpErr;?></span>
+  <br><br>
+
+  Name: <input type="text" name="nameOthDonUp" value="<?php echo $nameOthDonUp;?>">
+  <span class="error">* <?php echo $nameOthDonUpErr;?></span>
+  <br><br>
+
+  Dept: <input type="text" name="deptOthDonUp" value="<?php echo $deptOthDonUp;?>">
+  <span class="error">* <?php echo $deptOthDonUpErr;?></span>
+  <br><br>
+
+  E-mail: <input type="text" name="emailOthDonUp" value="<?php echo $emailOthDonUp;?>">
+  <span class="error">* <?php echo $emailOthDonUpErr;?></span>
+  <br><br>
+
+ Img: <input type="text" name="imgOthDonUp" value="<?php echo $imgOthDonUp;?>">
+  <span class="error">* <?php echo $imgOthDonUpErr;?></span>
+  <br><br>
+  <br><br>
+
+  
+  <input type="submit" name="submitOthDon3" value="Submit" " > 
+  
+</form>
+
+
+
+
+
+<?php           // for case of refreshs
+/*
+      
+    require("../db.php");
+    $sql = "DELETE FROM reports WHERE heading ='' OR links=''";
+
+if (mysqli_query($conn, $sql)) {
+    echo "Record deleted successfully";
+    // print if no data input
+
+} else {
+    echo "Error deleting record: " . mysqli_error($conn);
+} 
+mysqli_close($conn);
+*/
+?>
+    </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+<br><hr>
+
+
+<!--------------------------END OF other donors-------------->
+
+<hr>
+<br>
+<hr>
 
 
       <script>

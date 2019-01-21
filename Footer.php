@@ -52,7 +52,7 @@
       <img src="images/donate111.jpg" alt="Lights" style="width:100px; height: 100px; border-radius:10px"></a>
               </div>
               <div style="margin-top:35px;">
-                <a href="#" target="_blank">
+                <a href="./vol.php" target="_blank">
                 <img src="images/volunteer111jpg..jpg" alt="Lights" style="width:100px; height: 100px; border-radius:10px"></a>
                         </div>
               <div style="margin-top:35px;">
@@ -203,7 +203,7 @@ try {
     $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
     $mail->Username = 'rissin98@gmail.com';                 // SMTP username
-    $mail->Password = 'RAIock98';                           // SMTP password
+    $mail->Password = '';                           // SMTP password
     $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;                                    // TCP port to connect to
 
