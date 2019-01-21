@@ -8,6 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="style11.css">
+          <link rel="icon" href="Pehchan Logo.jpg" sizes="32x32">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -115,7 +116,7 @@ include './Siteheader.php';
             <i><b>Please fill the Google form with respect to your donation ,so that we can updated your 
                   contribution on your website:</b></i>
              <br>
-            <a href="https://drive.google.com/open?id=1I0CXr3VnrQLfn8ZGollJeUQ_bGjs6_t8KRSC3nQBQx0" class="btn btn-info" role="button" target="_blank" style="background-color:purple; color:white; height: 40px; width: 300px; border-radius: 7px; padding-bottom: 20px; padding-right: 10px;"><i><h4>Google form for donation details</h4></i></a>
+            <a href="https://drive.google.com/open?id=1I0CXr3VnrQLfn8ZGollJeUQ_bGjs6_t8KRSC3nQBQx0" class="btn btn-info" role="button" target="_blank" style="background-color:purple; color:white; height: 40px; width: 300px; border-radius: 7px; padding-bottom: 20px; padding-right: 10px;"><i><h4>Click here to be member</h4></i></a>
             
             <br>
             <br>  

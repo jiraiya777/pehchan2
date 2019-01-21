@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" type="text/css" href="style11.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <link rel="icon" href="Pehchan Logo.jpg" sizes="32x32">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
@@ -40,7 +41,7 @@ include 'Siteheader.php';
 
           <?php
           require("db.php");
-          $sqll="SELECT * FROM iitRoparDonor ORDER BY id DESC LIMIT 0, 1";
+          $sqll="SELECT * FROM iit_rpr_donr ORDER BY id DESC LIMIT 0, 1";
 
           $result = mysqli_query($conn,$sqll);
 
@@ -57,7 +58,7 @@ include 'Siteheader.php';
 
           for ($index=1; $index <=$highest_id; $index++)
             {
-              $sql="SELECT * FROM iitRoparDonor WHERE id='$index' ";
+              $sql="SELECT * FROM iit_rpr_donr WHERE id='$index' ";
               $result=mysqli_query($conn,$sql);
               if (mysqli_num_rows($result)>0)
               {

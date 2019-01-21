@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="style11.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <link rel="icon" href="Pehchan Logo.jpg" sizes="32x32">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
@@ -51,7 +52,7 @@ include './Siteheader.php';
                  <hr>
                  <div class="forum">
                  <a id="link" href="./WorkingModel"><h3 >WORKING MODEL</h3>
-              
+              </a>
                  </div>
                  
 
@@ -86,14 +87,153 @@ include './Siteheader.php';
 
           <div align="center">
             <div class="directorImg">
-            <img  src="images.jpg" rel="person" class="img-responsive" style="width:255px; height:255px;">
+            <img  src="./PehchaanesAdvisiors/Prof. S K Das.png" rel="person" class="img-responsive" style="width:255px; height:255px;">
           </div>
           Director ,IIT Ropar<br>
-          Dr.S K Das
+          Prof.S K Das
           </div>
-
+</div>
           <br>
           <div id="line"></div>
+
+          <!-------------Advisors------------------->
+
+          <br>
+
+          <div class="container">
+            
+            <div class="demo222" align="center">
+          <h2>Our Advisors</h2>
+          </div>
+        </div>
+          <hr>
+
+
+
+          <?php
+          require("db.php");
+          $sqll="SELECT * FROM advisorteam ORDER BY id DESC LIMIT 0, 1";
+
+          $result = mysqli_query($conn,$sqll);
+          $highest_id =0;
+          while ($row = mysqli_fetch_row($result))
+          $highest_id = $row[0];
+
+          //echo "HIGHEST ID: ".$highest_id."<br/";
+          $ind=0;
+          $lmtAdvsTeam=0;
+          $nameAdvsTeam = array(); // make a new array to hold all your data
+          $deptAdvsTeam=array();
+          $emailAdvsTeam=array();
+          $imgAdvsTeam=array();
+
+          for ($index=1; $index <=$highest_id; $index++)
+            {
+              $sql="SELECT * FROM advisorteam WHERE id='$index' ";
+              $result=mysqli_query($conn,$sql);
+              if (mysqli_num_rows($result)>0)
+              {
+               $row = mysqli_fetch_row($result);
+               $nameAdvsTeam[$ind] = $row[1];     // 0 for id , 1 for story
+               $deptAdvsTeam[$ind]=$row[2];
+               $emailAdvsTeam[$ind]=$row[3];
+               $imgAdvsTeam[$ind]=$row[4];
+
+               $ind++;
+              }
+              $lmtAdvsTeam=$ind ;
+                     
+            }
+
+            for($x=0; $x<$lmtAdvsTeam;$x++)
+            {
+
+
+              echo'<div class="container">';
+
+                echo'<div align="center">'.
+                  '<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" >'.
+                    '<div class="Pimg">'.
+                    '<img  src="'.$imgAdvsTeam[$x].'" rel="person" class="img-responsive" style="width:140px; height:140px;">'.
+                    '<h5 ><b>'.$nameAdvsTeam[$x].'</b></h5>'.
+                    '<h5 ><i>'.$deptAdvsTeam[$x].'</i></h5>'.
+                    '<h5 >'.$emailAdvsTeam[$x].'</h5>'.
+                  '</div>'.
+                  '</div>';
+
+
+                if (++$x < $lmtAdvsTeam)   
+                {
+                  echo
+                  '<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" >'.
+                    '<div class="Pimg">'.
+                    '<img  src="'.$imgAdvsTeam[$x].'" rel="person" class="img-responsive" style="width:140px; height:140px;">'.
+                    '<h5 ><b>'.$nameAdvsTeam[$x].'</b></h5>'.
+                    '<h5 ><i>'.$deptAdvsTeam[$x].'</i></h5>'.
+                    '<h5 >'.$emailAdvsTeam[$x].'</h5>'.
+                  '</div>'.
+                  '</div>';
+                }
+                else
+                {
+                  break;
+                }
+
+                if (++$x < $lmtAdvsTeam)   
+                {
+                  echo
+                  '<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" >'.
+                    '<div class="Pimg">'.
+                    '<img  src="'.$imgAdvsTeam[$x].'" rel="person" class="img-responsive" style="width:140px; height:140px;">'.
+                    '<h5 ><b>'.$nameAdvsTeam[$x].'</b></h5>'.
+                    '<h5 ><i>'.$deptAdvsTeam[$x].'</i></h5>'.
+                    '<h5 >'.$emailAdvsTeam[$x].'</h5>'.
+                  '</div>'.
+                  '</div>';
+                }
+                else
+                {
+                  break;
+                }
+
+                if (++$x < $lmtAdvsTeam)   
+                {
+                  echo
+                  '<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" >'.
+                    '<div class="Pimg">'.
+                    '<img  src="'.$imgAdvsTeam[$x].'" rel="person" class="img-responsive" style="width:140px; height:140px;">'.
+                    '<h5 ><b>'.$nameAdvsTeam[$x].'</b></h5>'.
+                    '<h5 ><i>'.$deptAdvsTeam[$x].'</i></h5>'.
+                    '<h5 >'.$emailAdvsTeam[$x].'</h5>'.
+                  '</div>'.
+                  '</div>';
+                }
+                else
+                {
+                  break;
+                }
+                  
+                  
+
+              echo'  </div>   
+
+              </div>
+
+                <br>';
+            }
+
+                    mysqli_close($conn);
+            ?>
+          </div>
+        </div>
+        <br>
+        <div id="line"></div>
+
+
+
+            <!-------------------------Advisors End------------->
+
+             <div class="container">
 
           <div class="demo222" align="center">
           <h2>Our Founders</h2>
@@ -104,9 +244,9 @@ include './Siteheader.php';
           <div align="center">
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" >
               <div class="Pimg">
-              <img  src="../members pictures/atul singh.jpg" rel="person" class="img-responsive" style="width:140px; height:140px;">
+              <img  src="../IMG_20190118_110824.jpg" rel="person" class="img-responsive" style="width:140px; height:140px;">
               <h5 ><b>Atul Singh </b></h5>
-              <h5 ><i>MTECH PHY IIT ROPAR</i></h5>
+              <h5 ><i>MSc. PHYSICS IIT ROPAR</i></h5>
               <h5 >2017phs1004@iitrpr.ac.in</h5>
             </div>
             </div>
@@ -116,7 +256,7 @@ include './Siteheader.php';
               <div class="Pimg">
               <img  src="../members pictures/1545042286873. - RATNESH KUMAR SINGH.jpg" rel="person" class="img-responsive" style="width:140px; height:140px;">
               <h5 ><b>Ratnesh Kumar Singh </b></h5>
-              <h5 ><i>BTECH CSE IIT ROPAR</i></h5>
+              <h5 ><i>MSc. MATHEMATICS IIT ROPAR</i></h5>
               <h5 >2017mas1017@iitrpr.ac.in</h5>
             </div>
             </div>
@@ -126,7 +266,7 @@ include './Siteheader.php';
               <div class="Pimg">
               <img  src="../members pictures/Sandeep Kumar Mishra, 2017MAS1019 - Sandeep Mishra.jpg" rel="person" class="img-responsive" style="width:140px; height:140px;">
               <h5 ><b>Sandeep Kumar Mishra </b></h5>
-              <h5 ><i>BTECH CSE IIT ROPAR</i></h5>
+              <h5 ><i>MSc. MATHEMATICS IIT ROPAR</i></h5>
               <h5 >2017mas1019@iitrpr.ac.in</h5>
             </div>
             </div>
@@ -136,7 +276,7 @@ include './Siteheader.php';
               <div class="Pimg">
               <img  src="../members pictures/jamph - mahantesh khetri.jpg" rel="person" class="img-responsive" style="width:140px; height:140px;">
               <h5 ><b>Mahantesh Khetri</b></h5>
-              <h5 ><i>BTECH CSE IIT ROPAR</i></h5>
+              <h5 ><i>MSc. PHYSICS IIT ROPAR</i></h5>
               <h5 >2017phs1011@iitrpr.ac.in</h5>
             </div>
             </div>
@@ -154,7 +294,7 @@ include './Siteheader.php';
               <div class="Pimg">
               <img  src="../members pictures/Raghav.jpg" rel="person" class="img-responsive" style="width:140px; height:140px;">
               <h5 ><b>Raghav Chugh </b></h5>
-              <h5 ><i>BTECH CSE IIT ROPAR</i></h5>
+              <h5 ><i>MSc. MATHEMATICS IIT ROPAR</i></h5>
               <h5 >2017mas1016@iitrpr.ac.in</h5>
             </div>
             </div>
@@ -164,7 +304,7 @@ include './Siteheader.php';
               <div class="Pimg">
               <img  src="../members pictures/anurag - Anurag Bokalial.jpg" rel="person" class="img-responsive" style="width:140px; height:140px;">
               <h5 ><b>Anurag Bokalial</b></h5>
-              <h5 ><i>BTECH CSE IIT ROPAR</i></h5>
+              <h5 ><i>MSc. PHYSICS IIT ROPAR</i></h5>
               <h5 >2017phs1003@iitrpr.ac.in</h5>
             </div>
             </div>
@@ -174,7 +314,7 @@ include './Siteheader.php';
               <div class="Pimg">
               <img  src="../members pictures/DikshaSnap2 - Diksha Bhutani.jpg" rel="person" class="img-responsive" style="width:140px; height:140px;">
               <h5 ><b>Diksha Bhutani </b></h5>
-              <h5 ><i>BTECH CSE IIT ROPAR</i></h5>
+              <h5 ><i>MSc. MATHEMATICS IIT ROPAR</i></h5>
               <h5 >2017mas1007@iitrpr.ac.in</h5>
             </div>
             </div>
@@ -184,7 +324,7 @@ include './Siteheader.php';
               <div class="Pimg">
               <img  src="../members pictures/Chetan_Waghela_240_300_Photo - Chetan Waghela.bmp" rel="person" class="img-responsive" style="width:140px; height:140px;">
               <h5 ><b>Chetan Jesing Waghela</b></h5>
-              <h5 ><i>BTECH CSE IIT ROPAR</i></h5>
+              <h5 ><i>PHD PHYSICS IIT ROPAR</i></h5>
               <h5 >Chetan.waghela@iitrpr.ac.in</h5>
             </div>
             </div>
@@ -201,7 +341,7 @@ include './Siteheader.php';
               <div class="Pimg">
               <img  src="../members pictures/IMG-2- Eslvath Devsingh.jpg" rel="person" class="img-responsive" style="width:140px; height:140px;">
               <h5 ><b>Devsingh Eslavath </b></h5>
-              <h5 ><i>BTECH CSE IIT ROPAR</i></h5>
+              <h5 ><i>BTECH MECHANICAL IIT ROPAR</i></h5>
               <h5 >2015meb1092@iitrpr.ac.in</h5>
             </div>
             </div>
@@ -214,9 +354,9 @@ include './Siteheader.php';
           <div align="center">
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" >
               <div class="Pimg">
-              <img  src="imag.jpg" rel="person" class="img-responsive" style="width:140px; height:140px;">
-              <h5 ><b>Joyti  Kumari  Kumara </b></h5>
-              <h5 ><i>BTECH CSE IIT ROPAR</i></h5>
+              <img  src="./IMG-20180824-WA0031.jpg" rel="person" class="img-responsive" style="width:140px; height:140px;">
+              <h5 ><b>Jyoti  Kumari</b></h5>
+              <h5 ><i>MSc. PHYSICS IIT ROPAR</i></h5>
               <h5 >2017phs1008@iitrpr.ac.in</h5>
             </div>
             </div>
@@ -228,9 +368,9 @@ include './Siteheader.php';
           <div align="center">
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" >
               <div class="Pimg">
-              <img  src="imag.jpg" rel="person" class="img-responsive" style="width:140px; height:140px;">
+              <img  src="./IMG-20180824-WA0029.jpg" rel="person" class="img-responsive" style="width:140px; height:140px;">
               <h5 ><b>Versha Choudhary </b></h5>
-              <h5 ><i>BTECH CSE IIT ROPAR</i></h5>
+              <h5 ><i>MSc. PHYSICS IIT ROPAR</i></h5>
               <h5 >2017phs10@iitrpr.ac.in</h5>
             </div>
             </div>
@@ -387,143 +527,6 @@ include './Siteheader.php';
 
             <!-------------------------Gov Body End------------->
 
-
-          <!-------------Advisors------------------->
-
-          <br>
-
-          <div class="container">
-            
-            <div class="demo222" align="center">
-          <h2>Our Advisors</h2>
-          </div>
-        </div>
-          <hr>
-
-
-
-          <?php
-          require("db.php");
-          $sqll="SELECT * FROM advisorteam ORDER BY id DESC LIMIT 0, 1";
-
-          $result = mysqli_query($conn,$sqll);
-          $highest_id =0;
-          while ($row = mysqli_fetch_row($result))
-          $highest_id = $row[0];
-
-          //echo "HIGHEST ID: ".$highest_id."<br/";
-          $ind=0;
-          $lmtAdvsTeam=0;
-          $nameAdvsTeam = array(); // make a new array to hold all your data
-          $deptAdvsTeam=array();
-          $emailAdvsTeam=array();
-          $imgAdvsTeam=array();
-
-          for ($index=1; $index <=$highest_id; $index++)
-            {
-              $sql="SELECT * FROM advisorteam WHERE id='$index' ";
-              $result=mysqli_query($conn,$sql);
-              if (mysqli_num_rows($result)>0)
-              {
-               $row = mysqli_fetch_row($result);
-               $nameAdvsTeam[$ind] = $row[1];     // 0 for id , 1 for story
-               $deptAdvsTeam[$ind]=$row[2];
-               $emailAdvsTeam[$ind]=$row[3];
-               $imgAdvsTeam[$ind]=$row[4];
-
-               $ind++;
-              }
-              $lmtAdvsTeam=$ind ;
-                     
-            }
-
-            for($x=0; $x<$lmtAdvsTeam;$x++)
-            {
-
-
-              echo'<div class="container">';
-
-                echo'<div align="center">'.
-                  '<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" >'.
-                    '<div class="Pimg">'.
-                    '<img  src="'.$imgAdvsTeam[$x].'" rel="person" class="img-responsive" style="width:140px; height:140px;">'.
-                    '<h5 ><b>'.$nameAdvsTeam[$x].'</b></h5>'.
-                    '<h5 ><i>'.$deptAdvsTeam[$x].'</i></h5>'.
-                    '<h5 >'.$emailAdvsTeam[$x].'</h5>'.
-                  '</div>'.
-                  '</div>';
-
-
-                if (++$x < $lmtAdvsTeam)   
-                {
-                  echo
-                  '<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" >'.
-                    '<div class="Pimg">'.
-                    '<img  src="'.$imgAdvsTeam[$x].'" rel="person" class="img-responsive" style="width:140px; height:140px;">'.
-                    '<h5 ><b>'.$nameAdvsTeam[$x].'</b></h5>'.
-                    '<h5 ><i>'.$deptAdvsTeam[$x].'</i></h5>'.
-                    '<h5 >'.$emailAdvsTeam[$x].'</h5>'.
-                  '</div>'.
-                  '</div>';
-                }
-                else
-                {
-                  break;
-                }
-
-                if (++$x < $lmtAdvsTeam)   
-                {
-                  echo
-                  '<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" >'.
-                    '<div class="Pimg">'.
-                    '<img  src="'.$imgAdvsTeam[$x].'" rel="person" class="img-responsive" style="width:140px; height:140px;">'.
-                    '<h5 ><b>'.$nameAdvsTeam[$x].'</b></h5>'.
-                    '<h5 ><i>'.$deptAdvsTeam[$x].'</i></h5>'.
-                    '<h5 >'.$emailAdvsTeam[$x].'</h5>'.
-                  '</div>'.
-                  '</div>';
-                }
-                else
-                {
-                  break;
-                }
-
-                if (++$x < $lmtAdvsTeam)   
-                {
-                  echo
-                  '<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" >'.
-                    '<div class="Pimg">'.
-                    '<img  src="'.$imgAdvsTeam[$x].'" rel="person" class="img-responsive" style="width:140px; height:140px;">'.
-                    '<h5 ><b>'.$nameAdvsTeam[$x].'</b></h5>'.
-                    '<h5 ><i>'.$deptAdvsTeam[$x].'</i></h5>'.
-                    '<h5 >'.$emailAdvsTeam[$x].'</h5>'.
-                  '</div>'.
-                  '</div>';
-                }
-                else
-                {
-                  break;
-                }
-                  
-                  
-
-              echo'  </div>   
-
-              </div>
-
-                <br>';
-            }
-
-                    mysqli_close($conn);
-            ?>
-          </div>
-        </div>
-        <br>
-        <div id="line"></div>
-
-
-
-            <!-------------------------Advisors End------------->
 
 
 
