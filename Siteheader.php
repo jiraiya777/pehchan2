@@ -72,7 +72,7 @@
       <a href="/VisionMission.php">Mission and Vision</a>
       <a href="/PeopleBehindPehchaan.php">People Behind Pehchaan Ek Safar </a>      
       <a href="../WorkingModel.php">Working Model </a>
-      <a href="#">Partners and Affiliates</a>
+      <a href="./partnerAndAffiliation.html">Partners and Affiliates</a>
 
     </div>
   </div> 

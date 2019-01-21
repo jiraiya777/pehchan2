@@ -49,7 +49,7 @@ include 'Siteheader.php';
     
     <div class="container-fluid" style="margin-top:35px;">
         
-            <div class="row" style="background-color:skyblue; padding-top:15px; margin-left: 70px; margin-right:70px ;">
+            <div class="row" style="background-color:skyblue; padding-top:15px;">
               <div class="col-lg-5 col-md-8 col-sm-10 col-xs-12">
                   <div class="thumbnail">
                       <a href="images/Camp_Samjhawa1.jpg" target="_blank">

@@ -20,11 +20,8 @@
 include 'Siteheader.php';
 ?>
 
-		<div>
-			<h1 id="demo333">About Us</h1>
-		</div>
 		<div class="container" >
-			
+                <h1 id="demo333">About Us</h1>
 		    <div class="row" style="height:300px;"> 
                 <div class="col-sm-4 col-md-4 col-xs-4 col-lg-4" id="poll">
                  <div >
@@ -61,18 +58,36 @@ include 'Siteheader.php';
                                 <p style="color:black; margin-left:45px;">
                                   We also intend to spread our wings around the country and work for bringing a positive change in our society.
                                   </p>
-            
+                                  <br>
+                                  <br>
                  </div>
             </div>
         </div>
         <div class="container">
-            <div class="row" style="margin:5px 12px ;">
-                <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
-                        <img id="demo3" style="width:85%; height: 250px; margin-top: 30px;" class="img-responsive" src="banner.jpg"	rel="poor children">
-                </div>
+                <div class="row" style="background-color: rgb(207, 201, 201); padding-top:15px;">
+                        
+                        <div class="col-md-8 col-sm-10 col-lg-5 col-xs-12">
+                            <div class="thumbnail">
+                                <a href="#" target="_blank">
+                                  <img src="images/Photo from Atul Singh.jpg" alt="Lights" style="width:100%; height: 300px;">
+                               
+                                </a>
+                              </div>
+                        </div>
+                        <div class="col-md-0 col-sm-0 col-lg-1 col-xs-0">
 
-			
-        </div>
+                        </div>
+                        <div class="col-md-8 col-sm-10 col-lg-5 col-xs-12">
+                          <div class="thumbnail">
+                            <a href="#" target="_blank">
+                              <img src="images/PicsArt_01-19-12.17.39-1.jpg" alt="Lights" style="width:100%; height:300px ;">
+                             
+                            </a>
+                          </div>
+                        </div>
+                      
+                </div>
+                
         </div>
 <hr>
       

@@ -44,7 +44,7 @@ include 'Siteheader.php';
                 </li>
                 <div class="container-fluid" style="margin-top:35px;">
              
-                        <div class="row" style="background-color: skyblue; padding-top:15px; margin-left:70px; margin-right:70px;">
+                        <div class="row" style="background-color: skyblue; padding-top:15px;">
                             
                           <div class="col-lg-5 col-md-8 col-sm-10 col-xs-12">
                               <div class="thumbnail">
@@ -74,7 +74,7 @@ include 'Siteheader.php';
                         </li>
                         <div class="container-fluid" style="margin-top:35px;">
              
-                                <div class="row" style="background-color: skyblue; padding-top:15px; margin-left:70px; margin-right:70px;">
+                                <div class="row" style="background-color: skyblue; padding-top:15px;">
                                     
                                   <div class="col-lg-5 col-md-8 col-sm-10 col-xs-12">
                                       <div class="thumbnail">
@@ -104,15 +104,13 @@ include 'Siteheader.php';
                            fest of IIT Ropar, zeitgeist.They performed PT show,Poetry and group Dance.</li> 
                            <div class="container-fluid" style="margin-top:35px;">
              
-                                <div class="row" style="background-color: skyblue; padding-top:15px; margin-left:70px; margin-right:70px;">
+                                <div class="row" style="background-color: skyblue; padding-top:15px;">
                                     
                                   <div class="col-lg-5 col-md-8 col-sm-10 col-xs-12">
                                       <div class="thumbnail">
                                           <a href="images/IITvisit-Zietgiest1.jpg" target="_blank">
                                             <img src="images/IITvisit-Zietgiest1.jpg" alt="poor" style="width:100%; height:250px;" >
-                                            <div class="caption">
-                                              <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                                            </div>
+                                           
                                           </a>
                                         </div>
                                       </div>
@@ -121,9 +119,7 @@ include 'Siteheader.php';
                                         <div class="thumbnail">
                                           <a href="images/IITvisit-Zietgiest2 .jpg" target="_blank">
                                             <img src="images/IITvisit-Zietgiest2 .jpg" alt="Nature" style="width:100%; height:250px;">
-                                            <div class="caption">
-                                              <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                                            </div>
+                                           
                                           </a>
                                         </div>
                                       </div>
@@ -137,7 +133,7 @@ include 'Siteheader.php';
                            us were presents as guest on the 7th convocation of IIT Ropar.</li>
                            <div class="container-fluid" style="margin-top:35px;">
              
-                                <div class="row" style="background-color: skyblue; padding-top:15px; margin-left:70px; margin-right:70px;">
+                                <div class="row" style="background-color: skyblue; padding-top:15px;">
                                     
                                   <div class="col-lg-5 col-md-8 col-sm-10 col-xs-12">
                                       <div class="thumbnail">
