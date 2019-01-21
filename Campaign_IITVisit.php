@@ -46,24 +46,20 @@ include 'Siteheader.php';
              
                         <div class="row" style="background-color: skyblue; padding-top:15px; margin-left:70px; margin-right:70px;">
                             
-                          <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                          <div class="col-lg-5 col-md-8 col-sm-10 col-xs-12">
                               <div class="thumbnail">
                                   <a href="images/IITvisit-Women'sDay1.jpg" target="_blank">
                                     <img src="images/IITvisit-convocation1.jpg" alt="poor" style="width:100%; height:250px;" >
-                                    <div class="caption">
-                                      <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                                    </div>
+                                   
                                   </a>
                                 </div>
                               </div>
                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-                              <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                              <div class="col-lg-5 col-md-8 col-sm-10 col-xs-12">
                                 <div class="thumbnail">
                                   <a href="images/IITvisit-Women'sDay2.jpg" target="_blank">
                                     <img src="images/IITvisit-Women'sDay2.jpg" alt="Nature" style="width:100%; height:250px;">
-                                    <div class="caption">
-                                      <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                                    </div>
+                                   
                                   </a>
                                 </div>
                               </div>
@@ -80,24 +76,20 @@ include 'Siteheader.php';
              
                                 <div class="row" style="background-color: skyblue; padding-top:15px; margin-left:70px; margin-right:70px;">
                                     
-                                  <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                  <div class="col-lg-5 col-md-8 col-sm-10 col-xs-12">
                                       <div class="thumbnail">
                                           <a href="images/IITvisit-15Aug1.jpg" target="_blank">
-                                            <img src="images/IITvisit-15Aug1.jpg" alt="poor" style="width:100%; height:250px;" >
-                                            <div class="caption">
-                                              <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                                            </div>
+                                            <img src="images/IITvisit-15Aug1.jpg" alt="poor children" style="width:100%; height:250px;" >
+                                            
                                           </a>
                                         </div>
                                       </div>
                                       <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-                                      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                      <div class="col-lg-5 col-md-8 col-sm-10 col-xs-12">
                                         <div class="thumbnail">
                                           <a href="images/IITvisit-15Aug 2.jpg" target="_blank">
                                             <img src="images/IITvisit-15Aug 2.jpg" alt="Nature" style="width:100%; height:250px;">
-                                            <div class="caption">
-                                              <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                                            </div>
+                                           
                                           </a>
                                         </div>
                                       </div>
@@ -114,7 +106,7 @@ include 'Siteheader.php';
              
                                 <div class="row" style="background-color: skyblue; padding-top:15px; margin-left:70px; margin-right:70px;">
                                     
-                                  <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                  <div class="col-lg-5 col-md-8 col-sm-10 col-xs-12">
                                       <div class="thumbnail">
                                           <a href="images/IITvisit-Zietgiest1.jpg" target="_blank">
                                             <img src="images/IITvisit-Zietgiest1.jpg" alt="poor" style="width:100%; height:250px;" >
@@ -125,7 +117,7 @@ include 'Siteheader.php';
                                         </div>
                                       </div>
                                       <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-                                      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                      <div class="col-lg-5 col-md-8 col-sm-10 col-xs-12">
                                         <div class="thumbnail">
                                           <a href="images/IITvisit-Zietgiest2 .jpg" target="_blank">
                                             <img src="images/IITvisit-Zietgiest2 .jpg" alt="Nature" style="width:100%; height:250px;">
@@ -147,24 +139,20 @@ include 'Siteheader.php';
              
                                 <div class="row" style="background-color: skyblue; padding-top:15px; margin-left:70px; margin-right:70px;">
                                     
-                                  <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                  <div class="col-lg-5 col-md-8 col-sm-10 col-xs-12">
                                       <div class="thumbnail">
                                           <a href="images/IITvisit-convocation1.jpg" target="_blank">
                                             <img src="images/IITvisit-convocation1.jpg" alt="poor" style="width:100%; height:250px;" >
-                                            <div class="caption">
-                                              <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                                            </div>
+                                           
                                           </a>
                                         </div>
                                       </div>
                                       <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-                                      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                      <div class="col-lg-5 col-md-8 col-sm-10 col-xs-12">
                                         <div class="thumbnail">
                                           <a href="images/IITVISIT-convocation2.JPG" target="_blank">
                                             <img src="images/IITVISIT-convocation2.JPG" alt="Nature" style="width:100%; height:250px;">
-                                            <div class="caption">
-                                              <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                                            </div>
+                                          
                                           </a>
                                         </div>
                                       </div>
@@ -176,7 +164,8 @@ include 'Siteheader.php';
     </ol>
     
        <br>
-    <strong><i>To learn more about Vikalp’s work with men, watch:</i></strong>
+    <strong><i>
+        here is video for our Campaign:</i></strong>
     <div class="embed-responsive embed-responsive-16by9">
             <iframe class="embed-responsive-item" src="https://youtu.be/PjTU0DmBWiU" style="width: 800px; height: 300px;"></iframe>
           </div>

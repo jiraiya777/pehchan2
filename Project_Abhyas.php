@@ -42,11 +42,9 @@ include 'Siteheader.php';
             </div>
             <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6">
               <div class="thumbnail">
-                <a href="banner.jpg" target="_blank">
-                  <img src="banner.jpg" alt="Lights" style="width:100%">
-                  <div class="caption">
-                    <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                  </div>
+                <a href="images/projrct-ab666.jpg" target="_blank">
+                  <img src="images/projrct-ab666.jpg" alt="Lights" style="width:100%; height: 300px;" >
+                 
                 </a>
               </div>
             </div>
@@ -66,17 +64,15 @@ include 'Siteheader.php';
           <div class="thumbnail">
             <a href="images/abhyas1.jpg" target="_blank">
               <img src="images/abhyas1.jpg" alt="Lights" style="width:100%">
-              <div class="caption">
-                <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-              </div>
+              
             </a>
           </div>
         </div>
       
 </div>
-<strong><i>To learn more about Vikalp’s work with men, watch:</i></strong>
+<strong><i>here is video of our Project:</i></strong>
 <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://youtu.be/PjTU0DmBWiU" style="width: 800px; height: 300px;"></iframe>
+        <iframe class="embed-responsive-item" src="https://youtu.be/l2Vh83nNZ9A" style="width: 800px; height: 300px;"></iframe>
       </div>
 </div>
     <?php

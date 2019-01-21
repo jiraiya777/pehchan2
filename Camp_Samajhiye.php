@@ -50,24 +50,20 @@ include 'Siteheader.php';
     <div class="container-fluid" style="margin-top:35px;">
         
             <div class="row" style="background-color:skyblue; padding-top:15px; margin-left: 70px; margin-right:70px ;">
-              <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+              <div class="col-lg-5 col-md-8 col-sm-10 col-xs-12">
                   <div class="thumbnail">
                       <a href="images/Camp_Samjhawa1.jpg" target="_blank">
-                        <img src="images/Camp_Samjhawa1.jpg" alt="poor" style="width:100%; height:250px;" >
-                        <div class="caption">
-                          <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                        </div>
+                        <img src="images/Camp_Samjhawa1.jpg" alt="poor" style="width:100%; height:300px;" >
+                     
                       </a>
                     </div>
                   </div>
                   <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-                  <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                  <div class="col-lg-5 col-md-8 col-sm-10 col-xs-12">
                     <div class="thumbnail">
                       <a href="images/Camp_Samjhawa2.jpg" target="_blank">
-                        <img src="images/Capm_Samjhawa2.jpg" alt="Nature" style="width:100%; height:250px;">
-                        <div class="caption">
-                          <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                        </div>
+                        <img src="images/Capm_Samjhawa2.jpg" alt="Nature" style="width:100%; height:300px;">
+                       
                       </a>
                     </div>
                   </div>
@@ -77,7 +73,8 @@ include 'Siteheader.php';
         </div>
     </div>
     <br>
-    <strong><i>To learn more about Vikalp’s work with men, watch:</i></strong>
+    <strong><i>
+        here is video for our Campaign:</i></strong>
     <div class="embed-responsive embed-responsive-16by9">
             <iframe class="embed-responsive-item" src="https://youtu.be/PjTU0DmBWiU" style="width: 800px; height: 300px;"></iframe>
           </div>
