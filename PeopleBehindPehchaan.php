@@ -89,8 +89,8 @@ include './Siteheader.php';
             <div class="directorImg">
             <img  src="./PehchaanesAdvisiors/Prof. S K Das.png" rel="person" class="img-responsive" style="width:255px; height:255px;">
           </div>
-          Director ,IIT Ropar<br>
-          Prof.S K Das
+         <strong><h3> Director ,IIT Ropar</h3></strong><br>
+          <h4><b>Prof.S K Das</b></h4>
           </div>
 </div>
           <br>

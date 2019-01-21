@@ -107,11 +107,52 @@ include 'Siteheader.php';
            is observed that by providing them the children are feeling motivated to
          study thereby actively indulging themselves in these sessions.
 </p>
-<strong><i>To learn more about Vikalp’s work with men, watch:</i></strong>
-<div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://youtu.be/PjTU0DmBWiU" style="width: 800px; height: 300px;"></iframe>
-      </div>
+
+
+
 </div>
+
+
+<br>
+<div class="container" align="center">
+
+<h3><strong>Here is video of our Project:</strong></h3>
+<hr>
+<?php
+
+require("db.php");
+$imgVid = array();
+$sql="SELECT * FROM proj_pathsala ";
+$flag=0;
+$result=mysqli_query($conn,$sql);
+              if (mysqli_num_rows($result)>0)
+              {
+               $row = mysqli_fetch_row($result);
+               $imgVid[0] = $row[1];
+               $flag=1;
+              }
+              $x=0;
+
+if($flag==1)
+{
+echo 
+'<iframe width="100%" height="315"
+src="'.$imgVid[0].'">
+</iframe>';
+}
+
+else
+{
+  echo "Video will be uploaded soon";
+}
+mysqli_close($conn);
+
+?>
+</div>
+
+
+<hr>
+<br>
     <?php
 include 'Footer.php';
 ?>

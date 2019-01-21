@@ -9365,7 +9365,7 @@ mysqli_close($conn);
 
 
         <h3 >VIDEOS </h3>
-         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalVidPg">Add</button>
+         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalVidPg">UPDATE</button>
 
   
       <div class="modal fade" id="myModalVidPg" role="dialog">
@@ -9378,9 +9378,25 @@ mysqli_close($conn);
               <h4 class="modal-title">ADD</h4>
             </div>
             <div class="modal-body">
+
+
+
             
 
               <?php
+
+
+              echo 'INPUT ID 1 FOR PROJECT ABHYAS'.'<br/>';
+              echo 'INPUT ID 2 FOR PROJECT PATHSALA'.'<br/>';
+              echo 'INPUT ID 3 FOR PROJECT SCHOOL CHALE HUM'.'<br/>';
+              echo 'INPUT ID 4 FOR PROJECT SCHOOL OUTREACH'.'<br/>';
+              echo 'INPUT ID 5 FOR CAMPAIGN KEEP AWAY'.'<br/>';
+              echo 'INPUT ID 6 FOR CAMPAIGN SAMAJHIYE'.'<br/>';
+              echo 'INPUT ID 7 FOR CAMPAIGN IIT VISITS'.'<br/>';
+              echo 'INPUT ID 8 FOR CAMPAIGN JHUGGI'.'<br/>';
+
+
+
 // define variables and set to empty values
 $nameVidPgErr =$nmeVidPgErr =$deptVidPgErr = $emailVidPgErr =$imgVidPgErr = "";
 $nameVidPg =$nmeVidPg =$deptVidPg = $emailVidPg =$imgVidPg ="";
