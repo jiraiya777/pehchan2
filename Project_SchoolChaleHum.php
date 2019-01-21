@@ -54,16 +54,14 @@ include 'Siteheader.php';
     </p>
     
     <div class="row">
-            <div class="col-md-2 col-sm-2 col-lg-2 col-xs-2">
+            <div class="col-md-0 col-sm-0 col-lg-2 col-xs-0">
 
             </div>
-            <div class="col-md-8 col-sm-8 col-lg-8 col-xs-8">
+            <div class="col-md-8 col-sm-10 col-lg-8 col-xs-12">
               <div class="thumbnail">
                 <a href="images/SchoolChaleHum3.jpg" target="_blank">
                   <img src="images/SchoolChaleHum3.jpg" alt="Lights" style="width:100%; height: 300px;">
-                  <div class="caption">
-                    <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                  </div>
+                  
                 </a>
               </div>
             </div>
@@ -80,35 +78,30 @@ include 'Siteheader.php';
          principal which added to our motivation in sending children to school. 
 </p>
 <div class="row">
-        <div class="col-md-1 col-sm-1 col-lg-1 col-xs-1">
+        <div class="col-md-0 col-sm-0 col-lg-1 col-xs-0">
 
         </div> 
-        <div class="col-md-5 col-sm-5 col-lg-5 col-xs-5">
+        <div class="col-md-8 col-sm-10 col-lg-5 col-xs-12">
             <div class="thumbnail">
                 <a href="images/SchoolChaleHum2.jpg" target="_blank">
                   <img src="images/SchoolChaleHum2.jpg
                       " alt="Lights" style="width:100%; height: 400px;">
-                  <div class="caption">
-                    <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                  </div>
+               
                 </a>
               </div>
         </div>
-        <div class="col-md-5 col-sm-5 col-lg-5 col-xs-5">
+        <div class="col-md-8 col-sm-10 col-lg-5 col-xs-12">
           <div class="thumbnail">
-            <a href="images/SchoolChaleHum1 (1).jpg" target="_blank">
-              <img src="images/SchoolChaleHum1 (1).jpg
-                  " alt="Lights" style="width:100%; height:400px ;">
-              <div class="caption">
-                <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-              </div>
+            <a href="images/project-schelhum777.jpg" target="_blank">
+              <img src="images/project-schelhum777.jpg" alt="Lights" style="width:100%; height:400px ;">
+             
             </a>
           </div>
         </div>
       
 </div>
 
-<strong><i>To learn more about Vikalp’s work with men, watch:</i></strong>
+<strong><i>here is video for our project:</video>:</i></strong>
 <div class="embed-responsive embed-responsive-16by9">
         <iframe class="embed-responsive-item" src="https://youtu.be/PjTU0DmBWiU" style="width: 800px; height: 300px;"></iframe>
       </div>

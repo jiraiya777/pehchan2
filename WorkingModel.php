@@ -40,13 +40,11 @@ include 'Siteheader.php';
         <div class="col-sm-3 col-lg-3 col-md-3 col-xs-3">
 
         </div>
-        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6">
+        <div class="col-md-8 col-sm-10 col-lg-6 col-xs-12">
             <div class="thumbnail">
                 <a href="#" target="_blank">
-                    <img src="images/pathsala1.jpg" alt="Lights" style="width:100%; height:300px ;">
-                    <div class="caption">
-                        <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                    </div>
+                    <img src="images/working structure 2.jpg" alt="Lights" style="width:100%; height:300px ;">
+                    
                  </a>
             </div>
         </div>
@@ -56,26 +54,38 @@ include 'Siteheader.php';
     <div class="row">
         <div class="sm-col-12">
            <ul >
-               <li style=" margin-left:70px;><p style=" margin-left:70px;  margin-right:70px;"><b>CHILDLINE Advisory Board (CAB)</b> comprises of senior level functionaries from the
-                    allied systems, NGOs, concerned individuals, media etc. It is the policy making body for
-                     CHILDLINE at the city level and
-                    it periodically undertakes reviews of CHILDLINE.</p></li>
+               <li style=" margin-left:70px;"><p style="   margin-right:70px;"><b>Boards and teams:</b> For efficiency 
+                in the working of the NGO, we have divided the members into certain teams namely- Official work, 
+                external affairs, marketing and logistics, accountancy team, teaching team, public relations, social
+                 media, and 
+                the governing body. All the teams finally report to the governing body.</p></li>
                     <br>
-               <li style=" margin-left:70px;><p style= " margin-left:70px;  margin-right:70px;"><b>The Nodal Organization,</b> essentially an
-                    academic institute ensures coordination,
-                    training, research, documentation, awareness and advocacy.</p></li>
+               <li style=" margin-left:70px;"> <p style= "  margin-right:70px;"><b>
+                    Donors and resources:</b> We get the funds for our NGO's activities 
+                from the privileged side of our community who voluntarily wish to donate for the education of
+                 the children. Our new policy is planned to be "one child, one donor" where we want every
+                 child under the NGO to be virtually adopted by a donor.</p></li>
                     <br>
-               <li style=" margin-left:70px;><p style= " margin-left:70px;  margin-right:70px;"><b>The Collaborative Organization,</b> essentially a 24-hour service for children,
-                    responds to calls on 1098, provides emergency intervention, links children to
-                     services for ultimate rehabilitation, conducts awareness and outreach programmes,
-                    documents every call that comes into CHILDLINE.</p></li>
-                    <br>
-               <li style=" margin-left:70px;><p style= " margin-left:70px;  margin-right:70px;"><b>The Support Organization</b> responds to calls referred by
-                    the collaborative organization,
-                    conducts awareness and outreach programs.</p></li>
-                    <br>
-               <li style=" margin-left:70px;><p style= " margin-left:70px;  margin-right:70px;"><b>Resource Organizations: </b>These organizations act as referral centres for CHILDLINE.
-                    They also participate in outreach and awareness programs for CHILDLINE.</p></li>
+              
+               <li style=" margin-left:70px;"><p style= "  margin-right:70px;"><b>Local community:</b> We are
+                 reaching out to the local people of the Ropar city around the campus of IIT Ropar and 
+                 helping them to realize the importance of education for everyone so they can co-operate
+                  with us in reaching our goals. Not only getting them to send their kids to study rather
+                   than sending them for trifle works, Pehchaan succeeded in making the parents help convert
+                    their learning ground provided by another
+                 child education supportist into a jhuggi Pathshala.</p></li>
+                 <br>
+                 <li style=" margin-left:70px;"><p style= "   margin-right:70px;"><b>
+                        Collaborators:
+                       </b> Pehchaan-Ek Safar is open to invitations of collaboration with other similar groups/ 
+                       NGO's/Government organisations working on the same agenda - welfare of the underprivileged. Our
+                        NGO believes that such
+                        collaborations are mutually beneficial for both the groups involved.</p></li>  
+                 <br>
+               <li style=" margin-left:70px;"><p style=   "margin-right:70px;"><b>
+                    Supporting organisations:
+                     </b> The NGO gets its main financial and advisory support
+                 as well as manpower from IIT Ropar.</p></li>
            </ul>
         </div>
     </div>

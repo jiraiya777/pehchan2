@@ -52,13 +52,11 @@ include 'Siteheader.php';
             <div class="col-md-3 col-sm-3 col-lg-3 col-xs-3">
 
             </div>
-            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6">
+            <div class="col-md-8 col-sm-10 col-lg-6 col-xs-12">
               <div class="thumbnail">
-                <a href="banner.jpg" target="_blank">
-                  <img src="banner.jpg" alt="Lights" style="width:100%">
-                  <div class="caption">
-                    <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                  </div>
+                <a href="images/abhyas1.jpg" target="_blank">
+                  <img src="images/abhyas1.jpg" alt="Lights" style="width:100%">
+                 
                 </a>
               </div>
             </div>
@@ -74,13 +72,11 @@ include 'Siteheader.php';
         <div class="col-md-3 col-sm-3 col-lg-3 col-xs-3">
 
         </div>
-        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6">
+        <div class="col-md-8 col-sm-10 col-lg-6 col-xs-12">
           <div class="thumbnail">
-            <a href="banner.jpg" target="_blank">
-              <img src="banner.jpg" alt="Lights" style="width:100%">
-              <div class="caption">
-                <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-              </div>
+            <a href="images/IITvisit-convocation1.jpg" target="_blank">
+              <img src="images/IITvisit-convocation1.jpg" alt="Lights" style="width:100%">
+           
             </a>
           </div>
         </div>
